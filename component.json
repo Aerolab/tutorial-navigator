@@ -1,5 +1,5 @@
 {
-  "name": "auth0-navigator-tutorial",
+  "name": "auth0-tutorial-navigator",
   "dependencies": {
     "auth0/styleguide": "*",
     "component/dom": "*"

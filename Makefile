@@ -24,4 +24,7 @@ packages: node_modules
 node_modules:
 	@npm install --development
 
+clean:
+	rm -rf node_modules components build
+
 .PHONY: build
