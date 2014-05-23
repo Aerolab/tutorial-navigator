@@ -519,7 +519,12 @@
     </control>
     <control controlID="145" controlTypeID="com.balsamiq.mockups::StickyNote" x="2089" y="309" w="298" h="100" measuredW="109" measuredH="123" zOrder="104" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>The%20question%20asking%20if%20the%20user%20if%20has%20a%20server%20or%20API%20is%20shown%20after%20a%20SDK%20is%20selected</text>
+        <text>We%20should%20show%20both%20SDKs%20and%20APIs%20by%20default%20so%20that%20the%20user%20gets%20a%20sense%20of%20what%20he%20can%20choose.</text>
+      </controlProperties>
+    </control>
+    <control controlID="147" controlTypeID="com.balsamiq.mockups::Paragraph" x="699" y="624" w="456" h="23" measuredW="275" measuredH="80" zOrder="105" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>If%20the%20app%20you%27re%20building%20is%20not%20listed%20here%2C%20please%20%5Bclick%20here%5D%28%29%20or%20%5Bchat%20with%20us%5D%28%29</text>
       </controlProperties>
     </control>
   </controls>
