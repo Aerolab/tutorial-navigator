@@ -4,7 +4,7 @@ endif
 
 run: build
 
-dev-run:
+dev-run: node_modules
 	@node_modules/.bin/supervisor \
 		--quiet \
 		--force-watch \

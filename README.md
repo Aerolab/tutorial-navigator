@@ -7,7 +7,6 @@
   ```bash
     git clone git@github.com:auth0/navigator-tutorial.git
     cd navigator-tutorial
-    npm install .
     make dev-run
   ```
 
