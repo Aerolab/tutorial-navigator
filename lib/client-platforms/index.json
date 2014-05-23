@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Single Page App",
+    "url": "/singlepageapp-tutorial",
+    "image": "//auth0.com/platforms-collection/img/html5.png"
+  },
+  {
+    "title": "Angular.js",
+    "url": "/angular-tutorial",
+    "image": "//auth0.com/platforms-collection/img/angular.png"
+  },
+  {
+    "title": "Ember.js",
+    "url": "/ember-tutorial",
+    "image": "//auth0.com/platforms-collection/img/html5.png"
+  }
+]

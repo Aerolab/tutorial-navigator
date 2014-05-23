@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Node.js",
+    "url": "/nodejs-tutorial",
+    "image": "//auth0.com/platforms-collection/img/node.png"
+  },
+  {
+    "title": "ASP.NET",
+    "url": "/aspnet-tutorial",
+    "image": "//auth0.com/platforms-collection/img/asp.png"
+  },
+  {
+    "title": "ASP.NET (OWIN)",
+    "url": "/aspnet-owin-tutorial",
+    "image": "//auth0.com/platforms-collection/img/asp.png"
+  },
+  {
+    "title": "ServiceStack",
+    "url": "/servicestack-tutorial",
+    "image": "//auth0.com/platforms-collection/img/service-stack.png"
+  },
+  {
+    "title": "PHP",
+    "url": "/php-tutorial",
+    "image": "//auth0.com/platforms-collection/img/php.png"
+  },
+  {
+    "title": "PHP (Laravel)",
+    "url": "/laravel-tutorial",
+    "image": "//auth0.com/platforms-collection/img/php.png"
+  },
+  {
+    "title": "Ruby",
+    "url": "/rails-tutorial",
+    "image": "//auth0.com/platforms-collection/img/rails.png"
+  },
+  {
+    "title": "Java",
+    "url": "/java-tutorial",
+    "image": "//auth0.com/platforms-collection/img/java.png"
+  },
+  {
+    "title": "Python",
+    "url": "/python-tutorial",
+    "image": "//auth0.com/platforms-collection/img/python.png"
+  }
+]

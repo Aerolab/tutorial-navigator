@@ -1,0 +1,12 @@
+{
+  "name": "auth0-nativator-tutorial",
+  "private": true,
+  "description": "Auth0's Nativator Tutorial page",
+  "dependencies": {
+    "component": "0.19.9"
+  },
+  "devDependencies": {
+    "supervisor": "*",
+    "serve": "*"
+  }
+}

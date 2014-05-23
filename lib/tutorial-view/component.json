@@ -1,0 +1,16 @@
+{
+  "name": "tutorial-view",
+  "description": "Reactive tutorial view",
+  "dependencies": {
+    "component/dom": "*",
+    "component/jquery": "*",
+    "component/reactive": "*",
+    "component/scroll-to": "*",
+    "learnboost/jsonp": "*",
+    "discore/closest": "*"
+  },
+  "templates": [ "tutorial.html" ],
+  "styles": [ "index.css" ],
+  "scripts": [ "index.js", "bindings.js" ],
+  "main": "index.js"
+}

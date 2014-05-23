@@ -1,0 +1,73 @@
+#tutorial-navigator {
+  min-height: 800px;
+}
+
+#tutorial-navigator .step,
+#tutorial-navigator .code-snippets {
+  margin-bottom: 50px;
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 3px;
+}
+
+#tutorial-navigator .step h3,
+#tutorial-navigator .code-snippets h3 {
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+#tutorial-navigator .step .app-type {
+  cursor: pointer;
+  padding: 20px;
+}
+
+#tutorial-navigator .step .app-type .app-type-item{
+  display: block;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+#tutorial-navigator .step .app-type.selected .app-type-item,
+#tutorial-navigator .step .app-type:hover .app-type-item {
+  background: #fff;
+}
+
+#tutorial-navigator .step .app-type .app-type-item span,
+#tutorial-navigator .step .app-type .app-type-item strong {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #666;
+}
+
+#tutorial-navigator .step .app-type.selected .app-type-item span,
+#tutorial-navigator .step .app-type.selected .app-type-item strong,
+#tutorial-navigator .step .app-type:hover .app-type-item span,
+#tutorial-navigator .step .app-type:hover .app-type-item strong {
+  color: #000;
+}
+
+#tutorial-navigator .step .app-type .app-type-item span.icon {
+  font-size: 7em;
+}
+
+#tutorial-navigator .step .app-type .app-type-item strong.label {
+  text-transform: capitalize;
+  font-size: 1.3em;
+}
+
+#tutorial-navigator .step .tutorial-item {
+  display: inline-block;
+  float: none;
+  margin-bottom: 20px;
+  vertical-align: top;
+}
+
+#tutorial-navigator .step .tutorial-item span {
+  min-height: 30px;
+  margin-top: 10px;
+}
+
+#tutorial-navigator .code-snippets {
+  min-height: 400px;
+}

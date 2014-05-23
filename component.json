@@ -1,0 +1,20 @@
+{
+  "name": "auth0-navigator-tutorial",
+  "dependencies": {
+    "auth0/styleguide": "*",
+    "component/dom": "*"
+  },
+  "paths": [
+    "lib"
+  ],
+  "local": [
+    "server-platforms",
+    "server-apis",
+    "client-platforms",
+    "native-platforms",
+    "tutorial-view"
+  ],
+  "templates": [ ],
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}

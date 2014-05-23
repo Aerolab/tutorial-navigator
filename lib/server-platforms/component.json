@@ -1,0 +1,7 @@
+{
+  "name": "server-platforms",
+  "description": "Server platforms tutorials",
+  "scripts": [ ],
+  "json": [ "index.json" ],
+  "main": "index.json"
+}
