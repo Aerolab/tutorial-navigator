@@ -8,7 +8,6 @@ Please follow the steps below to configure AngularJS to use it with Auth0.
 <!-- We use client cookies to save the user credentials -->
 <script src="https://code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
         
-        
 <!-- Auth0 widget script and AngularJS module -->
 <script src="https://cdn.auth0.com/w2/auth0-widget-4.js"></script>
 <script src="https://cdn.auth0.com/w2/auth0-angular-0.4.js"> </script>
