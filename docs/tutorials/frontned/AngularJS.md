@@ -115,7 +115,15 @@ You can [check here](https://docs.auth0.com/user-profile) to find out all of the
 
 #### 9. Sit back and relax
 
-Now it's time to sit back, relax and open a beer. You've implemented Login and Signup with Auth0 and AngularJS
+Now it's time to sit back, relax and open a beer. You've implemented Login and Signup with Auth0 and AngularJS.
+
+#### Extra Extra
+
+We've learnt how to configure AngularJS with Auth0's module and a popup for Signing in.
+
+If you want to learn how to implement this with redirect, [you can read here](https://github.com/auth0/auth0-angular/blob/master/docs/widget.md)
+
+If you want to implement your custom Signin and Signup form, [you can read here](https://github.com/auth0/auth0-angular/blob/master/docs/jssdk.md)
 
 
 
