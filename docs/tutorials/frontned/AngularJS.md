@@ -101,7 +101,17 @@ auth.signin({
 
 #### 7. Adding a logout button
 
-TODO: Check if AngularJS widget has logout button
+You can just call the `signout` method of Auth0 to remove all the cookies from the client that keep the user logged in:
+
+````js
+$scope.logout = function() {
+  auth.signout();
+}
+````
+
+````html
+<input type="submit" ng-click="logout()" value="Log out" />
+````
 
 #### 8. Showing user information
 
