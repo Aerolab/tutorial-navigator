@@ -39,7 +39,6 @@ eg: NodeJS + AngularJS
 ### Please choose your FrontEnd technology
 
 * AngularJS
-* EmberJS
 * jQuery
 * Vanilla JS
 * Generic SPA
