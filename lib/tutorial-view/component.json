@@ -7,8 +7,16 @@
     "component/reactive": "*",
     "component/scroll-to": "*",
     "learnboost/jsonp": "*",
+    "cristiandouce/merge-util": "*",
     "discore/closest": "*"
   },
+  "local": [
+    "apptypes",
+    "server-platforms",
+    "server-apis",
+    "client-platforms",
+    "native-platforms"
+  ],
   "templates": [ "tutorial.html" ],
   "styles": [ "index.css" ],
   "scripts": [ "index.js", "bindings.js" ],

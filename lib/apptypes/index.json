@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Native/mobile app",
+    "name": "native-mobile",
+    "budicon": "243"
+  },
+  {
+    "title": "Single page app + API",
+    "name": "spa-api",
+    "budicon": "349"
+  },
+  {
+    "title": "Regular web app",
+    "name": "web",
+    "budicon": "378"
+  }
+]

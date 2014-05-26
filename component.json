@@ -8,10 +8,6 @@
     "lib"
   ],
   "local": [
-    "server-platforms",
-    "server-apis",
-    "client-platforms",
-    "native-platforms",
     "tutorial-view"
   ],
   "templates": [ ],

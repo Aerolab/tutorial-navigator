@@ -1,25 +1,10 @@
 <div id="tutorial-navigator">
   <div class="row step select-app-type">
     <h3>Select your application type</h3>
-
-    <div class="app-type col-xs-4" data-type="native-mobile" on-click="apptypeselect">
+    <div each="apptypes" class="app-type col-xs-4" data-type="{name}" on-click="apptypeselect">
       <a href="#" class="app-type-item">
-        <span class="icon icon-budicon-243"></span>
-        <strong class="label">Native/mobile app</strong>
-      </a>
-    </div>
-
-    <div class="app-type col-xs-4" data-type="spa-api" on-click="apptypeselect">
-      <a href="#" class="app-type-item">
-        <span class="icon icon-budicon-349"></span>
-        <strong class="label">Single page app + API</strong>
-      </a>
-    </div>
-
-    <div class="app-type col-xs-4" data-type="web" on-click="apptypeselect">
-      <a href="#" class="app-type-item">
-        <span class="icon icon-budicon-378"></span>
-        <strong class="label">Regular web app</strong>
+        <span class="icon icon-budicon-{budicon}"></span>
+        <strong class="label" data-text="title"></strong>
       </a>
     </div>
   </div>
