@@ -33,9 +33,9 @@ TODO: This should show tailored data if the user has logged in.
 angular.module('auth0-sample', ['auth0'])
 .config(function (authProvider) {
   authProvider.init({
-    domain: 'YOUR_DOMAIN',
-    clientID: 'CLIENT_ID',
-    callbackURL: 'CALLBACK_URL'
+    domain: '@@account.namespace@@',
+    clientID: '@@account.namespace@@',
+    callbackURL: '@@account.callback@@'
   });
 });
 ````
