@@ -1,6 +1,6 @@
 ## jQuery configuration
 
-Please follow the steps below to configure your app to use it with jQuery and Auth0.
+Please follow the steps below to configure your JS app to use Auth0.
 
 ### 1. Adding the Auth0 scripts
 
@@ -31,15 +31,14 @@ $(document).ready(function() {
 Now we're ready to implement the Login. Once the user clicks on the login button, we'll call the `signin` method of Auth0's `widget` we've just created.
 
 ````js
-$('.btn-login').click(function(e) {
-  e.preventDefault();
+document.getElementById('btn-login').addEventListener('click', function() {
   widget.signin({ popup: true });
 });
 ````
 
 ````html
 <!-- ... -->
-<input type="submit" class="btn-login" />
+<input type="submit" class="btn-login" id="btn-login" />
 <!-- ... -->
 ````
 
@@ -59,8 +58,7 @@ In this case, we'll implement the callback #2.
 ````js
 var userProfile;
 
-$('.btn-login').click(function(e) {
-  e.preventDefault();
+document.getElementById('btn-login').addEventListener('click', function() {
   widget.signin({ popup: true, null, function(err, profile, token) {
     if (err) {
       // Error callback
@@ -85,11 +83,11 @@ We need to save the token so that we can use it later when calling a server or a
 We already have the `userProfile` variable with the user information. Now, we can set that information to a span:
 
 ````js
-$('.nick').text(userProfile.nickname);
+document.getElementById('nick').textContent = userProfile.nickname;
 ````
 
 ````html
-<p>His name is <span class="nick"></span></p>
+<p>His name is <span id="nick"></span></p>
 ````
 
 You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.

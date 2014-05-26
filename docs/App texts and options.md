@@ -40,8 +40,7 @@ eg: NodeJS + AngularJS
 
 * AngularJS
 * jQuery
-* Vanilla JS
-* Generic SPA
+* JS
 
 ### Please choose the Backend platform or API you'll use
 
