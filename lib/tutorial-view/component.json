@@ -8,7 +8,8 @@
     "component/scroll-to": "*",
     "learnboost/jsonp": "*",
     "cristiandouce/merge-util": "*",
-    "discore/closest": "*"
+    "discore/closest": "*",
+    "timoxley/offset": "*"
   },
   "local": [
     "apptypes",
