@@ -8,6 +8,9 @@ eg: iPhone SDK
 * Android
 * Windows Phone
 * Xamarin
+* Cordova
+* PhoneGap
+* Ionic Framework
 
 ### Will your mobile app connect to an external API or server?
 
@@ -36,10 +39,8 @@ eg: NodeJS + AngularJS
 ### Please choose your FrontEnd technology
 
 * AngularJS
-* EmberJS
 * jQuery
-* Vanilla JS
-* Generic SPA
+* JS
 
 ### Please choose the Backend platform or API you'll use
 

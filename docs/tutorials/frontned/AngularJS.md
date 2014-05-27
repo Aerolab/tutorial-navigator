@@ -6,36 +6,27 @@ Please follow the steps below to configure AngularJS to use it with Auth0.
 
 ````html
 <!-- We use client cookies to save the user credentials -->
-<script src="https://code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
+<script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
         
 <!-- Auth0 widget script and AngularJS module -->
-<script src="https://cdn.auth0.com/w2/auth0-widget-4.js"></script>
-<script src="https://cdn.auth0.com/w2/auth0-angular-0.4.js"> </script>
+<script src="//cdn.auth0.com/w2/auth0-widget-4.js"></script>
+<script src="//cdn.auth0.com/w2/auth0-angular-0.4.js"> </script>
 ````
 
-We're including to the `index.html` the Auth0 angular module and its dependencies. 
+We're including Auth0's angular module and its dependencies to the `index.html`. 
 
-### 2. Add the module dependency
+### 2. Add the module dependency and configure the service
 
-You need to add the `auth0` module dependency to your angular app:
-
-````js
-angular.module('auth0-sample', ['auth0'])
-````
-
-### 3. Configure the service
-
-Inject the `authProvider` to the `config` method of your app and initialize it with your configuration
-
-TODO: This should show tailored data if the user has logged in.
+First, you need to add the `auth0` module dependency to your angular app definition. Then, you need to configure it by calling the `init` method of the `authProvider`
 
 ````js
-angular.module('auth0-sample', ['auth0'])
+// app.js
+angular.module('YOUR-APP-NAME', ['auth0'])
 .config(function (authProvider) {
   authProvider.init({
-    domain: 'YOUR_DOMAIN',
-    clientID: 'CLIENT_ID',
-    callbackURL: 'CALLBACK_URL'
+    domain: '@@account.namespace@@',
+    clientID: '@@account.namespace@@',
+    callbackURL: '@@account.callback@@'
   });
 });
 ````
@@ -45,18 +36,22 @@ angular.module('auth0-sample', ['auth0'])
 In most cases, we'll have routing in our app. So let's add the `$routeProvider` configuration in the `config` method of our app.
 
 ````js
-$routeProvider.when('/login', {
-  templateUrl: 'login.tpl.html', 
-  controller: 'LoginCtrl'
-});
-$routeProvider.when('/user-info', {
-  templateUrl: 'userInfo.tpl.html', 
-  controller: 'UserInfoCtrl',
-  requiresLogin: true
+// app.js
+.config(function (authProvider, $routeProvider) {
+  $routeProvider.when('/login', {
+    templateUrl: 'login.tpl.html', 
+    controller: 'LoginCtrl'
+  });
+  // Logged in route
+  $routeProvider.when('/user-info', {
+    templateUrl: 'userInfo.tpl.html', 
+    controller: 'UserInfoCtrl',
+    requiresLogin: true
+  });
 });
 ````
 
-We need to add the `requiresLogin` property to true for all routes that require the user to be logged in.
+We need to set the `requiresLogin` property to true for all routes that require the user to be logged in.
 
 __Note__: If you are using ui-router, all you have to do is to create states instead of the routes above and set the `requiresLogin` attribute inside the `data` property of the state.
 
@@ -89,19 +84,32 @@ If you want to check all the available arguments for the signin call, please [ch
 The `signin` method returns a promise. That means that we can handle login success and failure the following way:
 
 ````js
-auth.signin({
-  popup: true
-})
-.then(function() {
-  // Success callback
-}, function() {
-  // Error callback
-});
+// LoginCtrl.js
+$scope.login = function() {
+  auth.signin({
+    popup: true
+  })
+  .then(function() {
+    // Success callback
+  }, function() {
+    // Error callback
+  });
+}
 ````
 
 #### 7. Adding a logout button
 
-TODO: Check if AngularJS widget has logout button
+You can just call the `signout` method of Auth0 to remove all the cookies from the client that keep the user logged in:
+
+````js
+$scope.logout = function() {
+  auth.signout();
+}
+````
+
+````html
+<input type="submit" ng-click="logout()" value="Log out" />
+````
 
 #### 8. Showing user information
 
@@ -111,7 +119,14 @@ After the user has logged in, we can get the `profile` property from the `auth` 
 <span>His name is {{auth.profile.nickname}}</span>
 ````
 
-You can [check here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
+````js
+// UserInfoCtrl.js
+function UserInfoCtrl($scope, auth) {
+  $scope.auth = auth;
+}
+````
+
+You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
 
 #### 9. Sit back and relax
 
