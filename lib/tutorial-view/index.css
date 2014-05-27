@@ -63,6 +63,17 @@
   vertical-align: top;
 }
 
+#tutorial-navigator .step .tutorial-item,
+#tutorial-navigator .step .tutorial-item a,
+#tutorial-navigator .step .tutorial-item a strong {
+  background: none;
+}
+
+#tutorial-navigator .step .tutorial-item:hover,
+#tutorial-navigator .step .tutorial-item.selected {
+  background: #fff;
+}
+
 #tutorial-navigator .step .tutorial-item span {
   min-height: 30px;
   margin-top: 10px;
