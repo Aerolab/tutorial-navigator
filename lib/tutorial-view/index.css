@@ -69,7 +69,6 @@
   border-radius: 3px;
 }
 
-#tutorial-navigator .step .app-type.selected .app-type-item,
 #tutorial-navigator .step .app-type:hover .app-type-item {
   background: #fff;
 }
@@ -82,8 +81,6 @@
   color: #666;
 }
 
-#tutorial-navigator .step .app-type.selected .app-type-item span,
-#tutorial-navigator .step .app-type.selected .app-type-item strong,
 #tutorial-navigator .step .app-type:hover .app-type-item span,
 #tutorial-navigator .step .app-type:hover .app-type-item strong {
   color: #44C7F4;
@@ -112,8 +109,7 @@
   border-radius: 3px;
 }
 
-#tutorial-navigator .step .tutorial-item:hover,
-#tutorial-navigator .step .tutorial-item.selected {
+#tutorial-navigator .step .tutorial-item:hover {
   background: #fff;
 }
 
