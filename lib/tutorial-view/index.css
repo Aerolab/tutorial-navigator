@@ -103,14 +103,18 @@
 }
 
 #tutorial-navigator .step .tutorial-item,
-#tutorial-navigator .step .tutorial-item a,
-#tutorial-navigator .step .tutorial-item a strong {
+#tutorial-navigator .step .tutorial-item a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item a.logo-tutorial strong {
   /*background: none;*/
   border-radius: 3px;
 }
 
-#tutorial-navigator .step .tutorial-item:hover {
+#tutorial-navigator .step .tutorial-item:hover,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial strong,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial span {
   background: #fff;
+  color: #44C7F4;
 }
 
 #tutorial-navigator .step .tutorial-item span {
