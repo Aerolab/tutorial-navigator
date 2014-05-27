@@ -1,11 +1,46 @@
 #tutorial-navigator {
-  min-height: 800px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#tutorial-navigator .tutorial-header {
+  border-bottom: 2px solid #ddd;
+  padding: 40px 0;
+  display: table;
+  width: 100%;
+}
+
+#tutorial-navigator .tutorial-header .step-circle {
+  text-align: center;
+}
+
+#tutorial-navigator .tutorial-header .step-circle a {
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  padding: 15px;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  line-height: 30px;
+  color: #fff;
+  font-size: 25px;
+}
+
+#tutorial-navigator .tutorial-header .step-circle a:hover,
+#tutorial-navigator .tutorial-header .step-circle a.active {
+  background: none;
+  color: #000;
+  border-color: #666;
+}
+
+#tutorial-navigator .tutorial-header .step-circle a span {
+
 }
 
 #tutorial-navigator .step,
 #tutorial-navigator .code-snippets {
   margin-bottom: 50px;
-  background: #f9f9f9;
   padding: 40px;
   border-radius: 3px;
 }
