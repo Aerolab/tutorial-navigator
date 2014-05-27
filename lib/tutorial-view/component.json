@@ -4,7 +4,7 @@
   "dependencies": {
     "component/dom": "*",
     "component/jquery": "*",
-    "component/reactive": "*",
+    "cristiandouce/reactive": "*",
     "learnboost/jsonp": "*",
     "cristiandouce/merge-util": "*",
     "discore/closest": "*"
