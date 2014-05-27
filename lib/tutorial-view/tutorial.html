@@ -11,14 +11,14 @@
       </a>
     </div>
     <div class="step-circle col-xs-4">
-      <a href="#" class="{ (nativePlatform || (clientPlatform && serverApi) || serverPlatform) ? 'active' : ''}" on-click="stepclick">
+      <a href="#" class="{ (nativePlatform || (!(!clientPlatform || !serverApi)) || serverPlatform) ? 'active' : ''}" on-click="stepclick">
         <span>3</span>
       </a>
     </div>
   </div>
 
   <div class="tutorial-body">
-    <div class="row step select-app-type">
+    <div class="row step select-app-type" data-hidden="apptype">
       <h3>Select your application type</h3>
       <div each="apptypes" class="app-type col-xs-4" data-type="{name}" on-click="apptypeselect">
         <a href="#" class="app-type-item">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-native-mobile" data-visible="nativeSelected">
+    <div class="row step select-platform-native-mobile {(!nativeSelected || nativePlatform) ? 'hidden' : 'visible'}">
       <h3>Select your Native/Mobile platform</h3>
       <div each="nativeapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-client" data-visible="spaSelected">
+    <div class="row step select-platform-client {(!spaSelected || clientPlatform) ? 'hidden' : 'visible'}">
       <h3>Select your platform client side</h3>
       <div each="clientapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-api" data-visible="clientPlatform">
+    <div class="row step select-platform-api {(!clientPlatform || serverApi) ? 'hidden' : 'visible'}">
       <h3>Select your platform server side</h3>
       <div each="serverapis" data-url="{url}" class="col-xs-2 tutorial-item" on-click="serverapiselect">
         <a data-href="url" class="logo-tutorial">
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-server" data-visible="webSelected">
+    <div class="row step select-platform-server {(!webSelected || serverPlatform) ? 'hidden' : 'visible'}">
       <h3>Select your platform server side</h3>
       <div each="serverapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
         <a data-href="url" class="logo-tutorial">
