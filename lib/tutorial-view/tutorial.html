@@ -1,19 +1,22 @@
 <div id="tutorial-navigator">
   <div class="tutorial-header">
-    <div class="step-circle col-xs-4">
-      <a href="#" class="active" on-click="clear">
+    <div class="step-circle col-xs-4 active">
+      <a href="#" on-click="clear">
         <span>1</span>
       </a>
+      <span class="step-label">Application Type</span>
     </div>
-    <div class="step-circle col-xs-4">
-      <a href="#" class="{apptype ? 'active' : ''}" on-click="stepclick">
+    <div class="step-circle col-xs-4 {apptype ? 'active' : ''}">
+      <a href="#" on-click="stepclick">
         <span>2</span>
       </a>
+      <span class="step-label">Platform</span>
     </div>
-    <div class="step-circle col-xs-4">
-      <a href="#" class="{ (nativePlatform || (!(!clientPlatform || !serverApi)) || serverPlatform) ? 'active' : ''}" on-click="stepclick">
+    <div class="step-circle col-xs-4 {(nativePlatform || (!(!clientPlatform || !serverApi)) || serverPlatform) ? 'active' : ''}">
+      <a href="#" on-click="stepclick">
         <span>3</span>
       </a>
+      <span class="step-label">Lets Code!</span>
     </div>
   </div>
 
@@ -28,7 +31,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-native-mobile" data-hidden="{!nativeSelected || nativePlatform}">
+    <div class="row step select-platform-native-mobile" data-hidden="{apptype !== 'native-mobile' || nativePlatform}">
       <h3>Select your Native/Mobile platform</h3>
       <div each="nativeapps" data-url="{url}" class="col-xs-2 tutorial-item {this.model.apptype}" on-click="nativeplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -40,7 +43,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-client" data-hidden="{!spaSelected || clientPlatform}">
+    <div class="row step select-platform-client" data-hidden="{apptype !== 'spa-api' || clientPlatform}">
       <h3>Select your platform client side</h3>
       <div each="clientapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -64,7 +67,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-server" data-hidden="{!webSelected || serverPlatform}">
+    <div class="row step select-platform-server" data-hidden="{apptype !== 'web' || serverPlatform}">
       <h3>Select your platform server side</h3>
       <div each="serverapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -78,10 +81,9 @@
   </div>
 
   <div class="row code-snippets" data-visible="showCode">
-    <h3>Lets code!</h3>
-    <div class="snippet" tutorial-fetch="nativePlatform" data-visible="nativeSelected"></div>
-    <div class="snippet" tutorial-fetch="clientPlatform" data-visible="spaSelected"></div>
-    <div class="snippet" tutorial-fetch="serverApi" data-visible="spaSelected"></div>
-    <div class="snippet" tutorial-fetch="serverPlatform" data-visible="webSelected"></div>
+    <div class="snippet" tutorial-fetch="nativePlatform" data-visible="{apptype === 'native-mobile'}"></div>
+    <div class="snippet" tutorial-fetch="clientPlatform" data-visible="{apptype === 'spa-api'}"></div>
+    <div class="snippet" tutorial-fetch="serverApi" data-visible="{apptype === 'spa-api'}"></div>
+    <div class="snippet" tutorial-fetch="serverPlatform" data-visible="{apptype === 'web'}"></div>
   </div>
 </div>
