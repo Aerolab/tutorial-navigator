@@ -5,11 +5,9 @@
     "component/dom": "*",
     "component/jquery": "*",
     "component/reactive": "*",
-    "component/scroll-to": "*",
     "learnboost/jsonp": "*",
     "cristiandouce/merge-util": "*",
-    "discore/closest": "*",
-    "timoxley/offset": "*"
+    "discore/closest": "*"
   },
   "local": [
     "apptypes",
