@@ -114,17 +114,17 @@ eg: PhoneGap, Ionic
 # Template Locals (Parameters)
 
 * __account__
-** __namespace__: Auth0 namespace. eg: `http://samples.auth0.com/`
-** __callbackURL__: Selected callback. eg: `http://www.google.com/`
-** __clientId__: Auth0 clientID. eg: `djasdklfjdasfh34ihgnjin`
-** __clientSecret__: Auth0 clientID. eg: `asdfkjouhsugfgiuoshgifsgh`
+  * __namespace__: Auth0 namespace. eg: `http://samples.auth0.com/`
+  * __callbackURL__: Selected callback. eg: `http://www.google.com/`
+  * __clientId__: Auth0 clientID. eg: `djasdklfjdasfh34ihgnjin`
+  * __clientSecret__: Auth0 clientID. eg: `asdfkjouhsugfgiuoshgifsgh`
 * __configuration__
-** __frontend__: The selected frontned lib. eg: `angularjs` or null
-** __api__: The selected server API. eg: `nodejs` or null
-** __backend__: The selected backend platform. eg: `nodejs` or null
-** __mobile__: The selected mobile platform. eg: `iphone` or `cordova` or null
-** __thirdParty__: boolean indicating if it's a third party plugin or not.
-** __hybrid__: boolean indicating if it's a hybrid app or not.
+  * __frontend__: The selected frontned lib. eg: `angularjs` or null
+  * __api__: The selected server API. eg: `nodejs` or null
+  * __backend__: The selected backend platform. eg: `nodejs` or null
+  * __mobile__: The selected mobile platform. eg: `iphone` or `cordova` or null
+  * __thirdParty__: boolean indicating if it's a third party plugin or not.
+  * __hybrid__: boolean indicating if it's a hybrid app or not.
 
 Example:
 
