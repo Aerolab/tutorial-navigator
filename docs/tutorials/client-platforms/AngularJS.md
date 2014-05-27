@@ -2,18 +2,21 @@
 
 Please follow the steps below to configure AngularJS to use it with Auth0.
 
-### 1. Adding the Auth0 scripts
+### 1. Adding the Auth0 scripts and setting the right viewport
 
 ````html
 <!-- We use client cookies to save the user credentials -->
 <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
-        
+
 <!-- Auth0 widget script and AngularJS module -->
 <script src="//cdn.auth0.com/w2/auth0-widget-4.js"></script>
 <script src="//cdn.auth0.com/w2/auth0-angular-0.4.js"> </script>
+
+<!-- Setting the right viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 ````
 
-We're including Auth0's angular module and its dependencies to the `index.html`. 
+We're including Auth0's angular module and its dependencies to the `index.html`.
 
 ### 2. Add the module dependency and configure the service
 
@@ -24,9 +27,9 @@ First, you need to add the `auth0` module dependency to your angular app definit
 angular.module('YOUR-APP-NAME', ['auth0'])
 .config(function (authProvider) {
   authProvider.init({
-    domain: '@@account.namespace@@',
-    clientID: '@@account.namespace@@',
-    callbackURL: '@@account.callback@@'
+    domain: '<%= account.namespace %>',
+    clientID: '<%= account.clientId %>',
+    callbackURL: '<%= account.callbackURL %>'
   });
 });
 ````
@@ -39,12 +42,12 @@ In most cases, we'll have routing in our app. So let's add the `$routeProvider` 
 // app.js
 .config(function (authProvider, $routeProvider) {
   $routeProvider.when('/login', {
-    templateUrl: 'login.tpl.html', 
+    templateUrl: 'login.tpl.html',
     controller: 'LoginCtrl'
   });
   // Logged in route
   $routeProvider.when('/user-info', {
-    templateUrl: 'userInfo.tpl.html', 
+    templateUrl: 'userInfo.tpl.html',
     controller: 'UserInfoCtrl',
     requiresLogin: true
   });
@@ -54,6 +57,21 @@ In most cases, we'll have routing in our app. So let's add the `$routeProvider` 
 We need to set the `requiresLogin` property to true for all routes that require the user to be logged in.
 
 __Note__: If you are using ui-router, all you have to do is to create states instead of the routes above and set the `requiresLogin` attribute inside the `data` property of the state.
+
+In order to handle the `requireLogin`, you must add the following code to the `run` of your app. In the following version of the SDK this will be handled for you.
+
+````js
+angular.module('YOUR-APP-NAME', ['auth0'])
+.run(function($rootScope, auth, $location) {
+  $rootScope.$on('$routeChangeStart', function(e, nextRoute, currentRoute) {
+    if (nextRoute.$$route && nextRoute.$$route.requiresLogin) {
+      if (!auth.isAuthenticated) {
+        $location.path('/login');
+      }
+    }
+  })
+})
+````
 
 ### 5. Let's implement the login
 
@@ -111,7 +129,36 @@ $scope.logout = function() {
 <input type="submit" ng-click="logout()" value="Log out" />
 ````
 
-#### 8. Showing user information
+You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
+
+<% if (configuration.api) { %>
+#### 8. Configuring secure calls to an API
+
+As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the token we receive on the login on every request. For that, we need to do 2 things:
+
+##### 8.1 Add the dependency to the `authInterceptor` module
+
+````js
+// app.js
+angular.module('YOUR-APP-NAME', ['auth0', 'authInterceptor'])
+````
+
+##### 8.2 Add the `$http` interceptor
+
+The `$http` interceptor will send the token in the `Authorization` header if it's available. We need to add it in the `config` section of our application:
+
+
+````js
+// app.js
+.config(function (authProvider, $routeProvider, $httpProvider) {
+  // ...
+  $httpProvider.interceptors.push('authInterceptor');
+  // ...
+});
+````
+<% } %>
+
+#### 9. Showing user information
 
 After the user has logged in, we can get the `profile` property from the `auth` service which has all the user information:
 
@@ -126,12 +173,6 @@ function UserInfoCtrl($scope, auth) {
 }
 ````
 
-You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
-
-#### 9. Sit back and relax
-
-Now it's time to sit back, relax and open a beer. You've implemented Login and Signup with Auth0 and AngularJS.
-
 #### Extra Extra
 
 We've learnt how to configure AngularJS with Auth0's module and a popup for Signing in.
@@ -139,6 +180,3 @@ We've learnt how to configure AngularJS with Auth0's module and a popup for Sign
 If you want to learn how to implement this with redirect, [you can read here](https://github.com/auth0/auth0-angular/blob/master/docs/widget.md)
 
 If you want to implement your custom Signin and Signup form, [you can read here](https://github.com/auth0/auth0-angular/blob/master/docs/jssdk.md)
-
-
-

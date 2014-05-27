@@ -40,7 +40,7 @@ eg: NodeJS + AngularJS
 
 * AngularJS
 * jQuery
-* JS
+* Generic SPA / Vanilla JS
 
 ### Please choose the Backend platform or API you'll use
 
@@ -109,6 +109,54 @@ eg: PhoneGap, Ionic
 * AWS
 * Firebase
 * Windows Azure Mobile
+
+
+# Template Locals (Parameters)
+
+* __account__
+** __namespace__: Auth0 namespace. eg: `http://samples.auth0.com/`
+** __callbackURL__: Selected callback. eg: `http://www.google.com/`
+** __clientId__: Auth0 clientID. eg: `djasdklfjdasfh34ihgnjin`
+** __clientSecret__: Auth0 clientID. eg: `asdfkjouhsugfgiuoshgifsgh`
+* __configuration__
+** __frontend__: The selected frontned lib. eg: `angularjs` or null
+** __api__: The selected server API. eg: `nodejs` or null
+** __backend__: The selected backend platform. eg: `nodejs` or null
+** __mobile__: The selected mobile platform. eg: `iphone` or `cordova` or null
+** __thirdParty__: boolean indicating if it's a third party plugin or not.
+** __hybrid__: boolean indicating if it's a hybrid app or not.
+
+Example:
+
+````js
+var angularWithFirebase = {
+  account: {
+    namespace: 'http://samples.auth0.com/',
+    callbackURL: 'http://www.google.com/',
+    clientId: 'asdfasdfdsafq423142134',
+    clientSecret: 'asdfasdfdsafq42314213a13214'
+  },
+  configuration: {
+    frontend: 'angularjs',
+    api: 'firebase',
+    thirdParty: true
+  }
+}
+
+var cordovaWithNode = {
+  account: {
+    namespace: 'http://samples.auth0.com/',
+    callbackURL: 'http://www.google.com/',
+    clientId: 'asdfasdfdsafq423142134',
+    clientSecret: 'asdfasdfdsafq42314213a13214'
+  },
+  configuration: {
+    mobile: 'cordova',
+    api: 'nodejs'
+  }
+}
+````
+
 
 
 

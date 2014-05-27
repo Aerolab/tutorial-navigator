@@ -1,12 +1,15 @@
 ## jQuery configuration
 
-Please follow the steps below to configure your JS app to use Auth0.
+Please follow the steps below to configure your app to use it with jQuery and Auth0.
 
-### 1. Adding the Auth0 scripts
+### 1. Adding the Auth0 scripts and setting the right viewport
 
 ````html
 <!-- Auth0 widget script -->
 <script src="//cdn.auth0.com/w2/auth0-widget-4.js"></script>
+
+<!-- Setting the right viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 ````
 
 We're including the Auth0 widget script to the `index.html`
@@ -31,14 +34,15 @@ $(document).ready(function() {
 Now we're ready to implement the Login. Once the user clicks on the login button, we'll call the `signin` method of Auth0's `widget` we've just created.
 
 ````js
-document.getElementById('btn-login').addEventListener('click', function() {
+$('.btn-login').click(function(e) {
+  e.preventDefault();
   widget.signin({ popup: true });
 });
 ````
 
 ````html
 <!-- ... -->
-<input type="submit" class="btn-login" id="btn-login" />
+<input type="submit" class="btn-login" />
 <!-- ... -->
 ````
 
@@ -58,7 +62,8 @@ In this case, we'll implement the callback #2.
 ````js
 var userProfile;
 
-document.getElementById('btn-login').addEventListener('click', function() {
+$('.btn-login').click(function(e) {
+  e.preventDefault();
   widget.signin({ popup: true, null, function(err, profile, token) {
     if (err) {
       // Error callback
@@ -83,11 +88,11 @@ We need to save the token so that we can use it later when calling a server or a
 We already have the `userProfile` variable with the user information. Now, we can set that information to a span:
 
 ````js
-document.getElementById('nick').textContent = userProfile.nickname;
+$('.nick').text(userProfile.nickname);
 ````
 
 ````html
-<p>His name is <span id="nick"></span></p>
+<p>His name is <span class="nick"></span></p>
 ````
 
 You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
@@ -113,6 +118,3 @@ We've learnt how to configure jQuery with Auth0 using a Popup for sign in.
 If you want to learn how to implement this with redirect, [you can read here](TODO://)
 
 If you want to implement your custom Signin and Signup form, [you can read here](TODO://)
-
-
-
