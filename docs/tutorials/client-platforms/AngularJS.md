@@ -1,6 +1,14 @@
 ## AngularJS configuration
 
-Please follow the steps below to configure AngularJS to use it with Auth0.
+<% if (configuration.api && configuration.thirdParty) { %>
+If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download]() a seed project that is already configured to use Auth0. 
+<% } else  { %>
+If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download]() a seed project that is already configured to use Auth0. 
+
+<% } %>
+The only thing you need to do is to change the `authProvider` configuration to use your Auth0's account. Please [click here]() to learn how to do it.
+
+Otherwise, Please follow the steps below to configure AngularJS to use it with Auth0 with your existing Angular app.
 
 ### 1. Adding the Auth0 scripts and setting the right viewport
 
@@ -131,7 +139,7 @@ $scope.logout = function() {
 
 You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
 
-<% if (configuration.api) { %>
+<% if (configuration.api && configuration.thirdParty) { %>
 #### 8. Configuring secure calls to an API
 
 As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the token we receive on the login on every request. For that, we need to do 2 things:
