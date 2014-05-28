@@ -1,12 +1,12 @@
 ## AngularJS configuration
 
 <% if (configuration.api && configuration.thirdParty) { %>
-If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download]() a seed project that is already configured to use Auth0. 
+If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-thirdparty-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0. 
 <% } else  { %>
-If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download]() a seed project that is already configured to use Auth0. 
-
+If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-api-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0. 
 <% } %>
-The only thing you need to do is to change the `authProvider` configuration to use your Auth0's account. Please [click here]() to learn how to do it.
+
+The only thing you need to do is to change the `authProvider` configuration to use your Auth0's account. Please [click here](#2-add-the-module-dependency-and-configure-the-service) to learn how to do it.
 
 Otherwise, Please follow the steps below to configure AngularJS to use it with Auth0 with your existing Angular app.
 
@@ -44,11 +44,11 @@ angular.module('YOUR-APP-NAME', ['auth0'])
 
 ### 4. Let's add routing (Optional)
 
-In most cases, we'll have routing in our app. So let's add the `$routeProvider` configuration in the `config` method of our app.
+In most cases, we'll have routing in our app. So let's add the `$routeProvider` configuration in the `config` method of our app and let's set a `hashPrefix`.
 
 ````js
 // app.js
-.config(function (authProvider, $routeProvider) {
+.config(function (authProvider, $routeProvider, $locationProvider) {
   $routeProvider.when('/login', {
     templateUrl: 'login.tpl.html',
     controller: 'LoginCtrl'
@@ -59,6 +59,8 @@ In most cases, we'll have routing in our app. So let's add the `$routeProvider` 
     controller: 'UserInfoCtrl',
     requiresLogin: true
   });
+
+  $locationProvider.hashPrefix('!');
 });
 ````
 
@@ -139,10 +141,10 @@ $scope.logout = function() {
 
 You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
 
-<% if (configuration.api && configuration.thirdParty) { %>
+<% if (configuration.api && !configuration.thirdParty) { %>
 #### 8. Configuring secure calls to an API
 
-As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the token we receive on the login on every request. For that, we need to do 2 things:
+As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the [JWT token](https://docs.auth0.com/jwt) we receive on the login on every request. For that, we need to do 2 things:
 
 ##### 8.1 Add the dependency to the `authInterceptor` module
 
@@ -164,6 +166,35 @@ The `$http` interceptor will send the token in the `Authorization` header if it'
   // ...
 });
 ````
+
+Now, you can regularly call your API with `$http`, `$resource` or any rest client as you'd normally do and the [JWT token](https://docs.auth0.com/jwt) will be sent on every request.
+<% } %>
+
+<% if (configuration.api && configuration.thirdParty) { %>
+#### 8. Configuring calls to a Third Party API
+
+Now, we want to be able to call <%= configuration.api %>, which is a third party api. What we're going to do is to exchange the JWT token we got from Auth0 for a token we can use to query <%= configuration.api %> securely and authenticated.
+
+For that, we're going to change the `login` function of our controller to look like this:
+
+````js
+$scope.login = function() {
+  auth.signin({
+    popup: true,
+  }).then(function(profile) {
+    // Put the <%= configuration.api %> client id here
+    return auth.getToken('THIRD_PARTY_API_CLIENT_ID')  
+  }).then(function(thirdPartyToken) {
+    // Setting the <%= configuration.api %> token for all requests as default one
+    $http.defaults.headers.common.Authorization =  'Bearer '+ auth.idToken;
+    $location.path('/');
+  }, function(err) {
+    console.log("There was an error signin in", err);
+  });
+}
+````
+
+We're going to create the <%= configuration.api %> in the following steps. Once we create it, you just need to put the client id of that API in this snippet and it'll work
 <% } %>
 
 #### 9. Showing user information
