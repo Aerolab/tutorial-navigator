@@ -1,6 +1,18 @@
 ## jQuery configuration
 
-Please follow the steps below to configure your app to use it with jQuery and Auth0.
+<% if (configuration.api && configuration.thirdParty) { %>
+
+If you're creating a new app with jQuery which will use a <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-thirdparty-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0.
+
+<% } else  { %>
+
+If you're creating a new app with jQuery which will use a <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-thirdparty-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0.
+
+<% } %>
+
+You only have to change the `Auth0Widget` configuration to use your Auth0's account. Please [click here](#2-Configure-the-Auth0Widget) to learn how to do it.
+
+Otherwise, Please follow the steps below to configure your app to use jQuery with Auth0.
 
 ### 1. Adding the Auth0 scripts and setting the right viewport
 
@@ -82,6 +94,39 @@ $('.btn-login').click(function(e) {
 ````
 
 We need to save the token so that we can use it later when calling a server or an API. In this case, we're saving that token in LocalStorage.
+
+<% if (configuration.api && configuration.thirdParty) { %>
+
+#### 7. Configuring calls to a Third Party API
+
+Now, we want to be able to call <%= configuration.api %> which is a third party api. What we're going to do is to exchange the JWT token we got from Auth0 for a token we can use to query <%= configuration.api %> securely and authenticated.
+
+For that, we're going to change the signin success callback we did on Step #6.
+
+
+
+
+<% } %>
+<% if (configuration.api && !configuration.thirdParty) { %>
+
+####7. Configuring secure calls to your API
+
+As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the [JWT token](https://docs.auth0.com/jwt) we receive on the login on every request. For that, we need to implement the `$.ajaxSetup` so that every ajax call sends the `Authorization` header with the correct token.
+
+````js
+$.ajaxSetup({
+  'beforeSend': function(xhr) {
+    if (localStorage.getItem('userToken')) {
+      xhr.setRequestHeader('Authorization',
+            'Bearer ' + localStorage.getItem('userToken'));
+    }
+  }
+});
+````
+
+Please note that we're using the JWT that we saved after login on Step #6.
+
+<% } %>
 
 #### 8. Showing user information
 

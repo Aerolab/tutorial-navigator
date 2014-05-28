@@ -147,7 +147,7 @@ You can [click here](https://docs.auth0.com/user-profile) to find out all of the
 
 <% if (configuration.api && !configuration.thirdParty) { %>
 
-#### 8. Configuring secure calls to an API
+#### 8. Configuring secure calls to our API
 
 As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the [JWT token](https://docs.auth0.com/jwt) we receive on the login on every request. For that, we need to do 2 things:
 
@@ -180,7 +180,7 @@ Now, you can regularly call your API with `$http`, `$resource` or any rest clien
 
 #### 8. Configuring calls to a Third Party API
 
-Now, we want to be able to call <%= configuration.api %>, which is a third party api. What we're going to do is to exchange the JWT token we got from Auth0 for a token we can use to query <%= configuration.api %> securely and authenticated.
+Now, we want to be able to call <%= configuration.api %> which is a third party api. What we're going to do is to exchange the JWT token we got from Auth0 for a token we can use to query <%= configuration.api %> securely and authenticated.
 
 For that, we're going to change the `login` function of our controller to look like this:
 
@@ -192,8 +192,7 @@ $scope.login = function() {
     // Put the <%= configuration.api %> client id here
     return auth.getToken('THIRD_PARTY_API_CLIENT_ID')  
   }).then(function(thirdPartyToken) {
-    // Setting the <%= configuration.api %> token for all requests as default one
-    $http.defaults.headers.common.Authorization =  'Bearer '+ auth.idToken;
+    // Do something with the thirdPartyToken. Add it as a header or save it for later usage
     $location.path('/');
   }, function(err) {
     console.log("There was an error signin in", err);
@@ -201,7 +200,7 @@ $scope.login = function() {
 }
 ````
 
-We're going to create the <%= configuration.api %> in the following steps. Once we create it, you just need to put the client id of that API in this snippet and it'll work
+We're going to create the <%= configuration.api %> in the following steps. Once we create it, you just need to put the client id of that API in this snippet and it'll work. Then, you can use the thirdPartyToken as needed.
 
 <% } %>
 
