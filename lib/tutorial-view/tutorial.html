@@ -7,13 +7,13 @@
       <span class="step-label">Application Type</span>
     </div>
     <div class="step-circle col-xs-4 {apptype ? 'active' : ''}">
-      <a href="#" on-click="stepclick">
+      <a href="#" on-click="clearTwo">
         <span>2</span>
       </a>
       <span class="step-label">Platform</span>
     </div>
     <div class="step-circle col-xs-4 {(nativePlatform || (!(!clientPlatform || !serverApi)) || serverPlatform) ? 'active' : ''}">
-      <a href="#" on-click="stepclick">
+      <a href="#" on-click="noop">
         <span>3</span>
       </a>
       <span class="step-label">Lets Code!</span>
