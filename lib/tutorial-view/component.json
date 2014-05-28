@@ -4,12 +4,10 @@
   "dependencies": {
     "component/dom": "*",
     "component/jquery": "*",
-    "component/reactive": "*",
-    "component/scroll-to": "*",
+    "cristiandouce/reactive": "*",
     "learnboost/jsonp": "*",
     "cristiandouce/merge-util": "*",
-    "discore/closest": "*",
-    "timoxley/offset": "*"
+    "discore/closest": "*"
   },
   "local": [
     "apptypes",

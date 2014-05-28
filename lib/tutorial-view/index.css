@@ -1,19 +1,61 @@
 #tutorial-navigator {
-  min-height: 800px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#tutorial-navigator .tutorial-header {
+  border-bottom: 2px solid #ddd;
+  padding: 40px 0;
+  display: table;
+  width: 100%;
+}
+
+#tutorial-navigator .tutorial-header .step-circle {
+  text-align: center;
+}
+
+#tutorial-navigator .tutorial-header .step-circle a {
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  padding: 15px;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  line-height: 30px;
+  color: #fff;
+  font-size: 25px;
+}
+
+#tutorial-navigator .tutorial-header .step-circle span.step-label {
+  display: block;
+  padding: 15px 0px 0px 0px;
+  font-size: 20px;
+  color: #ddd;
+}
+
+
+#tutorial-navigator .tutorial-header .step-circle.active a {
+  background: #4fcb1f;
+  color: #fff;
+  border-color: #4fcb1f;
+}
+
+#tutorial-navigator .tutorial-header .step-circle.active span.step-label {
+  color: #000;
 }
 
 #tutorial-navigator .step,
 #tutorial-navigator .code-snippets {
-  margin-bottom: 50px;
-  background: #f9f9f9;
   padding: 40px;
   border-radius: 3px;
 }
 
-#tutorial-navigator .step h3,
-#tutorial-navigator .code-snippets h3 {
+#tutorial-navigator .step > h3,
+#tutorial-navigator .code-snippets > h3 {
   margin-top: 0px;
   margin-bottom: 40px;
+  padding-left: 15px;
 }
 
 #tutorial-navigator .step .app-type {
@@ -27,7 +69,6 @@
   border-radius: 3px;
 }
 
-#tutorial-navigator .step .app-type.selected .app-type-item,
 #tutorial-navigator .step .app-type:hover .app-type-item {
   background: #fff;
 }
@@ -40,11 +81,9 @@
   color: #666;
 }
 
-#tutorial-navigator .step .app-type.selected .app-type-item span,
-#tutorial-navigator .step .app-type.selected .app-type-item strong,
 #tutorial-navigator .step .app-type:hover .app-type-item span,
 #tutorial-navigator .step .app-type:hover .app-type-item strong {
-  color: #000;
+  color: #44C7F4;
 }
 
 #tutorial-navigator .step .app-type .app-type-item span.icon {
@@ -64,14 +103,26 @@
 }
 
 #tutorial-navigator .step .tutorial-item,
-#tutorial-navigator .step .tutorial-item a,
-#tutorial-navigator .step .tutorial-item a strong {
-  background: none;
+#tutorial-navigator .step .tutorial-item a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item a.logo-tutorial strong {
+  /*background: none;*/
+  border-radius: 3px;
+}
+
+#tutorial-navigator .step .tutorial-item a.logo-tutorial {
+  border: 1px solid #fff;
 }
 
 #tutorial-navigator .step .tutorial-item:hover,
-#tutorial-navigator .step .tutorial-item.selected {
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial strong,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial span {
   background: #fff;
+  color: #44C7F4;
+}
+
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial {
+  border-color: #f1f1f1;
 }
 
 #tutorial-navigator .step .tutorial-item span {
@@ -81,4 +132,29 @@
 
 #tutorial-navigator .code-snippets {
   min-height: 400px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs {
+  width: 100%;
+  display: table;
+  border-bottom: 1px solid #16214d;
+  margin-bottom: 30px;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs a{
+  background: #f1f1f1;
+  padding: 10px;
+  display: inline-block;
+  height: auto;
+  min-width: 110px;
+  text-align: center;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs a.active{
+  background: #16214d;
+  color: #fff;
 }
