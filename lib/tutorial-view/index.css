@@ -109,12 +109,20 @@
   border-radius: 3px;
 }
 
+#tutorial-navigator .step .tutorial-item a.logo-tutorial {
+  border: 1px solid #fff;
+}
+
 #tutorial-navigator .step .tutorial-item:hover,
 #tutorial-navigator .step .tutorial-item:hover a.logo-tutorial,
 #tutorial-navigator .step .tutorial-item:hover a.logo-tutorial strong,
 #tutorial-navigator .step .tutorial-item:hover a.logo-tutorial span {
   background: #fff;
   color: #44C7F4;
+}
+
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial {
+  border-color: #f1f1f1;
 }
 
 #tutorial-navigator .step .tutorial-item span {
@@ -126,4 +134,27 @@
   min-height: 400px;
   padding-left: 60px;
   padding-right: 60px;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs {
+  width: 100%;
+  display: table;
+  border-bottom: 1px solid #16214d;
+  margin-bottom: 30px;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs a{
+  background: #f1f1f1;
+  padding: 10px;
+  display: inline-block;
+  height: auto;
+  min-width: 110px;
+  text-align: center;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs a.active{
+  background: #16214d;
+  color: #fff;
 }

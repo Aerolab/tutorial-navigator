@@ -79,10 +79,14 @@
       </div>
     </div>
 
-    <div class="row code-snippets" data-visible="showCode">
+    <div class="row code-snippets" data-visible="codevisible">
       <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{apptype === 'native-mobile'}"></div>
-      <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{apptype === 'spa-api'}"></div>
-      <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{apptype === 'spa-api'}"></div>
+      <div class="snippet-tabs" data-visible="{apptype === 'spa-api'}">
+        <a class="{clientvisible ? 'active' : ''}" on-click="showClient"><span>Client</span></a>
+        <a class="{serverapivisible ? 'active' : ''}" on-click="showServerApi"><span>Server API</span></a>
+      </div>
+      <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{apptype === 'spa-api' && clientvisible}"></div>
+      <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{apptype === 'spa-api' && serverapivisible}"></div>
       <div class="snippet" tutorial-fetch="serverPlatform" empty-if="{!serverPlatform}" data-visible="{apptype === 'web'}"></div>
     </div>
   </div>
