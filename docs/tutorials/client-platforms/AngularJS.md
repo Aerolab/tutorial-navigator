@@ -1,12 +1,16 @@
 ## AngularJS configuration
 
 <% if (configuration.api && configuration.thirdParty) { %>
-If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-thirdparty-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0. 
+
+If you're creating a new AngularJS app that you'll use with the <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-thirdparty-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0. 
+
 <% } else  { %>
+
 If you're creating a new AngularJS app that you'll use with your <%= configuration.api %> API, you can [click here to download](https://github.com/auth0/auth0-angular-api-sample/archive/gh-pages.zip) a seed project that is already configured to use Auth0. 
+
 <% } %>
 
-The only thing you need to do is to change the `authProvider` configuration to use your Auth0's account. Please [click here](#2-add-the-module-dependency-and-configure-the-service) to learn how to do it.
+You only have to change the `authProvider` configuration to use your Auth0's account. Please [click here](#2-add-the-module-dependency-and-configure-the-service) to learn how to do it.
 
 Otherwise, Please follow the steps below to configure AngularJS to use it with Auth0 with your existing Angular app.
 
@@ -142,6 +146,7 @@ $scope.logout = function() {
 You can [click here](https://docs.auth0.com/user-profile) to find out all of the available properties from the user's profile. Please note that some of this depend on the social provider being used.
 
 <% if (configuration.api && !configuration.thirdParty) { %>
+
 #### 8. Configuring secure calls to an API
 
 As we're going to call an API we're going to make on <%= configuration.api %>, we need to make sure we send the [JWT token](https://docs.auth0.com/jwt) we receive on the login on every request. For that, we need to do 2 things:
@@ -168,9 +173,11 @@ The `$http` interceptor will send the token in the `Authorization` header if it'
 ````
 
 Now, you can regularly call your API with `$http`, `$resource` or any rest client as you'd normally do and the [JWT token](https://docs.auth0.com/jwt) will be sent on every request.
+
 <% } %>
 
 <% if (configuration.api && configuration.thirdParty) { %>
+
 #### 8. Configuring calls to a Third Party API
 
 Now, we want to be able to call <%= configuration.api %>, which is a third party api. What we're going to do is to exchange the JWT token we got from Auth0 for a token we can use to query <%= configuration.api %> securely and authenticated.
@@ -195,6 +202,7 @@ $scope.login = function() {
 ````
 
 We're going to create the <%= configuration.api %> in the following steps. Once we create it, you just need to put the client id of that API in this snippet and it'll work
+
 <% } %>
 
 #### 9. Showing user information
