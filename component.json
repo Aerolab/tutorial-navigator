@@ -1,6 +1,6 @@
 {
   "name": "tutorial-navigator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "auth0/styleguide": "*",
     "component/dom": "*"
@@ -11,7 +11,9 @@
   "local": [
     "tutorial-view"
   ],
-  "templates": [ ],
-  "scripts": [ "index.js" ],
+  "templates": [],
+  "scripts": [
+    "index.js"
+  ],
   "main": "index.js"
 }
