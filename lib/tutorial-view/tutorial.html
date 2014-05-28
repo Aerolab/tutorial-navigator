@@ -81,9 +81,9 @@
   </div>
 
   <div class="row code-snippets" data-visible="showCode">
-    <div class="snippet" tutorial-fetch="nativePlatform" data-visible="{apptype === 'native-mobile'}"></div>
-    <div class="snippet" tutorial-fetch="clientPlatform" data-visible="{apptype === 'spa-api'}"></div>
-    <div class="snippet" tutorial-fetch="serverApi" data-visible="{apptype === 'spa-api'}"></div>
-    <div class="snippet" tutorial-fetch="serverPlatform" data-visible="{apptype === 'web'}"></div>
+    <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{apptype === 'native-mobile'}"></div>
+    <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{apptype === 'spa-api'}"></div>
+    <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{apptype === 'spa-api'}"></div>
+    <div class="snippet" tutorial-fetch="serverPlatform" empty-if="{!serverPlatform}" data-visible="{apptype === 'web'}"></div>
   </div>
 </div>
