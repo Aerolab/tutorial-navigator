@@ -31,7 +31,7 @@ eg: iPhone SDK
 * Firebase
 * Windows Azure Mobile
 
-## Single Page App + API
+## Single Page App
 **Desc**: Create a Javascript application that runs in your browser using your sever's API.
 
 eg: NodeJS + AngularJS
