@@ -8,8 +8,7 @@ eg: iPhone SDK
 * Android
 * Windows Phone
 * Xamarin
-* Cordova
-* PhoneGap
+* Cordova / PhoneGap
 * Ionic Framework
 
 ### Will your mobile app connect to an external API or server?
@@ -87,8 +86,7 @@ Are you using a FrontEnd technology like AngularJS or Ember? If you do, [please 
 
 eg: PhoneGap, Ionic
 ### Please choose your native SDK
-* Cordova
-* PhoneGap
+* Cordova / PhoneGap
 * Ionic Framework
 
 ### Will your mobile app connect to an external API or server?
