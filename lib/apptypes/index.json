@@ -21,9 +21,9 @@
     "budicon": "378"
   },
   {
-    "title": "Regular web app",
+    "title": "Hybrid mobile app",
     "name": "hybrid",
-    "description": "Create a Web/Hybrid Mobile app using any of our SDKs",
+    "description": "Create an Hybrid Web/Mobile app using any of our SDKs",
     "example": "eg: PhoneGap, Ionic",
     "budicon": "243"
   }

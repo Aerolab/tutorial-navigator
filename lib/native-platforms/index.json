@@ -2,41 +2,49 @@
   {
     "title": "iOS",
     "url": "/ios-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/ios.png"
   },
   {
     "title": "Android",
     "url": "/android-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/android.png"
   },
   {
     "title": "Windows Phone",
     "url": "/windowsphone-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/windows-phone.png"
   },
   {
     "title": "Xamarin",
     "url": "/xamarin-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/xamarin.png"
   },
   {
     "title": "PhoneGap",
     "url": "/phonegap-tutorial",
+    "hybrid": true,
     "image": "//auth0.com/platforms-collection/img/phonegap.png"
   },
   {
     "title": "Windows 8 (JS)",
     "url": "/win8-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/windows-8.png"
   },
   {
     "title": "Windows 8 (C#)",
     "url": "/win8-cs-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/windows-8.png"
   },
   {
     "title": "WPF / Winforms",
     "url": "/wpf-winforms-tutorial",
+    "hybrid": false,
     "image": "//auth0.com/platforms-collection/img/asp.png"
   }
 ]
