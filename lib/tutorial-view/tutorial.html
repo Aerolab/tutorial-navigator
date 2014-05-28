@@ -81,8 +81,20 @@
       </div>
     </div>
 
+    <div class="row step select-platform-hybrid" data-hidden="{apptype !== 'hybrid' || nativePlatform}">
+      <h3>Select your hybrid platform</h3>
+      <div each="hybridapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
+        <a data-href="url" class="logo-tutorial">
+          <strong>
+            <img data-src="image">
+          </strong>
+          <span data-text="title"></span>
+        </a>
+      </div>
+    </div>
+
     <div class="row code-snippets" data-visible="codevisible">
-      <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{apptype === 'native-mobile'}"></div>
+      <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{nativePlatform}"></div>
       <div class="snippet-tabs" data-visible="{apptype === 'spa-api'}">
         <a class="{clientvisible ? 'active' : ''}" on-click="showClient"><span>Client</span></a>
         <a class="{serverapivisible ? 'active' : ''}" on-click="showServerApi"><span>Server API</span></a>
