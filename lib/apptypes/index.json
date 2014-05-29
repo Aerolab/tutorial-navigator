@@ -10,7 +10,7 @@
     "title": "Single page app",
     "name": "spa-api",
     "description": "Create a Javascript application that runs in your browser using your sever's API",
-    "example": "eg: NodeJS + AngularJS",
+    "example": "eg: AngularJS + NodeJS",
     "budicon": "349"
   },
   {
