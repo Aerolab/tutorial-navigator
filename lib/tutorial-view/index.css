@@ -9,7 +9,7 @@
 
 #tutorial-navigator .tutorial-header {
   border-bottom: 2px solid #ddd;
-  padding: 40px 0;
+  padding: 40px 0 20px 0;
   display: table;
   width: 100%;
 }
@@ -38,6 +38,13 @@
   color: #ddd;
 }
 
+#tutorial-navigator .tutorial-header .step-circle small {
+    display: block;
+    line-height: 15px;
+    height: 15px;
+    font-size: 14px;
+    margin-top: 5px;
+}
 
 #tutorial-navigator .tutorial-header .step-circle.active a {
   background: #4fcb1f;
