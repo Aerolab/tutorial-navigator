@@ -2,56 +2,67 @@
   {
     "title": "ASP.NET Web API",
     "url": "/aspnetwebapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/asp.png"
   },
   {
     "title": "ASP.NET Web API (OWIN)",
     "url": "/aspnetwebapi-owin-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/asp.png"
   },
   {
     "title": "Node.js API",
     "url": "/nodeapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/node.png"
   },
   {
     "title": "Ruby API",
     "url": "/rubyapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/rails.png"
   },
   {
     "title": "PHP API",
     "url": "/phpapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/php.png"
   },
   {
     "title": "PHP (Laravel) API",
     "url": "/laravelapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/php.png"
   },
   {
     "title": "Java API",
     "url": "/javaapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/java.png"
   },
   {
     "title": "Python API",
     "url": "/pythonapi-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/python.png"
   },
   {
     "title": ".NET WCF",
     "url": "/wcf-tutorial",
+    "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/wcf.png"
   },
   {
     "title": "AWS",
     "url": "/awsapi-tutorial",
+    "thirdParty": true,
     "image": "//auth0.com/saas-collection/img/aws.png"
   },
   {
     "title": "Azure Mobile Services",
     "url": "/wams",
+    "thirdParty": true,
     "image": "//auth0.com/platforms-collection/img/azure.png"
   }
 ]
