@@ -112,6 +112,7 @@
   float: none;
   margin-bottom: 20px;
   vertical-align: top;
+  padding: 0px 5px;
 }
 
 #tutorial-navigator .step .tutorial-item,
@@ -123,6 +124,7 @@
 
 #tutorial-navigator .step .tutorial-item a.logo-tutorial {
   border: 1px solid #fff;
+  padding: 10px;
 }
 
 #tutorial-navigator .step .tutorial-item:hover,
