@@ -1,0 +1,53 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1374" measuredH="713" mockupW="975" mockupH="642">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="399" y="71" w="975" h="642" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tutorial%20Navigator</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="488" y="171" w="848" h="492" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::HRule" x="488" y="285" w="842" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::VRule" x="752" y="171" w="-1" h="124" measuredW="10" measuredH="100" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::VRule" x="1010" y="171" w="-1" h="124" measuredW="10" measuredH="100" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::IconLabel" x="577" y="202" w="-1" h="-1" measuredW="103" measuredH="63" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <icon>Number1Icon%7Clarge</icon>
+        <text>Application%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::IconLabel" x="862" y="202" w="-1" h="-1" measuredW="56" measuredH="63" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Number2Icon%7Clarge</icon>
+        <text>Platforms</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::IconLabel" x="1140" y="202" w="-1" h="-1" measuredW="62" measuredH="63" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Number3Icon%7Clarge</icon>
+        <text>Let%27s%20code</text>
+      </controlProperties>
+    </control>
+    <control controlID="146" controlTypeID="com.balsamiq.mockups::ButtonBar" x="490" y="290" w="840" h="27" measuredW="137" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>AngularJS%2C%20PHP</text>
+      </controlProperties>
+    </control>
+    <control controlID="147" controlTypeID="com.balsamiq.mockups::Paragraph" x="497" y="379" w="831" h="219" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20Bla%20bla%20bla%20bla%20bla%20bla%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="148" controlTypeID="com.balsamiq.mockups::Label" x="827" y="330" w="-1" h="-1" measuredW="119" measuredH="32" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>AngularJS</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
