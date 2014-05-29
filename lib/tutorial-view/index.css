@@ -3,6 +3,10 @@
   border-radius: 3px;
 }
 
+#tutorial-navigator a {
+  cursor: pointer;
+}
+
 #tutorial-navigator .tutorial-header {
   border-bottom: 2px solid #ddd;
   padding: 40px 0;
@@ -54,7 +58,11 @@
 #tutorial-navigator .step > h3,
 #tutorial-navigator .code-snippets > h3 {
   margin-top: 0px;
-  margin-bottom: 40px;
+}
+
+#tutorial-navigator .step > h3,
+#tutorial-navigator .step > h4,
+#tutorial-navigator .step > p {
   padding-left: 15px;
 }
 
@@ -147,18 +155,21 @@
   margin-bottom: 30px;
 }
 
-#tutorial-navigator .code-snippets .snippet-tabs a{
+#tutorial-navigator .code-snippets .snippet-tabs .snippet-tab {
+  display:inline-block;
+}
+
+#tutorial-navigator .code-snippets .snippet-tabs .snippet-tab a {
+  display:inline-block;
   background: #f1f1f1;
   padding: 10px;
-  display: inline-block;
   height: auto;
   min-width: 110px;
   text-align: center;
   color: #aaa;
-  cursor: pointer;
 }
 
-#tutorial-navigator .code-snippets .snippet-tabs a.active{
+#tutorial-navigator .code-snippets .snippet-tabs .snippet-tab a.active{
   background: #16214d;
   color: #fff;
 }
