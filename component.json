@@ -21,7 +21,7 @@
     "native-platforms"
   ],
   "templates": [ "tutorial.html" ],
-  "stles": [ "index.css" ],
+  "styles": [ "index.css" ],
   "scripts": [
     "index.js"
   ],
