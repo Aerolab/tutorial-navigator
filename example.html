@@ -162,5 +162,10 @@
     }
   </script>
   <script src="build/build.js"></script>
-  <script>require('tutorial-navigator')</script>
+  <script>
+    var TutorialNavigator = require('tutorial-navigator');
+    var view = new TutorialView();
+
+    view.render('section.content');
+  </script>
 </html>

@@ -3,15 +3,25 @@
   "version": "0.2.0",
   "dependencies": {
     "auth0/styleguide": "*",
-    "component/dom": "*"
+    "component/dom": "*",
+    "component/to-function": "*",
+    "cristiandouce/reactive": "*",
+    "cristiandouce/merge-util": "*",
+    "discore/closest": "*"
   },
   "paths": [
     "lib"
   ],
   "local": [
-    "tutorial-view"
+    "bindings",
+    "apptypes",
+    "server-platforms",
+    "server-apis",
+    "client-platforms",
+    "native-platforms"
   ],
-  "templates": [],
+  "templates": [ "tutorial.html" ],
+  "stles": [ "index.css" ],
   "scripts": [
     "index.js"
   ],

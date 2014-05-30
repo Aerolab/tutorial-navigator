@@ -1,0 +1,11 @@
+{
+  "name": "bindings",
+  "description": "reactive bindings for tutorial navigator",
+  "dependencies": {
+    "learnboost/jsonp": "*",
+    "component/reactive": "*",
+    "component/jquery": "*"
+  },
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}
