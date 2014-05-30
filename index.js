@@ -194,6 +194,16 @@ TutorialView.prototype.apiTitle = function() {
   return this._platformTitle('serverApi');
 };
 
-TutorialView.prototype.render = function() {
-  return this.reactive.el;
+TutorialView.prototype.render = function(el) {
+  if (!arguments.length) return this.el();
+
+  if ('string' === typeof el) el = dom(el)[0];
+
+  if (el !== this.el().parentNode) el.appendChild(this.el());
+
+  return this;
 }
+
+TutorialView.prototype.el = function() {
+  return this.reactive.el;
+};
