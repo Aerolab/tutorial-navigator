@@ -77,7 +77,7 @@
 
     <div class="row step select-platform-api" disabled-if="{!(clientPlatform || nativePlatform || hybridPlatform)}" data-hidden="{!apptype || apptype === 'web' || serverApi || codevisible}">
       <h3>
-        Will you use an API Server with your {clientPlatform ? 'FrontEnd' : 'mobile application'}?
+        Will you use an API Server with your {'spa-api' === apptype ? 'javascript' : 'mobile'} application?
         <small>No, <a on-click="showCode">skip this</a></small>
       </h3>
       <h4>Backend Platform</h4>
