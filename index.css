@@ -157,13 +157,13 @@
 
 #tutorial-navigator .step.disabled {
   position: relative;
-  opacity: .6;
+  opacity: .15;
 }
 
 #tutorial-navigator .step.disabled .disabled-cover {
   position: absolute;
   background: none;
-  opacity: .3;
+  /*opacity: .3;*/
   top: 0;
   right: 0;
   bottom: 0;
