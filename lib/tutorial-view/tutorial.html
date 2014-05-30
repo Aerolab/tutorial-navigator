@@ -12,12 +12,17 @@
         <span>2</span>
       </a>
       <span class="step-label">Platform</span>
+      <small>
+        {nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformTitle : ''}
+        {serverApi ? ' + ' + apiTitle : ''}
+      </small>
     </div>
     <div class="step-circle col-xs-4 {codevisible ? 'active' : ''}">
       <a href="#" on-click="noop">
         <span>3</span>
       </a>
       <span class="step-label">Lets Code!</span>
+      <small>{codevisible ? 'Enjoy!' : ''}</small>
     </div>
   </div>
 
