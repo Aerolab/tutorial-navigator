@@ -4,7 +4,9 @@
   "dependencies": {
     "learnboost/jsonp": "*",
     "component/reactive": "*",
-    "component/jquery": "*"
+    "component/jquery": "*",
+    "component/scroll-to": "*",
+    "timoxley/offset": "*"
   },
   "scripts": [ "index.js" ],
   "main": "index.js"
