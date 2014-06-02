@@ -11,6 +11,11 @@
   cursor: pointer;
 }
 
+small.example {
+  color: #7E7E80;
+  font-weight: bold;
+}
+
 #tutorial-navigator .tutorial-header {
   border-bottom: 2px solid #ddd;
   padding: 40px 0 20px 0;
@@ -21,6 +26,7 @@
 #tutorial-navigator .tutorial-header .step-circle {
   text-align: center;
 }
+
 
 #tutorial-navigator .tutorial-header .step-circle a {
   background: #ddd;
@@ -103,9 +109,8 @@
   color: #666;
 }
 
-#tutorial-navigator .step .app-type:hover .app-type-item span,
-#tutorial-navigator .step .app-type:hover .app-type-item small,
-#tutorial-navigator .step .app-type:hover .app-type-item strong {
+#tutorial-navigator .step .app-type:hover .app-type-item span.icon,
+#tutorial-navigator .step .app-type:hover .app-type-item strong  {
   color: #44C7F4;
 }
 
@@ -129,12 +134,12 @@
 #tutorial-navigator .step .tutorial-item,
 #tutorial-navigator .step .tutorial-item a.logo-tutorial,
 #tutorial-navigator .step .tutorial-item a.logo-tutorial strong {
-  /*background: none;*/
+  background: none;
   border-radius: 3px;
 }
 
 #tutorial-navigator .step .tutorial-item a.logo-tutorial {
-  border: 1px solid #fff;
+  border: 1px solid #f1f1f1;
   padding: 10px;
 }
 
@@ -147,7 +152,8 @@
 }
 
 #tutorial-navigator .step .tutorial-item:hover a.logo-tutorial {
-  border-color: #f1f1f1;
+  border-color: #817B7B;
+  background-color: none;
 }
 
 #tutorial-navigator .step .tutorial-item span {

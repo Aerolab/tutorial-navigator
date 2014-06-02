@@ -2,28 +2,28 @@
   {
     "title": "Native mobile app",
     "name": "native-mobile",
-    "description": "Use any of our native SDKs to build your Mobile app",
-    "example": "eg: iPhone SDK",
+    "description": "An app that runs natively in devices",
+    "example": "eg: iOS SDK",
     "budicon": "243"
   },
   {
     "title": "Single page app",
     "name": "spa-api",
-    "description": "Create a Javascript application that runs in your browser using your sever's API",
+    "description": "A JavaScript front-end app that uses an API",
     "example": "eg: AngularJS + NodeJS",
     "budicon": "349"
   },
   {
     "title": "Regular web app",
     "name": "web",
-    "description": "Create a server side WebApplication using any of our SDKs",
-    "example": "eg: Ruby on Rails",
+    "description": "Traditional web app (with refresh)",
+    "example": "eg: Java, ASP.NET",
     "budicon": "378"
   },
   {
     "title": "Hybrid mobile app",
     "name": "hybrid",
-    "description": "Create an Hybrid Web/Mobile app using any of our SDKs",
+    "description": "A JS/HTML5 mobile app that runs in devices",
     "example": "eg: PhoneGap, Ionic",
     "budicon": "243"
   }
