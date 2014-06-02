@@ -45,7 +45,39 @@ function TutorialView(tutorial) {
     delegate: this,
     bindings: bindings
   });
+
+  this.bindAll();
 }
+
+TutorialView.prototype.set = function(prop, val) {
+  this.reactive.set(prop, val);
+};
+
+TutorialView.prototype.get = function(prop) {
+  return this.reactive.get(prop);
+};
+
+TutorialView.prototype.bindAll = function() {
+  var _self = this;
+  this.reactive.on('change clientPlatform', function(value) {
+    _self.set('clientvisible', !!value);
+  });
+  this.reactive.on('change nativePlatform', function(value) {
+    _self.set('nativevisible', !!value);
+  });
+  this.reactive.on('change hybridPlatform', function(value) {
+    _self.set('hybridvisible', !!value);
+  });
+  this.reactive.on('change serverPlatform', function(value) {
+    _self.set('codevisible', !!value);
+  });
+  this.reactive.on('change serverApi', function(value) {
+    _self.set('codevisible', !!value);
+  });
+  this.reactive.on('change apptype', function(value) {
+    _self.clearTwo();
+  });
+};
 
 TutorialView.prototype.apptypeselect = function(ev) {
   var el = closest(ev.target, '[data-type]', true);
@@ -61,62 +93,35 @@ TutorialView.prototype.setApptype = function(apptype) {
 TutorialView.prototype.nativeplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
-  this.setNativePlatform(el.getAttribute('data-url'));
-}
-
-TutorialView.prototype.setNativePlatform = function(url) {
-  this.reactive.set('nativePlatform', url);
-  this.showNative();
+  this.set('nativePlatform', el.getAttribute('data-url'));
 }
 
 TutorialView.prototype.hybridplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
-  this.setHybridPlatform(el.getAttribute('data-url'));
-}
-
-TutorialView.prototype.setHybridPlatform = function(url) {
-  this.reactive.set('hybridPlatform', url);
-  this.showHybrid();
+  this.set('hybridPlatform', el.getAttribute('data-url'));
 }
 
 TutorialView.prototype.clientplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
-  this.setClientPlatform(el.getAttribute('data-url'));
-}
-
-TutorialView.prototype.setClientPlatform = function(url) {
-  this.reactive.set('clientPlatform', url);
-  this.showClient();
+  this.set('clientPlatform', el.getAttribute('data-url'));
 }
 
 TutorialView.prototype.serverapiselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
-  this.setApiPlatform(el.getAttribute('data-url'));
-}
-
-TutorialView.prototype.setApiPlatform = function(url) {
-  this.reactive.set('serverApi', url);
-  this.showCode();
+  this.set('serverApi', el.getAttribute('data-url'));
 }
 
 TutorialView.prototype.serverplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
-  this.setServerPlatform(el.getAttribute('data-url'));
+  this.set('serverPlatform', el.getAttribute('data-url'));
 }
-
-TutorialView.prototype.setServerPlatform = function(url) {
-  this.reactive.set('serverPlatform', url);
-  this.reactive.set('codevisible', true);
-}
-
 
 TutorialView.prototype.clear = function() {
   this.reactive.set('apptype', '');
-  this.clearTwo();
 };
 
 TutorialView.prototype.clearTwo = function(ev) {
