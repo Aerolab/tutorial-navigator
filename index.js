@@ -188,10 +188,12 @@ TutorialView.prototype.platformTitle = function() {
   if (this.model.hybridPlatform) return this._platformTitle('hybridPlatform');
   if (this.model.clientPlatform) return this._platformTitle('clientPlatform');
   if (this.model.serverPlatform) return this._platformTitle('serverPlatform');
+  return '';
 };
 
 TutorialView.prototype.apiTitle = function() {
-  return this._platformTitle('serverApi');
+  if (this.model.serverApi) return this._platformTitle('serverApi');
+  return '';
 };
 
 TutorialView.prototype.render = function(el) {
