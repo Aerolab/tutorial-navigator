@@ -4,6 +4,7 @@
 
 var dom = require('dom');
 var _ = require('to-function');
+var Emitter = require('emitter');
 var closest = require('closest');
 var merge = require('merge-util');
 var reactive = require('reactive');
@@ -49,6 +50,8 @@ function TutorialView(tutorial) {
   this.bindAll();
 }
 
+Emitter(TutorialView.prototype);
+
 TutorialView.prototype.set = function(prop, val) {
   this.reactive.set(prop, val);
 };
@@ -83,54 +86,56 @@ TutorialView.prototype.apptypeselect = function(ev) {
   var el = closest(ev.target, '[data-type]', true);
   if (!el) return;
   this.clear();
-  this.setApptype(el.getAttribute('data-type'));
+  this.set('apptype', el.getAttribute('data-type'));
+  this.emit('apptype', apptype);
 }
-
-TutorialView.prototype.setApptype = function(apptype) {
-  this.reactive.set('apptype', apptype);
-};
 
 TutorialView.prototype.nativeplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('nativePlatform', el.getAttribute('data-url'));
+  this.emit('nativePlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.hybridplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('hybridPlatform', el.getAttribute('data-url'));
+  this.emit('hybridPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.clientplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('clientPlatform', el.getAttribute('data-url'));
+  this.emit('clientPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.serverapiselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('serverApi', el.getAttribute('data-url'));
+  this.emit('serverApi', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.serverplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('serverPlatform', el.getAttribute('data-url'));
+  this.emit('serverPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.clear = function() {
-  this.reactive.set('apptype', '');
+  this.set('apptype', '');
 };
 
 TutorialView.prototype.clearTwo = function(ev) {
-  this.reactive.set('nativePlatform', '');
-  this.reactive.set('hybridPlatform', '');
-  this.reactive.set('clientPlatform', '');
-  this.reactive.set('serverApi', '');
-  this.reactive.set('serverPlatform', '');
-  this.reactive.set('codevisible', false);
+  this.set('nativePlatform', '');
+  this.set('hybridPlatform', '');
+  this.set('clientPlatform', '');
+  this.set('serverApi', '');
+  this.set('serverPlatform', '');
+  this.set('codevisible', false);
   this.resetTabs();
 };
 
@@ -139,45 +144,45 @@ TutorialView.prototype.noop = function() {
 };
 
 TutorialView.prototype.showCode = function() {
-  this.reactive.set('codevisible', true);
+  this.set('codevisible', true);
 };
 
 TutorialView.prototype.showNative = function() {
   this.resetTabs();
-  this.reactive.set('nativevisible', true);
+  this.set('nativevisible', true);
 };
 
 TutorialView.prototype.showHybrid= function() {
   this.resetTabs();
-  this.reactive.set('hybridvisible', true);
+  this.set('hybridvisible', true);
 };
 
 TutorialView.prototype.showClient = function() {
   this.resetTabs();
-  this.reactive.set('clientvisible', true);
+  this.set('clientvisible', true);
 };
 
 TutorialView.prototype.showServerApi = function() {
   this.resetTabs();
-  this.reactive.set('serverapivisible', true);
+  this.set('serverapivisible', true);
 };
 
 TutorialView.prototype.resetTabs = function() {
-  this.reactive.set('nativevisible', false);
-  this.reactive.set('hybridvisible', false);
-  this.reactive.set('clientvisible', false);
-  this.reactive.set('serverapivisible', false);
+  this.set('nativevisible', false);
+  this.set('hybridvisible', false);
+  this.set('clientvisible', false);
+  this.set('serverapivisible', false);
 };
 
 TutorialView.prototype.apptypeTitle = function() {
-  var apptypeQuery = 'name === "%"'.replace('%', this.reactive.get('apptype'));
+  var apptypeQuery = 'name === "%"'.replace('%', this.get('apptype'));
   var apptypeFilter = _(apptypeQuery);
   var apptype = this.model.apptypes.filter(apptypeFilter);
   return apptype.length ? apptype[0].title : '';
 };
 
 TutorialView.prototype._platformTitle = function(type) {
-  var platformQuery = 'url === "%"'.replace('%', this.reactive.get(type));
+  var platformQuery = 'url === "%"'.replace('%', this.get(type));
   var platformFilter = _(platformQuery);
 
   type = ~type.indexOf('Platform')

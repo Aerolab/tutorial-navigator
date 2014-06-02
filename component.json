@@ -5,6 +5,7 @@
     "auth0/styleguide": "*",
     "component/dom": "*",
     "component/to-function": "*",
+    "component/emitter": "*",
     "cristiandouce/reactive": "*",
     "cristiandouce/merge-util": "*",
     "discore/closest": "*"
