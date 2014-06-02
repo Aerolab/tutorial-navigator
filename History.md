@@ -1,4 +1,12 @@
 
+0.4.0 / 2014-06-02
+==================
+
+ * Update to make platform selection to display both sub-steps when server API optional. Close #3
+ * Update to show platform titles at tabs text instead of plain 'Client, Native, ...'
+ * Add `scroll-on` binding directive
+ * Add `disable-if` reactive binding directive and styles
+
 0.3.0 / 2014-05-30
 ==================
 
