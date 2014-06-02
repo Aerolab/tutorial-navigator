@@ -116,16 +116,16 @@
     <div class="row code-snippets" data-visible="codevisible">
       <div class="snippet-tabs" data-hidden="{!serverApi}">
         <div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}">
-          <a class="{nativevisible ? 'active' : ''}"><span>Native</span></a>
+          <a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
         </div>
         <div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}">
-          <a class="{hybridvisible ? 'active' : ''}" ><span>Hybrid</span></a>
+          <a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
         </div>
         <div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}">
-          <a class="{clientvisible ? 'active' : ''}"><span>Client</span></a>
+          <a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
         </div>
         <div class="snippet-tab" on-click="showServerApi">
-          <a class="{serverapivisible ? 'active' : ''}"><span>Server API</span></a>
+          <a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
         </div>
       </div>
       <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
