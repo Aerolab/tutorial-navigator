@@ -15,11 +15,14 @@ dev-run: node_modules
 build: packages
 	@node node_modules/.bin/component-build
 
-dev-build: build
+build_dev: packages
+	@node node_modules/.bin/component-build --dev
+
+dev-build: build_dev
 	@node_modules/.bin/serve --port $(PORT)
 
 packages: node_modules
-	@node node_modules/.bin/component-install
+	@node node_modules/.bin/component-install --dev
 
 node_modules:
 	@npm install --development
