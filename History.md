@@ -1,4 +1,11 @@
 
+0.5.0 / 2014-06-03
+==================
+
+ * Update css
+ * Add ability to change tutorial state from outter apps
+ * Add events to communicate tutorial state to outter apps
+
 0.4.0 / 2014-06-02
 ==================
 
