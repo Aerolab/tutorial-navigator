@@ -1,12 +1,22 @@
 {
   "name": "auth0-tutorial-navigator",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "private": true,
   "description": "Auth0's Nativator Tutorial page",
   "dependencies": {},
   "devDependencies": {
     "component": "0.19.9",
-    "supervisor": "*",
-    "serve": "*"
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-maxcdn": "https://github.com/siacomuzzi/grunt-maxcdn/tarball/0.0.1",
+    "grunt-s3": "~0.2.0-alpha.3",
+    "grunt-shell": "^0.7.0",
+    "matchdep": "^0.3.0",
+    "serve": "*",
+    "supervisor": "*"
+  },
+  "scripts": {
+    "cdn": "grunt cdn"
   }
 }
