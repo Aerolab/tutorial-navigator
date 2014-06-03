@@ -3,7 +3,7 @@
 ## Development
 
   ```bash
-    git clone git@github.com:auth0/navigator-tutorial.git
+    git clone git@github.com:auth0/tutorial-navigator.git
     cd navigator-tutorial
     make dev-run
   ```
