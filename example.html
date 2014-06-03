@@ -163,9 +163,77 @@
   </script>
   <script src="build/build.js"></script>
   <script>
+    var page = require('visionmedia-page.js');
     var TutorialNavigator = require('tutorial-navigator');
     var tutorial = new TutorialNavigator();
+    var extract = /\/([^-]+)-tutorial/;
 
-    tutorial.render('section.content');
+    // TODO: FINISH ROUTING!
+    // tutorial.on('apptype', function(val) {
+    //   if (val) page('/:apptype'.replace(':apptype', val));
+    // });
+
+    // tutorial.on('nativePlatform', function(val) {
+    //   var url = '/:apptype/:platform'
+    //     .replace(':apptype', tutorial.get('apptype'))
+    //     .replace(':platform', extract.exec(val)[1]);
+    //   page(url);
+    // });
+
+
+    // tutorial.on('hybridPlatform', function(val) {
+    //   var url = '/:apptype/:platform'
+    //     .replace(':apptype', tutorial.get('apptype'))
+    //     .replace(':platform', extract.exec(val)[1]);
+    //   page(url);
+    // });
+
+
+    // tutorial.on('clientPlatform', function(val) {
+    //   var url = '/:apptype/:platform'
+    //     .replace(':apptype', tutorial.get('apptype'))
+    //     .replace(':platform', extract.exec(val)[1]);
+    //   page(url);
+    // });
+
+    // tutorial.on('serverApi', function(val) {
+    //   var platform = tutorial.get('clientPlatform')
+    //     || tutorial.get('nativePlatform')
+    //     || tutorial.get('hybridPlatform');
+
+    //   var url = '/:apptype/:platform/:api'
+    //     .replace(':apptype', tutorial.get('apptype'))
+    //     .replace(':platform', platform)
+    //     .replace(':api', extract.exec(val)[1]);
+
+    //   page(url);
+    // });
+
+    // page('/:apptype', justinit, apptypestate, render);
+    // page('/:apptype/:platform', justinit, apptypestate, render);
+
+    page('*', render);
+
+    // function justinit(ctx, next) {
+    //   if (ctx.init) return next();
+    // }
+
+    // function apptypestate (ctx, next) {
+    //   if (ctx.params.apptype) tutorial.set('apptype', ctx.params.apptye);
+    //   next();
+    // }
+
+    // function apptypestate (ctx, next) {
+    //   if (ctx.params.apptype) tutorial.set('apptype', ctx.params.apptye);
+    //   next();
+    // }
+
+    function render(ctx, next) {
+      tutorial.render('section.content');
+    }
+
+    page({
+      base: '/example.html/'
+    });
   </script>
 </html>
