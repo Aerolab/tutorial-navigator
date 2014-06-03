@@ -87,7 +87,7 @@ TutorialView.prototype.apptypeselect = function(ev) {
   if (!el) return;
   this.clear();
   this.set('apptype', el.getAttribute('data-type'));
-  this.emit('apptype', apptype);
+  this.emit('apptype', el.getAttribute('data-type'));
 }
 
 TutorialView.prototype.nativeplatformselect = function(ev) {
