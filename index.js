@@ -6,40 +6,19 @@ var dom = require('dom');
 var _ = require('to-function');
 var Emitter = require('emitter');
 var closest = require('closest');
-var merge = require('merge-util');
 var reactive = require('reactive');
 var bindings = require('bindings');
 var template = require('./tutorial.html');
-var apptypes = require('apptypes');
-var nativeapps = require('native-platforms');
-var clientapps = require('client-platforms');
-var serverapis = require('server-apis');
-var serverapps = require('server-platforms');
+var Tutorial = require('tutorial-model');
+var TutorialAdapter = require('tutorial-adapter');
 
 module.exports = TutorialView;
 
 function TutorialView(tutorial) {
-  this.model = merge({
-    apptype: '',
-    nativePlatform: '',
-    hybridPlatform: '',
-    clientPlatform: '',
-    serverApi: '',
-    serverPlatform: '',
-    apptypes: apptypes,
-    nativeapps: nativeapps,
-    clientapps: clientapps,
-    serverapis: serverapis,
-    serverapps: serverapps,
-    hybridapps: nativeapps.filter(_('hybrid')),
-    codevisible: false,
-    nativevisible: false,
-    hybridvisible: false,
-    clientvisible: false,
-    serverapivisible: false
-  }, tutorial || {}, true);
+  this.model = new Tutorial(tutorial || {});
 
   this.reactive = reactive(template, this.model, {
+    adapter: TutorialAdapter,
     delegate: this,
     bindings: bindings
   });
@@ -174,7 +153,7 @@ TutorialView.prototype.resetTabs = function() {
 TutorialView.prototype.apptypeTitle = function() {
   var apptypeQuery = 'name === "%"'.replace('%', this.get('apptype'));
   var apptypeFilter = _(apptypeQuery);
-  var apptype = this.model.apptypes.filter(apptypeFilter);
+  var apptype = this.model.get('apptypes').filter(apptypeFilter);
   return apptype.length ? apptype[0].title : '';
 };
 
@@ -186,20 +165,20 @@ TutorialView.prototype._platformTitle = function(type) {
     ? type.slice(0, type.indexOf('Platform')) + 'app'
     : type;
 
-  var platform = this.model[type.toLowerCase() + 's'].filter(platformFilter);
+  var platform = this.model.get(type.toLowerCase() + 's').filter(platformFilter);
   return platform.length ? platform[0].title : '';
 };
 
 TutorialView.prototype.platformTitle = function() {
-  if (this.model.nativePlatform) return this._platformTitle('nativePlatform');
-  if (this.model.hybridPlatform) return this._platformTitle('hybridPlatform');
-  if (this.model.clientPlatform) return this._platformTitle('clientPlatform');
-  if (this.model.serverPlatform) return this._platformTitle('serverPlatform');
+  if (this.model.get('nativePlatform')) return this._platformTitle('nativePlatform');
+  if (this.model.get('hybridPlatform')) return this._platformTitle('hybridPlatform');
+  if (this.model.get('clientPlatform')) return this._platformTitle('clientPlatform');
+  if (this.model.get('serverPlatform')) return this._platformTitle('serverPlatform');
   return '';
 };
 
 TutorialView.prototype.apiTitle = function() {
-  if (this.model.serverApi) return this._platformTitle('serverApi');
+  if (this.model.get('serverApi')) return this._platformTitle('serverApi');
   return '';
 };
 

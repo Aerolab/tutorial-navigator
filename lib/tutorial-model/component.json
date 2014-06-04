@@ -1,0 +1,18 @@
+{
+  "name": "tutorial-model",
+  "description": "Model for the TutorialView",
+  "dependencies": {
+    "component/to-function": "*",
+    "modella/modella": "0.2.8",
+    "modella/defaults": "*"
+  },
+  "local": [
+    "apptypes",
+    "native-platforms",
+    "client-platforms",
+    "server-apis",
+    "server-platforms"
+  ],
+  "scripts": ["index.js"],
+  "main": "index.js"
+}

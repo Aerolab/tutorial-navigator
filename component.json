@@ -7,7 +7,6 @@
     "component/to-function": "*",
     "component/emitter": "*",
     "cristiandouce/reactive": "*",
-    "cristiandouce/merge-util": "*",
     "discore/closest": "*"
   },
   "paths": [
@@ -15,11 +14,8 @@
   ],
   "local": [
     "bindings",
-    "apptypes",
-    "server-platforms",
-    "server-apis",
-    "client-platforms",
-    "native-platforms"
+    "tutorial-model",
+    "tutorial-adapter"
   ],
   "templates": [
     "tutorial.html"

@@ -1,0 +1,7 @@
+{
+  "name": "tutorial-adapter",
+  "description": "Tutorial Adapter for reactive/modella interaction",
+  "dependencies": {},
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}
