@@ -20,9 +20,6 @@ module.exports = TutorialView;
 
 function TutorialView(tutorial) {
   this.model = merge({
-    stepOne: '',
-    stepTwo: '',
-    stepThree: '',
     apptype: '',
     nativePlatform: '',
     hybridPlatform: '',
