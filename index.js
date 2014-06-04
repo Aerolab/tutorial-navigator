@@ -39,22 +39,28 @@ TutorialView.prototype.get = function(prop) {
 TutorialView.prototype.bindAll = function() {
   var _self = this;
   this.reactive.on('change clientPlatform', function(value) {
+    _self.emit('clientPlatform', value);
     _self.set('clientvisible', !!value);
   });
   this.reactive.on('change nativePlatform', function(value) {
+    _self.emit('nativePlatform', value);
     _self.set('nativevisible', !!value);
   });
   this.reactive.on('change hybridPlatform', function(value) {
+    _self.emit('hybridPlatform', value);
     _self.set('hybridvisible', !!value);
   });
   this.reactive.on('change serverPlatform', function(value) {
+    _self.emit('serverPlatform', value);
     _self.set('codevisible', !!value);
   });
   this.reactive.on('change serverApi', function(value) {
+    _self.emit('serverApi', value);
     _self.set('codevisible', !!value);
   });
   this.reactive.on('change apptype', function(value) {
     _self.clearTwo();
+    _self.emit('apptype', value);
   });
 };
 
@@ -63,42 +69,36 @@ TutorialView.prototype.apptypeselect = function(ev) {
   if (!el) return;
   this.clear();
   this.set('apptype', el.getAttribute('data-type'));
-  this.emit('apptype', el.getAttribute('data-type'));
 }
 
 TutorialView.prototype.nativeplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('nativePlatform', el.getAttribute('data-url'));
-  this.emit('nativePlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.hybridplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('hybridPlatform', el.getAttribute('data-url'));
-  this.emit('hybridPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.clientplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('clientPlatform', el.getAttribute('data-url'));
-  this.emit('clientPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.serverapiselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('serverApi', el.getAttribute('data-url'));
-  this.emit('serverApi', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.serverplatformselect = function(ev) {
   var el = closest(ev.target, '[data-url]', true);
   if (!el) return;
   this.set('serverPlatform', el.getAttribute('data-url'));
-  this.emit('serverPlatform', el.getAttribute('data-url'))
 }
 
 TutorialView.prototype.clear = function() {
