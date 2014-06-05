@@ -214,7 +214,7 @@
         serverApi: 'no-api' === api || !api ? '' : compose(api)
       });
 
-      tutorial.set('codevisible', ('no-api' === api || 'web' === apptype) );
+      tutorial.set('codevisible', ('no-api' === api || 'web' === apptype  || !!api) );
       next();
     }
 
