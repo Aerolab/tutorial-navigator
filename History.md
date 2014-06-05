@@ -1,4 +1,16 @@
 
+0.6.0 / 2014-06-05
+==================
+
+ * Use grunt-connect to help simulate pushState on routing example
+ * Move examples to example/ folder
+ * Add fallback on scroll when tutorial is not yet on DOM
+ * Add emit for `codevisible` state change
+ * Update all change event emits
+ * Add Tutorial model and adapter for reactive with `modella/modella`
+ * Remove unused title from template
+ * Remove unused tutorial props
+
 0.5.1 / 2014-06-03
 ==================
 
