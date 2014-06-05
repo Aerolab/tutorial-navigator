@@ -3,12 +3,43 @@ var pkg = require('./package');
 var minorVersion = pkg.version.replace(/\.(\d)*$/, '');
 var majorVersion = pkg.version.replace(/\.(\d)*\.(\d)*$/, '');
 var path = require('path');
+var join = path.join;
+var fs = require('fs');
+var read = fs.readFileSync;
 
 module.exports = function (grunt) {
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    connect: {
+      dev: {
+        options: {
+          // base: "test",
+          hostname: '*',
+          // base: ['.','example'],
+          port: 9999,
+          middleware: function (connect, options) {
+            return [
+              connect.static(__dirname),
+              function routing(req, res, next) {
+                if (!/^\/routing/.test(req.originalUrl)) return next();
+                res.end(read(join(__dirname, 'example/routing.html')));
+              },
+              function basic(req, res, next) {
+                res.end(read(join(__dirname, 'example/index.html')));
+              }
+            ]
+          }
+        }
+      },
+    },
+    watch: {
+      dev: {
+        files: ['*', 'lib/**/*'],
+        tasks: ["shell:component_install", "shell:component_build"]
+      }
+    },
     clean: [
       'release/'
     ],
@@ -18,6 +49,9 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/component-install'
       },
       component_build: {
+        command: './node_modules/.bin/component-build'
+      },
+      component_build_release: {
         command: './node_modules/.bin/component-build --out release'
       }
     },
@@ -54,7 +88,7 @@ module.exports = function (grunt) {
           // dest:   'tutorial-navigator-' + majorVersion + '/',
           // options: { gzip: false }
         // }, {
-          rel:    'release', 
+          rel:    'release',
           src:    'release/**/*',
           dest:   'tutorial-navigator/' + pkg.version + '/',
           options: { gzip: false }
@@ -88,8 +122,8 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build', ['clean', 'shell:component_install', 
-                     'shell:component_build']);
+  grunt.registerTask('dev', ['connect', 'watch'])
+  grunt.registerTask('build', ['clean', 'shell:component_install', 'shell:component_build_release']);
   grunt.registerTask('cdn', ['build', 's3', 'maxcdn']);
   grunt.registerTask('default', ['build']);
 };

@@ -26,8 +26,5 @@
   "scripts": [
     "index.js"
   ],
-  "development": {
-    "visionmedia/page.js": "*"
-  },
   "main": "index.js"
 }
