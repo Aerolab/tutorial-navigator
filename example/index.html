@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="https://auth0.com/boot/img/favicon.png">
     <link href="//docs.auth0.com/css/docs.css" rel="stylesheet">
-    <link href="build/build.css" rel="stylesheet">
+    <link href="/build/build.css" rel="stylesheet">
     <script type="text/javascript" src="//use.typekit.net/iws6ohy.js"></script>
     <script>
       try{Typekit.load();}catch(e){}
@@ -161,79 +161,11 @@
       location.hash = location.hash;
     }
   </script>
-  <script src="build/build.js"></script>
+  <script src="/build/build.js"></script>
   <script>
-    var page = require('visionmedia-page.js');
     var TutorialNavigator = require('tutorial-navigator');
     var tutorial = new TutorialNavigator();
-    var extract = /\/([^-]+)-tutorial/;
-
-    // TODO: FINISH ROUTING!
-    // tutorial.on('apptype', function(val) {
-    //   if (val) page('/:apptype'.replace(':apptype', val));
-    // });
-
-    // tutorial.on('nativePlatform', function(val) {
-    //   var url = '/:apptype/:platform'
-    //     .replace(':apptype', tutorial.get('apptype'))
-    //     .replace(':platform', extract.exec(val)[1]);
-    //   page(url);
-    // });
-
-
-    // tutorial.on('hybridPlatform', function(val) {
-    //   var url = '/:apptype/:platform'
-    //     .replace(':apptype', tutorial.get('apptype'))
-    //     .replace(':platform', extract.exec(val)[1]);
-    //   page(url);
-    // });
-
-
-    // tutorial.on('clientPlatform', function(val) {
-    //   var url = '/:apptype/:platform'
-    //     .replace(':apptype', tutorial.get('apptype'))
-    //     .replace(':platform', extract.exec(val)[1]);
-    //   page(url);
-    // });
-
-    // tutorial.on('serverApi', function(val) {
-    //   var platform = tutorial.get('clientPlatform')
-    //     || tutorial.get('nativePlatform')
-    //     || tutorial.get('hybridPlatform');
-
-    //   var url = '/:apptype/:platform/:api'
-    //     .replace(':apptype', tutorial.get('apptype'))
-    //     .replace(':platform', platform)
-    //     .replace(':api', extract.exec(val)[1]);
-
-    //   page(url);
-    // });
-
-    // page('/:apptype', justinit, apptypestate, render);
-    // page('/:apptype/:platform', justinit, apptypestate, render);
-
-    page('*', render);
-
-    // function justinit(ctx, next) {
-    //   if (ctx.init) return next();
-    // }
-
-    // function apptypestate (ctx, next) {
-    //   if (ctx.params.apptype) tutorial.set('apptype', ctx.params.apptye);
-    //   next();
-    // }
-
-    // function apptypestate (ctx, next) {
-    //   if (ctx.params.apptype) tutorial.set('apptype', ctx.params.apptye);
-    //   next();
-    // }
-
-    function render(ctx, next) {
-      tutorial.render('section.content');
-    }
-
-    page({
-      base: '/example.html/'
-    });
+    tutorial.render('section.content');
+    // That's it!
   </script>
 </html>
