@@ -1,4 +1,10 @@
 
+0.6.1 / 2014-06-05
+==================
+
+ * Improve routing and fix pushState
+ * Update emit with old values as 2nd parameter
+
 0.6.0 / 2014-06-05
 ==================
 
