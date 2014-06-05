@@ -62,6 +62,9 @@ TutorialView.prototype.bindAll = function() {
     _self.clearTwo();
     _self.emit('apptype', value);
   });
+  this.reactive.on('change codevisible', function(value) {
+    _self.emit('codevisible', !!value);
+  });
 };
 
 TutorialView.prototype.apptypeselect = function(ev) {
