@@ -38,32 +38,32 @@ TutorialView.prototype.get = function(prop) {
 
 TutorialView.prototype.bindAll = function() {
   var _self = this;
-  this.reactive.on('change clientPlatform', function(value) {
-    _self.emit('clientPlatform', value);
+  this.model.on('change clientPlatform', function(value, old) {
+    _self.emit('clientPlatform', value, old);
     _self.set('clientvisible', !!value);
   });
-  this.reactive.on('change nativePlatform', function(value) {
-    _self.emit('nativePlatform', value);
+  this.model.on('change nativePlatform', function(value, old) {
+    _self.emit('nativePlatform', value, old);
     _self.set('nativevisible', !!value);
   });
-  this.reactive.on('change hybridPlatform', function(value) {
-    _self.emit('hybridPlatform', value);
+  this.model.on('change hybridPlatform', function(value, old) {
+    _self.emit('hybridPlatform', value, old);
     _self.set('hybridvisible', !!value);
   });
-  this.reactive.on('change serverPlatform', function(value) {
-    _self.emit('serverPlatform', value);
+  this.model.on('change serverPlatform', function(value, old) {
+    _self.emit('serverPlatform', value, old);
     _self.set('codevisible', !!value);
   });
-  this.reactive.on('change serverApi', function(value) {
-    _self.emit('serverApi', value);
+  this.model.on('change serverApi', function(value, old) {
+    _self.emit('serverApi', value, old);
     _self.set('codevisible', !!value);
   });
-  this.reactive.on('change apptype', function(value) {
+  this.model.on('change apptype', function(value, old) {
     _self.clearTwo();
-    _self.emit('apptype', value);
+    _self.emit('apptype', value, old);
   });
-  this.reactive.on('change codevisible', function(value) {
-    _self.emit('codevisible', !!value);
+  this.model.on('change codevisible', function(value, old) {
+    _self.emit('codevisible', !!value, !!old);
   });
 };
 
