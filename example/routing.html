@@ -299,5 +299,15 @@
       if (!eqlPath(url)) return page(url);
     };
 
+    // Cool stuff
+    tutorial.on('codevisible', prettifyonvisible);
+    tutorial.on('nativevisible', prettifyonvisible);
+    tutorial.on('hybridvisible', prettifyonvisible);
+    tutorial.on('clientvisible', prettifyonvisible);
+    tutorial.on('serverapivisible', prettifyonvisible);
+
+    function prettifyonvisible(visible) {
+      if (visible && prettyPrint) prettyPrint();
+    }
   </script>
 </html>
