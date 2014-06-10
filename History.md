@@ -1,4 +1,11 @@
 
+0.6.2 / 2014-06-09
+==================
+
+ * Fix error when global function handler name matches docs.auth0.com
+ * Fix odd indentation on h3 title
+ * Fix routing example
+
 0.6.1 / 2014-06-05
 ==================
 
