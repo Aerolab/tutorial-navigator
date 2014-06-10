@@ -1,4 +1,11 @@
 
+0.7.0 / 2014-06-10
+==================
+
+ * Add prettyprint to routing example
+ * Add class prettyprint on `pre` returned docs, to allow pretty printing
+ * Remove auth0/styleguide as a main dependency
+
 0.6.3 / 2014-06-10
 ==================
 
