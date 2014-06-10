@@ -168,5 +168,16 @@
     var tutorial = new TutorialNavigator();
     tutorial.render('section.content');
     // That's it!
+
+    // Cool stuff
+    tutorial.on('codevisible', prettifyonvisible);
+    tutorial.on('nativevisible', prettifyonvisible);
+    tutorial.on('hybridvisible', prettifyonvisible);
+    tutorial.on('clientvisible', prettifyonvisible);
+    tutorial.on('serverapivisible', prettifyonvisible);
+
+    function prettifyonvisible(visible) {
+      if (visible && prettyPrint) prettyPrint();
+    }
   </script>
 </html>

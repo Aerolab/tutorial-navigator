@@ -65,6 +65,18 @@ TutorialView.prototype.bindAll = function() {
   this.model.on('change codevisible', function(value, old) {
     _self.emit('codevisible', !!value, !!old);
   });
+  this.model.on('change nativevisible', function(value, old) {
+    _self.emit('nativevisible', !!value, !!old);
+  });
+  this.model.on('change hybridvisible', function(value, old) {
+    _self.emit('hybridvisible', !!value, !!old);
+  });
+  this.model.on('change clientvisible', function(value, old) {
+    _self.emit('clientvisible', !!value, !!old);
+  });
+  this.model.on('change serverapivisible', function(value, old) {
+    _self.emit('serverapivisible', !!value, !!old);
+  });
 };
 
 TutorialView.prototype.apptypeselect = function(ev) {
