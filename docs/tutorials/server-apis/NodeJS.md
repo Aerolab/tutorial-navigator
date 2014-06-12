@@ -2,9 +2,9 @@
 
 If you're creating a new NodeJS api that you'll use with your <%= configuration.frontend %> code, you can [click here to download](https://github.com/auth0/auth0-nodejsapi-sample/archive/master.zip) a seed project that is already configured to use Auth0.
 
-Then, you just need to specify your configuration in the `.env` file: https://github.com/auth0/auth0-nodejsapi-sample#running-the-example
+Then, you just need to specify your Auth0 account configuration in the `.env` file: https://github.com/auth0/auth0-nodejsapi-sample#running-the-example
 
-Otherwise, Please follow the steps below to configure NodeJS to use it with Auth0.
+Otherwise, Please follow the steps below to configure your existing NodeJS app to use it with Auth0.
 
 ### 1. Add express-jwt dependency
 
@@ -36,6 +36,7 @@ You need to set the ClientID and ClientSecret in `express-jwt`'s configuration s
 
 Now, you need to specify one or more routes or paths that you want to protect, so that only users with the correct JWT will be able to do the request.
 
+````js
 app.configure(function () {
 
   // ...
@@ -45,6 +46,7 @@ app.configure(function () {
   // ...
 
 });
+````
 
 ### 4. You've nailed it.
 

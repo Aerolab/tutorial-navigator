@@ -1,51 +1,44 @@
-##NodeJS
+##Ruby on Rails
 
-If you're creating a new NodeJS api that you'll use with your <%= configuration.frontend %> code, you can [click here to download](https://github.com/auth0/auth0-nodejsapi-sample/archive/master.zip) a seed project that is already configured to use Auth0.
+If you're creating a Ruby On Rails app, please check [this other tutorial]().
 
-Then, you just need to specify your configuration in the `.env` file: https://github.com/auth0/auth0-nodejsapi-sample#running-the-example
+Otherwise, Please follow the steps below to configure your existing Ruby app to use it with Auth0.
 
-Otherwise, Please follow the steps below to configure NodeJS to use it with Auth0.
+### 1. Add jwt dependency to your Gemfile
 
-### 1. Add express-jwt dependency
+You need to add the jwt dependency.
 
-You need to add the express-jwt dependency.
-
-Just run the following code to install the dependency and add it to your `package.json`
+Open your Gemfile and add the following:
 
 ````js
-npm install express-jwt --save
+gem 'jwt'
 ````
 
-### 2. Configure express-jwt with your Auth0 account
+### 2. Validate JWT token
 
-You need to set the ClientID and ClientSecret in `express-jwt`'s configuration so that it can validate and sign [JWT](https://docs.auth0.com/jwt)s for you.
+You need to validate the [JWT](https://docs.auth0.com/jwt)s to make sure the user is authenticated. For that, in a filter or in a middleware processor that runs before your actions, you should write the following code:
 
-````js
-  var http = require('http');
-  var express = require('express');
-  var app = express();
-  var jwt = require('express-jwt');
+````ruby
+class InvalidTokenError < StandardError; end
 
-  var authenticate = jwt({
-    secret: new Buffer('<%= account.clientSecret %>', 'base64'),
-    audience: '<%= account.clientId %>'
-  });
+def validate_token
+  begin
+    auth0_client_id = '<%= account.clientId %>'
+    auth0_client_secret = '<%= account.clientSecret %>'
+    authorization = request.headers['Authorization']
+    raise InvalidTokenError if authorization.nil?
+
+    token = request.headers['Authorization'].split(' ').last
+    decoded_token = JWT.decode(token,
+      JWT.base64url_decode(auth0_client_secret))
+
+    raise InvalidTokenError if auth0_client_id != decoded_token[0]["aud"]
+  rescue JWT::DecodeError
+    raise InvalidTokenError
+  end
+end
 ````
 
-### 3. Secure your API
-
-Now, you need to specify one or more routes or paths that you want to protect, so that only users with the correct JWT will be able to do the request.
-
-app.configure(function () {
-
-  // ...
-
-  app.use('/api/path-you-want-to-protect', authenticate);
-
-  // ...
-
-});
-
-### 4. You've nailed it.
+### 5. You've nailed it.
 
 Now you have both your FrontEnd and Backend configured to use Auth0. Congrats, you're awesome!
