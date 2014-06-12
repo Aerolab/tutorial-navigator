@@ -175,8 +175,16 @@
      */
     var TutorialNavigator = require('tutorial-navigator');
     var tutorial = new TutorialNavigator();
-    var extract = /\/(.+)-tutorial/;
-    var compose = function(val) { return val ? '/' + val + '-tutorial' : ''};
+    var extract = function(p) {
+      if (!~p.indexOf('-tutorial')) p += '-tutorial';
+      var parts =  /\/(.+)-tutorial/.exec(p);
+      return parts ? parts[1] : '';
+    };
+    var compose = function(val) {
+      return 'wams' === val
+        ? '/' + val
+        : (val ? "/"  + val + '-tutorial' : '');
+    }
     var eqlPath = function(url) {
       var base = page.base() || '';
       var path = window.location.pathname.slice(base.length) || '/';
@@ -244,7 +252,7 @@
     function onplatform(val, old) {
       var url = '/:apptype/:platform';
       var apptype = tutorial.get('apptype');
-      var platform = val ? extract.exec(val)[1] : '';
+      var platform = val ? extract(val) : '';
 
       if (!apptype) return;
 
@@ -268,8 +276,8 @@
 
       var url = '/:apptype/:platform/:api'
         .replace(':apptype', apptype)
-        .replace(':platform', extract.exec(platform)[1])
-        .replace(':api', api ? extract.exec(api)[1] : 'no-api')
+        .replace(':platform', extract(platform))
+        .replace(':api', api ? extract(api) : 'no-api')
         .replace(/\/$/, '');
 
       if (!eqlPath(url)) return page(url);
@@ -290,9 +298,9 @@
 
       var url = '/:apptype/:platform/:api'
         .replace(':apptype', apptype)
-        .replace(':platform', extract.exec(platform)[1])
+        .replace(':platform', extract(platform))
         .replace(':api', api
-          ? extract.exec(api)[1]
+          ? extract(api)
           : ('web' === apptype ? '' : 'no-api'))
         .replace(/\/$/, '');
 
