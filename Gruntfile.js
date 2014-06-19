@@ -15,9 +15,7 @@ module.exports = function (grunt) {
     connect: {
       dev: {
         options: {
-          // base: "test",
           hostname: '*',
-          // base: ['.','example'],
           port: 8989,
           middleware: function (connect, options) {
             return [
@@ -52,7 +50,12 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/component-build'
       },
       component_build_release: {
-        command: './node_modules/.bin/component-build --out release'
+        command: [
+          './node_modules/.bin/component-build --out release',
+          './node_modules/.bin/component-build --out release --name build.min --use component-minify',
+          './node_modules/.bin/component-build --out release --standalone TutorialNavigator --name standalone',
+          './node_modules/.bin/component-build --out release --standalone TutorialNavigator --name standalone.min --use component-minify'
+        ].join(' && ')
       }
     },
 
