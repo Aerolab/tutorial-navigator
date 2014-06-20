@@ -24,6 +24,10 @@ module.exports = function (grunt) {
                 if (!/^\/routing/.test(req.originalUrl)) return next();
                 res.end(read(join(__dirname, 'example/routing.html')));
               },
+              function standalone(req, res, next) {
+                if (!/^\/standalone/.test(req.originalUrl)) return next();
+                res.end(read(join(__dirname, 'example/standalone.html')));
+              },
               function basic(req, res, next) {
                 res.end(read(join(__dirname, 'example/index.html')));
               }
