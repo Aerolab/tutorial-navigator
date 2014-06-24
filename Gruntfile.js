@@ -129,7 +129,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['connect', 'watch'])
+  grunt.registerTask('dev', ['shell:component_install', 'shell:component_build', 'connect', 'watch'])
   grunt.registerTask('build', ['clean', 'shell:component_install', 'shell:component_build_release']);
   grunt.registerTask('cdn', ['build', 's3', 'maxcdn']);
   grunt.registerTask('default', ['build']);
