@@ -30,7 +30,8 @@
   background: #ddd;
   border: 1px solid #ddd;
   border-radius: 100%;
-  padding: 15px;
+  padding: 15px 0;
+  text-align: center;
   height: 60px;
   width: 60px;
   display: inline-block;
@@ -52,8 +53,8 @@
   font-size: 12px;
 }
 #tutorial-navigator .tutorial-header .step-circle.active a {
-  background: #4fcb1f;
-  color: #fff;
+  background: #fff;
+  color: #4fcb1f;
   border-color: #4fcb1f;
 }
 #tutorial-navigator .tutorial-header .step-circle.active span.step-label {
