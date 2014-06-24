@@ -1,4 +1,16 @@
 
+0.7.1 / 2014-06-24
+==================
+
+ * Update readme.md
+ * Update to use `clientId` and `docsDomain` to alter tutorial doc request url
+ * Add `clientId` and `docsDomain` options to tutorial-model
+ * Update styles
+ * example: Add standalone example. Still requires bootstrap loaded in page
+ * release: Add minification and standalone to release deployment
+ * docs: Added Java, Ruby on rails and ruby
+ * example: fix routing example
+
 0.7.0 / 2014-06-10
 ==================
 
