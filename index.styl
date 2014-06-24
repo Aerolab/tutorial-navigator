@@ -1,0 +1,236 @@
+#tutorial-navigator
+  border 1px solid #ddd
+  border-radius 3px
+  font-family "proxima-nova", sans-serif
+  .hidden
+    display none!important
+    visibility hidden!important
+  .visible
+    visibility visible!important
+  .row
+    margin 0
+  a
+    cursor pointer
+    text-decoration none
+  .tutorial-header
+    border-bottom 1px solid #ddd
+    padding 40px 0 20px 0
+    display table
+    width 100%
+    .step-circle
+      text-align center
+      a
+        background #ddd
+        border 1px solid #ddd
+        border-radius 100%
+        padding 15px
+        height 60px
+        width 60px
+        display inline-block
+        line-height 30px
+        color #fff
+        font-size 25px
+      span
+        &.step-label
+          display block
+          padding 15px 0px 0px 0px
+          font-size 20px
+          color #ddd
+          margin-bottom 5px
+      small
+        display block
+        line-height 12px
+        height 12px
+        font-size 12px
+      &.active
+        a
+          background #4fcb1f
+          color #fff
+          border-color #4fcb1f
+        span
+          &.step-label
+            color #000
+  .step
+    .app-type
+      cursor pointer
+      text-align: center;
+      .app-type-item
+        display block
+        border-radius 3px
+        small
+          color #7E7E80
+          font-weight bold
+        span
+          &.icon
+            font-size 2em
+            background-color: white
+            background-image: -webkit-linear-gradient(90deg, darken(#448cf4, 40%) 0%, #448cf4 100%);
+            border-radius 3px
+            width 70px
+            height 70px
+            color white
+            margin auto
+            line-height 80px
+            text-shadow: 0 1px 0 rgba(0,0,0,.2);
+
+        strong
+          &.label
+            text-transform capitalize
+            font-size 1.3em
+            margin 20px 0 6px 0
+            font-weight 300
+            color black
+
+      .btn-select.btn-xs
+        font-size: 11px;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: #333;
+        margin-top: 20px;
+        background: white;
+
+      &:hover
+        .app-type-item
+          background #fff
+
+
+    .app-type:nth-child(2n)
+      .app-type-item
+        span.icon 
+          background-image: -webkit-linear-gradient(90deg, darken(#ffdb47, 40%) 0%, #ffdb47 100%);
+
+
+    .app-type:nth-child(3n)
+      .app-type-item
+        span.icon 
+          background-image: -webkit-linear-gradient(90deg, darken(#a83dda, 40%) 0%, #a83dda 100%);
+
+    .app-type:nth-child(4n)
+      .app-type-item
+        span.icon 
+          background-image: -webkit-linear-gradient(90deg, darken(#ff4847, 40%) 0%, #ff4847 100%);
+
+
+    .tutorial-item
+      display inline-block
+      float none
+      margin-bottom 20px
+      vertical-align top
+      padding 0px 5px
+      a
+        &.logo-tutorial
+          border 1px solid #f1f1f1
+          padding 10px
+          text-align center
+          border-radius 4px
+          display block
+          padding 10px
+          strong
+            background-color #fff
+            display block
+            padding 10px 0
+            border-radius 3px
+            img
+              height 45px
+              max-width 100%
+      &:hover
+        a
+          &.logo-tutorial
+            border-color #44C7F4
+            background-color none
+            color darken(#44C7F4, 40%)
+
+      span
+        min-height 30px
+        margin-top 10px
+    &.disabled
+      position relative
+      opacity .15
+      .disabled-cover
+        position absolute
+        background none
+        top 0
+        right 0
+        bottom 0
+        left 0
+  .code-snippets
+    min-height 400px
+    padding-left 60px
+    padding-right 60px
+    .snippet-tabs
+      width 100%
+      display table
+      border-bottom 1px solid #16214d
+      margin-bottom 30px
+      .snippet-tab
+        display inline-block
+        a
+          display inline-block
+          background #f1f1f1
+          padding 10px
+          height auto
+          min-width 110px
+          text-align center
+          color #aaa
+          &.active
+            background #16214d
+            color #fff
+
+#tutorial-navigator *,
+#tutorial-navigator :before,
+#tutorial-navigator :after
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+#tutorial-navigator .step,
+#tutorial-navigator .code-snippets
+  padding 30px
+  border-radius 3px
+
+#tutorial-navigator .step > h3,
+#tutorial-navigator .code-snippets > h3
+  margin-top 0px
+
+#tutorial-navigator .step > h3,
+#tutorial-navigator .step > h4,
+#tutorial-navigator .step > p
+  padding-left 5px
+
+#tutorial-navigator .step .app-type .app-type-item span,
+#tutorial-navigator .step .app-type .app-type-item small,
+#tutorial-navigator .step .app-type .app-type-item strong
+  display block
+  width 100%
+  text-align center
+
+#tutorial-navigator .step .app-type .app-type-item span,
+#tutorial-navigator .step .app-type .app-type-item strong
+  color #666
+
+#tutorial-navigator .step .app-type:hover 
+  .app-type-item 
+    span.icon
+      color: white
+
+    strong, span
+      color black
+
+    .btn 
+      background: #D0D2D3;
+      border-color #D0D2D3;
+
+
+#tutorial-navigator .step .tutorial-item,
+#tutorial-navigator .step .tutorial-item a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item a.logo-tutorial strong
+  background none
+  border-radius 3px
+
+#tutorial-navigator .step .tutorial-item:hover,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial strong,
+#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial span
+  background #fff
+  color darken(#44C7F4, 40%)
+
