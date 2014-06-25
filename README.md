@@ -5,7 +5,7 @@
 ```js
 var TutorialNavigator = require('tutorial-navigator');  //You don't need this using the standalone compilation
 var tutorial = new TutorialNavigator({
-  clientID: 'some-client-id', // optional
+  clientId: 'some-client-id', // optional
   docsDomain: 'https://docs.myauth0.com' // defaults to 'https://docs.auth0.com'
 });
 
