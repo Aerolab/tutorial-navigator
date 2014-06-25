@@ -104,6 +104,3 @@ After that you will have access to 3 example pages:
 * **Simple**: [http://localhost:8989/](http://localhost:8989) for simple view.
 * **Routing**: [http://localhost:8989/routing](http://localhost:8989/routing) for routing example
 * **Standalone**: [http://localhost:8989/routing](http://localhost:8989/standalone) for standalone version (withouth css) **this still requires bootstrap.css**
-
-**Warning!**: At this point, for this to look "good" it requires [auth0/styleguide](https://github.com/auth0/styleguide) to be includuded in the site where it displays.
-> this **will** be fixed soon
