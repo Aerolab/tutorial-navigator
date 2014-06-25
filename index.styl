@@ -18,6 +18,52 @@
     display: table;
     content: " ";
   }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+  }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #999;
+  }
+  h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small {
+    font-size: 65%;
+  }
+  h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small, h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small {
+    font-size: 75%;
+  }
+  h1, .h1 {
+    font-size: 36px;
+  }
+  h2, .h2 {
+    font-size: 30px;
+  }
+  h3, .h3 {
+    font-size: 24px;
+  }
+  h4, .h4 {
+    font-size: 18px;
+  }
+  h5, .h5 {
+    font-size: 14px;
+  }
+  h6, .h6 {
+    font-size: 12px;
+  }
+  p {
+    margin: 0 0 10px;
+  }
   .row:after {
     clear: both;
   }
@@ -66,12 +112,47 @@
   .col-xs-1 {
     width: 8.33333333%;
   }
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .btn:hover,
+  .btn:focus {
+    color: #333;
+    text-decoration: none;
+  }
+  .btn-xs,
+  .btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
 
 // Now begins tutorial navigator styles
 #tutorial-navigator
   border 1px solid #ddd
   border-radius 3px
-  font-family "proxima-nova", sans-serif
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+  color: #4d4d4d;
   .hidden
     display none!important
     visibility hidden!important
@@ -79,9 +160,37 @@
     visibility visible!important
   .row
     margin 0
+  .btn, a.btn
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase
+    font-size: 16px;
+    letter-spacing: 2px;
+    border: 0;
+    font-weight: bold
+    border: 1px solid #d0d2d3;
   a
     cursor pointer
     text-decoration none
+    color: darken(#44c7f4, 40%);
+    &:focus
+      outline: 0;
+    &:hover
+      text-decoration: none
+      color: #44c7f4
+  h1,h2,h3
+    font-weight: 100;
+  h4,h5,h6
+    font-weight: bold
+
+  h1,h2,h3,h4,h5,h6
+    font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+    color: black;
+    a
+      color: black;
   .tutorial-header
     border-bottom 1px solid #ddd
     padding 40px 0 20px 0
@@ -196,6 +305,14 @@
           border-radius 4px
           display block
           padding 10px
+          span
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            margin-top: 6px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #333;
           strong
             background-color #fff
             display block
