@@ -3,13 +3,13 @@
 ## Usage
 
 ```js
-  var TutorialNavigator = require('tutorial-navigator');  //You don't need this using the standalone compilation
-  var tutorial = new TutorialNavigator({
-    clientID: 'some-client-id', // optional
-    docsDomain: 'https://docs.myauth0.com' // defaults to 'https://docs.auth0.com'
-  });
+var TutorialNavigator = require('tutorial-navigator');  //You don't need this using the standalone compilation
+var tutorial = new TutorialNavigator({
+  clientID: 'some-client-id', // optional
+  docsDomain: 'https://docs.myauth0.com' // defaults to 'https://docs.auth0.com'
+});
 
-  tutorial.render('#my-tutorial-container');  // Try to avoid using 'tutorial-navigator' as an id
+tutorial.render('#my-tutorial-container');  // Try to avoid using 'tutorial-navigator' as an id
 ```
 
 ## Install & Build
@@ -17,8 +17,8 @@
 ### From Auth0's CDN, ready to go
 
 ```html
-  <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/tutorial-navigator/0.7.2/build.css">
-  <script type="text/javascript" src="https://cdn.auth0.com/tutorial-navigator/0.7.2/build.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/tutorial-navigator/0.7.2/build.css">
+<script type="text/javascript" src="https://cdn.auth0.com/tutorial-navigator/0.7.2/build.js"></script>
 ```
 
 > You may also use our minified or standalone versions `build.min.*`, `standalone.*`, `standalone.min.*`.
@@ -27,10 +27,10 @@
 
 Run the following lines in your terminal
 
-```
-  git clone git@github.com:auth0/tutorial-navigator.git
-  cd tutorial-navigator
-  make build
+```bash
+$ git clone git@github.com:auth0/tutorial-navigator.git
+$ cd tutorial-navigator
+$ make build
 ```
 
 And then you can get the files from the `build/` folder.
@@ -40,33 +40,52 @@ And then you can get the files from the `build/` folder.
 
 `TutorialNavigator` uses [deedubs/component-stylus](https://github.com/deedubs/component-stylus) plugin con transpile stylus files into CSS in the build process.
 
-Add `auth0/tutorial-navigator` to your dependencies tree at your project's `component.json` file.
+So in order to work installed as a component you need to add this build step by following the next few steps:
+
+1. Add `auth0/tutorial-navigator` to your dependencies tree at your project's `component.json` file.
 
 ```json
-  {
-    "dependencies": {
-      "auth0/tutorial-navigator": "*"
-    }
+{
+  "dependencies": {
+    "auth0/tutorial-navigator": "*"
   }
-```
-Install `component-stylus` global
-
-```
-  $ [sudo] npm install -g component-stylus
+}
 ```
 
-Or local to your [Node.js](https://nodejs.org) application
+2. a) Install `component-stylus` global
+
 
 ```
-  $ npm install --save component-stylus
-  # or as a devDependency
-  $ npm install --save-dev component-stylus
+$ [sudo] npm install -g component-stylus
 ```
 
-Then on the build process
+2. b) Or local to your [Node.js](https://nodejs.org) application
 
 ```
-  $ component build
+$ npm install --save component-stylus
+```
+
+2. c) or as a devDependency
+
+```
+$ npm install --save-dev component-stylus
+```
+
+3. a) Then on the build command, add
+
+```
+  $ component build --use component-stylus
+```
+
+3. b) Or add it at your custom builder
+
+```
+var Builder = require('component-builder')
+var stylus = require('component-stylus');
+
+var builder = new Builder(__dirname);
+
+builder.use(stylus());
 ```
 
 ## Development
