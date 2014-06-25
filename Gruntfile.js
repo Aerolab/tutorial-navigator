@@ -51,14 +51,14 @@ module.exports = function (grunt) {
         command: './node_modules/.bin/component-install'
       },
       component_build: {
-        command: './node_modules/.bin/component-build'
+        command: './node_modules/.bin/component-build --use component-stylus'
       },
       component_build_release: {
         command: [
-          './node_modules/.bin/component-build --out release',
-          './node_modules/.bin/component-build --out release --name build.min --use component-minify',
-          './node_modules/.bin/component-build --out release --standalone TutorialNavigator --name standalone',
-          './node_modules/.bin/component-build --out release --standalone TutorialNavigator --name standalone.min --use component-minify'
+          './node_modules/.bin/component-build --use component-stylus --out release',
+          './node_modules/.bin/component-build --use component-stylus --use component-minify --out release --name build.min',
+          './node_modules/.bin/component-build --use component-stylus --out release --standalone TutorialNavigator --name standalone',
+          './node_modules/.bin/component-build --use component-stylus --use component-minify --out release --standalone TutorialNavigator --name standalone.min'
         ].join(' && ')
       }
     },

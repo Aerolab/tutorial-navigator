@@ -20,7 +20,7 @@
     "tutorial.html"
   ],
   "styles": [
-    "index.css"
+    "index.styl"
   ],
   "scripts": [
     "index.js"
