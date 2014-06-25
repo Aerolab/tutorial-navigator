@@ -1,4 +1,12 @@
 
+0.7.3 / 2014-06-25
+==================
+
+ * Update standalone styles and example
+ * Update Readme.md
+ * Update Makefile
+ * Update to use component-stylus on build
+
 0.7.2 / 2014-06-24
 ==================
 
