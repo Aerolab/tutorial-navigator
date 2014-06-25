@@ -44,56 +44,59 @@ So in order to work installed as a component you need to add this build step by 
 
 1. Add `auth0/tutorial-navigator` to your dependencies tree at your project's `component.json` file.
 
-```json
-{
-  "dependencies": {
-    "auth0/tutorial-navigator": "*"
+  ```json
+  {
+    "dependencies": {
+      "auth0/tutorial-navigator": "*"
+    }
   }
-}
-```
+  ```
 
-2. a) Install `component-stylus` global
+2. Install `component-stylus`
 
+  a. by adding it globaly to your environment
 
-```
-$ [sudo] npm install -g component-stylus
-```
+    ```
+    $ [sudo] npm install -g component-stylus
+    ```
 
-2. b) Or local to your [Node.js](https://nodejs.org) application
+  b. or local to your [Node.js](https://nodejs.org) application
 
-```
-$ npm install --save component-stylus
-```
+    ```
+    $ npm install --save component-stylus
+    ```
 
-2. c) or as a devDependency
+  c. or as a devDependency
 
-```
-$ npm install --save-dev component-stylus
-```
+    ```
+    $ npm install --save-dev component-stylus
+    ```
 
-3. a) Then on the build command, add
+3. Then proceed to build the tutorial
 
-```
-  $ component build --use component-stylus
-```
+  a. by `component(1)` command line tool with
 
-3. b) Or add it at your custom builder
+    ```
+      $ component build --use component-stylus
+    ```
 
-```
-var Builder = require('component-builder')
-var stylus = require('component-stylus');
+  b. or with your custom builder by
 
-var builder = new Builder(__dirname);
+    ```
+    var Builder = require('component-builder')
+    var stylus = require('component-stylus');
 
-builder.use(stylus());
-```
+    var builder = new Builder(__dirname);
+
+    builder.use(stylus());
+    ```
 
 ## Development
 
 ```bash
-  git clone git@github.com:auth0/tutorial-navigator.git
-  cd tutorial-navigator
-  make dev-run
+$ git clone git@github.com:auth0/tutorial-navigator.git
+$ cd tutorial-navigator
+$ make dev-run
 ```
 
 After that you will have access to 3 example pages:
