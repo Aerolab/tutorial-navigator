@@ -15,16 +15,16 @@ dev-run: node_modules
 # 		-x make -q dev-build
 
 build: packages
-	@node node_modules/.bin/component-build
+	@node node_modules/.bin/component-build --use component-stylus
 
 build_dev: packages
-	@node node_modules/.bin/component-build
+	@node node_modules/.bin/component-build --use component-stylus
 
 dev-build: build_dev
 	@node_modules/.bin/serve --port $(PORT)
 
 packages: node_modules
-	@node node_modules/.bin/component-install --dev
+	@node node_modules/.bin/component-install
 
 node_modules:
 	@npm install --development
