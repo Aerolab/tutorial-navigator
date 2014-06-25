@@ -1,4 +1,10 @@
 
+0.7.4 / 2014-06-25
+==================
+
+ * Update Readme.md
+ * Update styles to fix standalone version
+
 0.7.3 / 2014-06-25
 ==================
 
