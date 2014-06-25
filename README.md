@@ -38,7 +38,7 @@ And then you can get the files from the `build/` folder.
 
 ### Using Component(1)
 
-`TutorialNavigator` uses [segmentio/component-stylus](https://github.com/segmentio/component-stylus) plugin con transpile stylus files into CSS in the build process.
+`TutorialNavigator` uses [deedubs/component-stylus](https://github.com/deedubs/component-stylus) plugin con transpile stylus files into CSS in the build process.
 
 Add `auth0/tutorial-navigator` to your dependencies tree at your project's `component.json` file.
 
