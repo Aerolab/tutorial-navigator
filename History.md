@@ -1,4 +1,13 @@
 
+0.7.5 / 2014-07-01
+==================
+
+ * Update Gruntfile.js to publish latest on cdn
+ * Add minor styles updates
+ * Fix bug when using plugins to build minified releases
+ * Update Readme.md
+ * Update to fully stylus styles
+
 0.7.4 / 2014-06-25
 ==================
 
