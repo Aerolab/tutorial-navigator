@@ -75,14 +75,22 @@ module.exports = function (grunt) {
       },
       clean: {
         del: [
-          // { src:     'tutorial-navigator-' + majorVersion + '/index.html', },
-          // { src:     'tutorial-navigator-' + majorVersion + '/index.css', },
-          // { src:     'tutorial-navigator-' + minorVersion + '/index.html', },
-          // { src:     'tutorial-navigator-' + minorVersion + '/index.css', },
-          // { src:     'tutorial-navigator/' + pkg.version  + '/index.html', },
-          // { src:     'tutorial-navigator/' + pkg.version  + '/index.css', },
-          // { src:     'tutorial-navigator/index.html', },
-          // { src:     'tutorial-navigator/index.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.min.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.min.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.min.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.min.js', },
+          { src:     'tutorial-navigator/latest/build.css', },
+          { src:     'tutorial-navigator/latest/build.js', },
+          { src:     'tutorial-navigator/latest/build.min.css', },
+          { src:     'tutorial-navigator/latest/build.min.js', },
+          { src:     'tutorial-navigator/latest/standalone.css', },
+          { src:     'tutorial-navigator/latest/standalone.js', },
+          { src:     'tutorial-navigator/latest/standalone.min.css', },
+          { src:     'tutorial-navigator/latest/standalone.min.js', },
         ]
       },
       publish: {
@@ -99,10 +107,11 @@ module.exports = function (grunt) {
           src:    'release/**/*',
           dest:   'tutorial-navigator/' + pkg.version + '/',
           options: { gzip: false }
-        // }, {
-        //   src:    'release/*',
-        //   dest:   'tutorial-navigator/',
-        //   options: { gzip: false }
+        }, {
+          rel:    'release',
+          src:    'release/*',
+          dest:   'tutorial-navigator/latest/',
+          options: { gzip: false }
         }]
       }
     },
@@ -116,14 +125,22 @@ module.exports = function (grunt) {
           method:         'delete'
         },
         files: [
-          // { src:     'tutorial-navigator-' + majorVersion + '/index.html', },
-          // { src:     'tutorial-navigator-' + majorVersion + '/index.css', },
-          // { src:     'tutorial-navigator-' + minorVersion + '/index.html', },
-          // { src:     'tutorial-navigator-' + minorVersion + '/index.css', },
-          // { src:     'tutorial-navigator-' + pkg.version  + '/index.html', },
-          // { src:     'tutorial-navigator-' + pkg.version  + '/index.css', },
-          // { src:     'tutorial-navigator/index.html', },
-          // { src:     'tutorial-navigator/index.css', }
+          { src:     'tutorial-navigator/' + pkg.version + '/build.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.min.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/build.min.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.js', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.min.css', },
+          { src:     'tutorial-navigator/' + pkg.version + '/standalone.min.js', },
+          { src:     'tutorial-navigator/latest/build.css', },
+          { src:     'tutorial-navigator/latest/build.js', },
+          { src:     'tutorial-navigator/latest/build.min.css', },
+          { src:     'tutorial-navigator/latest/build.min.js', },
+          { src:     'tutorial-navigator/latest/standalone.css', },
+          { src:     'tutorial-navigator/latest/standalone.js', },
+          { src:     'tutorial-navigator/latest/standalone.min.css', },
+          { src:     'tutorial-navigator/latest/standalone.min.js', },
         ],
       },
     }
