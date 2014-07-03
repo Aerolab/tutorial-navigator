@@ -87,33 +87,33 @@ TutorialView.prototype.apptypeselect = function(ev) {
 }
 
 TutorialView.prototype.nativeplatformselect = function(ev) {
-  var el = closest(ev.target, '[data-url]', true);
+  var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('nativePlatform', el.getAttribute('data-url'));
+  this.set('nativePlatform', el.getAttribute('data-name'));
 }
 
 TutorialView.prototype.hybridplatformselect = function(ev) {
-  var el = closest(ev.target, '[data-url]', true);
+  var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('hybridPlatform', el.getAttribute('data-url'));
+  this.set('hybridPlatform', el.getAttribute('data-name'));
 }
 
 TutorialView.prototype.clientplatformselect = function(ev) {
-  var el = closest(ev.target, '[data-url]', true);
+  var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('clientPlatform', el.getAttribute('data-url'));
+  this.set('clientPlatform', el.getAttribute('data-name'));
 }
 
 TutorialView.prototype.serverapiselect = function(ev) {
-  var el = closest(ev.target, '[data-url]', true);
+  var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('serverApi', el.getAttribute('data-url'));
+  this.set('serverApi', el.getAttribute('data-name'));
 }
 
 TutorialView.prototype.serverplatformselect = function(ev) {
-  var el = closest(ev.target, '[data-url]', true);
+  var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('serverPlatform', el.getAttribute('data-url'));
+  this.set('serverPlatform', el.getAttribute('data-name'));
 }
 
 TutorialView.prototype.clear = function() {
@@ -172,24 +172,42 @@ TutorialView.prototype.apptypeTitle = function() {
   return apptype.length ? apptype[0].title : '';
 };
 
-TutorialView.prototype._platformTitle = function(type) {
-  var platformQuery = 'url === "%"'.replace('%', this.get(type));
-  var platformFilter = _(platformQuery);
-  var platform = this.model.get(type.toLowerCase() + 's').filter(platformFilter);
-  return platform.length ? platform[0].title : '';
-};
-
 TutorialView.prototype.platformTitle = function() {
-  if (this.model.get('nativePlatform')) return this._platformTitle('nativePlatform');
-  if (this.model.get('hybridPlatform')) return this._platformTitle('hybridPlatform');
-  if (this.model.get('clientPlatform')) return this._platformTitle('clientPlatform');
-  if (this.model.get('serverPlatform')) return this._platformTitle('serverPlatform');
-  return '';
+  var model = this.model;
+  var name = model.get('nativePlatform')
+    || model.get('hybridPlatform')
+    || model.get('clientPlatform')
+    || model.get('serverPlatform');
+  var platform = this.getPlatform(name);
+  return platform ? platform.title : '';
 };
 
 TutorialView.prototype.apiTitle = function() {
-  if (this.model.get('serverApi')) return this._platformTitle('serverApi');
-  return '';
+  var name = this.model.get('serverApi');
+  var api = this.getApi(name);
+  return api ? api.title : '';
+};
+
+TutorialView.prototype.getPlatform = function(name) {
+  var query = 'name === "%"'.replace('%', name);
+  var filter = _(query);
+  var model = this.model;
+  var collection = [];
+
+  if (model.get('nativePlatform')) collection = model.get('nativeplatforms');
+  if (model.get('hybridPlatform')) collection = model.get('hybridplatforms');
+  if (model.get('clientPlatform')) collection = model.get('clientplatforms');
+  if (model.get('serverPlatform')) collection = model.get('serverplatforms');
+
+  var platform = collection.filter(filter);
+  return platform.length ? platform[0] : null;
+};
+
+TutorialView.prototype.getApi = function(name) {
+  var query = 'name === "%"'.replace('%', name);
+  var filter = _(query);
+  var api = this.model.get('serverapis').filter(filter);
+  return api.length ? api[0] : null;
 };
 
 TutorialView.prototype.render = function(el) {
