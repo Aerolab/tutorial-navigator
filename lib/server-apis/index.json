@@ -1,66 +1,77 @@
 [
   {
     "title": "ASP.NET Web API",
+    "name": "aspnetwebapi",
     "url": "/aspnetwebapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/asp.png"
   },
   {
     "title": "ASP.NET Web API (OWIN)",
+    "name": "aspnetwebapi-owin",
     "url": "/aspnetwebapi-owin-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/asp.png"
   },
   {
     "title": "Node.js API",
+    "name": "nodeapi",
     "url": "/nodeapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/node.png"
   },
   {
     "title": "Ruby API",
+    "name": "rubyapi",
     "url": "/rubyapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/rails.png"
   },
   {
     "title": "PHP API",
+    "name": "phpapi",
     "url": "/phpapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/php.png"
   },
   {
     "title": "PHP (Laravel) API",
+    "name": "laravelapi",
     "url": "/laravelapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/php.png"
   },
   {
     "title": "Java API",
+    "name": "javaapi",
     "url": "/javaapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/java.png"
   },
   {
     "title": "Python API",
+    "name": "pythonapi",
     "url": "/pythonapi-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/python.png"
   },
   {
     "title": ".NET WCF",
+    "name": "wcf",
     "url": "/wcf-tutorial",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/wcf.png"
   },
   {
     "title": "AWS",
+    "name": "awsapi",
     "url": "/awsapi-tutorial",
     "thirdParty": true,
     "image": "//auth0.com/saas-collection/img/aws.png"
   },
   {
     "title": "Azure Mobile Services",
+    "name": "wams",
     "url": "/wams",
     "thirdParty": true,
     "image": "//auth0.com/platforms-collection/img/azure.png"
