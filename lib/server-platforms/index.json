@@ -36,6 +36,12 @@
     "image": "//auth0.com/platforms-collection/img/php.png"
   },
   {
+    "title": "PHP (Symfony)",
+    "name": "symfony",
+    "url": "/symfony-tutorial",
+    "image": "//auth0.com/platforms-collection/img/php.png"
+  },
+  {
     "title": "Ruby",
     "name": "rails",
     "url": "/rails-tutorial",
