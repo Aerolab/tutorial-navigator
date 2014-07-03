@@ -175,11 +175,6 @@ TutorialView.prototype.apptypeTitle = function() {
 TutorialView.prototype._platformTitle = function(type) {
   var platformQuery = 'url === "%"'.replace('%', this.get(type));
   var platformFilter = _(platformQuery);
-
-  type = ~type.indexOf('Platform')
-    ? type.slice(0, type.indexOf('Platform')) + 'app'
-    : type;
-
   var platform = this.model.get(type.toLowerCase() + 's').filter(platformFilter);
   return platform.length ? platform[0].title : '';
 };

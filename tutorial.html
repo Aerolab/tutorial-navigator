@@ -42,7 +42,7 @@
 
     <div class="row step select-platform-native-mobile" disabled-if="{nativePlatform}" data-hidden="{apptype !== 'native-mobile' || codevisible}">
       <h3>Select your native SDK</h3>
-      <div each="nativeapps" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
+      <div each="nativeplatforms" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
         <a data-href="url" class="logo-tutorial">
           <strong>
             <img data-src="image">
@@ -54,7 +54,7 @@
 
     <div class="row step select-platform-client" disabled-if="{clientPlatform}" data-hidden="{apptype !== 'spa-api' || codevisible}">
       <h3>What will you use in the FrontEnd?</h3>
-      <div each="clientapps" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
+      <div each="clientplatforms" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
         <a data-href="url" class="logo-tutorial">
           <strong>
             <img data-src="image">
@@ -66,7 +66,7 @@
 
     <div class="row step select-platform-hybrid" disabled-if="{hybridPlatform}" data-hidden="{apptype !== 'hybrid' || codevisible}">
       <h3>Select your hybrid SDK</h3>
-      <div each="hybridapps" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="hybridplatformselect">
+      <div each="hybridplatforms" data-name="{name}" data-url="{url}" class="col-xs-2 tutorial-item" on-click="hybridplatformselect">
         <a data-href="url" class="logo-tutorial">
           <strong>
             <img data-src="image">
@@ -100,7 +100,7 @@
 
     <div class="row step select-platform-server" data-hidden="{apptype !== 'web' || serverPlatform}">
       <h3>What technology are you using for your WebApp?</h3>
-      <div each="serverapps" data-url="{url}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
+      <div each="serverplatforms" data-url="{url}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
         <a data-href="url" class="logo-tutorial">
           <strong>
             <img data-src="image">
