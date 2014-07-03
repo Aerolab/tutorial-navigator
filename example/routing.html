@@ -175,16 +175,6 @@
      */
     var TutorialNavigator = require('tutorial-navigator');
     var tutorial = new TutorialNavigator();
-    var extract = function(p) {
-      if (!~p.indexOf('-tutorial')) p += '-tutorial';
-      var parts =  /\/(.+)-tutorial/.exec(p);
-      return parts ? parts[1] : '';
-    };
-    var compose = function(val) {
-      return 'wams' === val
-        ? '/' + val
-        : (val ? "/"  + val + '-tutorial' : '');
-    }
     var eqlPath = function(url) {
       var base = page.base() || '';
       var path = window.location.pathname.slice(base.length) || '/';
@@ -211,7 +201,7 @@
 
     function checkstate(ctx, next) {
       var apptype = ctx.params.apptype || '';
-      var platform = compose(ctx.params.platform || '');
+      var platform = ctx.params.platform || '';
       var api = ctx.params.api || '';
 
       tutorial.set({
@@ -220,7 +210,7 @@
         hybridPlatform: 'hybrid' === apptype ? platform : '',
         clientPlatform: 'spa-api' === apptype ? platform : '',
         serverPlatform: 'web' === apptype ? platform : '',
-        serverApi: 'no-api' === api || !api ? '' : compose(api)
+        serverApi: 'no-api' === api || !api ? '' : api
       });
 
       var codevisible = ('no-api' === api || 'web' === apptype);
@@ -252,7 +242,7 @@
     function onplatform(val, old) {
       var url = '/:apptype/:platform';
       var apptype = tutorial.get('apptype');
-      var platform = val ? extract(val) : '';
+      var platform = val ? val : '';
 
       if (!apptype) return;
 
@@ -276,8 +266,8 @@
 
       var url = '/:apptype/:platform/:api'
         .replace(':apptype', apptype)
-        .replace(':platform', extract(platform))
-        .replace(':api', api ? extract(api) : 'no-api')
+        .replace(':platform', platform)
+        .replace(':api', api ? api : 'no-api')
         .replace(/\/$/, '');
 
       if (!eqlPath(url)) return page(url);
@@ -298,9 +288,9 @@
 
       var url = '/:apptype/:platform/:api'
         .replace(':apptype', apptype)
-        .replace(':platform', extract(platform))
+        .replace(':platform', platform)
         .replace(':api', api
-          ? extract(api)
+          ? api
           : ('web' === apptype ? '' : 'no-api'))
         .replace(/\/$/, '');
 
