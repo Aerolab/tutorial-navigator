@@ -1,4 +1,17 @@
 
+0.7.6 / 2014-07-04
+==================
+
+ * Add symfony tutorial
+ * Fix routing example
+ * Update tutorial.html to save name state on element
+ * Update TutorialView to expect unique names instead of urls
+ * Update binding fetch-tutorial to expect unique names instead of urls
+ * Update quickstart tutorial to reflect tutorial-model updates
+ * Update tutorial-model
+ * Add data-name to platforms
+ * Add name fields to apptypes and platforms dictionaries as unique keys
+
 0.7.5 / 2014-07-01
 ==================
 

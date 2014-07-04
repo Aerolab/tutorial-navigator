@@ -1,6 +1,6 @@
 {
   "name": "tutorial-navigator",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "dependencies": {
     "component/dom": "*",
     "component/to-function": "*",
