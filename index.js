@@ -89,31 +89,41 @@ TutorialView.prototype.apptypeselect = function(ev) {
 TutorialView.prototype.nativeplatformselect = function(ev) {
   var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('nativePlatform', el.getAttribute('data-name'));
+  var name = el.getAttribute('data-name');
+  var nativeplatforms = this.model.get('nativeplatforms');
+  this.set('nativePlatform', this.find(nativeplatforms, name));
 }
 
 TutorialView.prototype.hybridplatformselect = function(ev) {
   var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('hybridPlatform', el.getAttribute('data-name'));
+  var name = el.getAttribute('data-name');
+  var hybridplatforms = this.model.get('hybridplatforms');
+  this.set('hybridPlatform', this.find(hybridplatforms, name));
 }
 
 TutorialView.prototype.clientplatformselect = function(ev) {
   var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('clientPlatform', el.getAttribute('data-name'));
+  var name = el.getAttribute('data-name');
+  var clientplatforms = this.model.get('clientplatforms');
+  this.set('clientPlatform', this.find(clientplatforms, name));
 }
 
 TutorialView.prototype.serverapiselect = function(ev) {
   var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('serverApi', el.getAttribute('data-name'));
+  var name = el.getAttribute('data-name');
+  var serverapis = this.model.get('serverapis');
+  this.set('serverApi', this.find(serverapis, name));
 }
 
 TutorialView.prototype.serverplatformselect = function(ev) {
   var el = closest(ev.target, '[data-name]', true);
   if (!el) return;
-  this.set('serverPlatform', el.getAttribute('data-name'));
+  var name = el.getAttribute('data-name');
+  var serverplatforms = this.model.get('serverplatforms');
+  this.set('serverPlatform', this.find(serverplatforms, name));
 }
 
 TutorialView.prototype.clear = function() {
@@ -121,11 +131,11 @@ TutorialView.prototype.clear = function() {
 };
 
 TutorialView.prototype.clearTwo = function(ev) {
-  this.set('nativePlatform', '');
-  this.set('hybridPlatform', '');
-  this.set('clientPlatform', '');
-  this.set('serverApi', '');
-  this.set('serverPlatform', '');
+  this.set('nativePlatform', null);
+  this.set('hybridPlatform', null);
+  this.set('clientPlatform', null);
+  this.set('serverApi', null);
+  this.set('serverPlatform', null);
   this.set('codevisible', false);
   this.resetTabs();
 };
@@ -174,31 +184,21 @@ TutorialView.prototype.apptypeTitle = function() {
 
 TutorialView.prototype.platformTitle = function() {
   var model = this.model;
-  var name = model.get('nativePlatform')
+  var platform = model.get('nativePlatform')
     || model.get('hybridPlatform')
     || model.get('clientPlatform')
     || model.get('serverPlatform');
-  var platform = this.getPlatform(name);
   return platform ? platform.title : '';
 };
 
 TutorialView.prototype.apiTitle = function() {
-  var name = this.model.get('serverApi');
-  var api = this.getApi(name);
+  var api = this.model.get('serverApi');
   return api ? api.title : '';
 };
 
-TutorialView.prototype.getPlatform = function(name) {
+TutorialView.prototype.find = function(collection, name) {
   var query = 'name === "%"'.replace('%', name);
   var filter = _(query);
-  var model = this.model;
-  var collection = [];
-
-  if (model.get('nativePlatform')) collection = model.get('nativeplatforms');
-  if (model.get('hybridPlatform')) collection = model.get('hybridplatforms');
-  if (model.get('clientPlatform')) collection = model.get('clientplatforms');
-  if (model.get('serverPlatform')) collection = model.get('serverplatforms');
-
   var platform = collection.filter(filter);
   return platform.length ? platform[0] : null;
 };
