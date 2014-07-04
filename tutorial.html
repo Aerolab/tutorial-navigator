@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-native-mobile" disabled-if="{nativePlatform}" data-hidden="{apptype !== 'native-mobile' || codevisible}">
+    <div class="row step select-platform-native-mobile" disabled-if="{!!nativePlatform}" data-hidden="{apptype !== 'native-mobile' || codevisible}">
       <h3>Select your native SDK</h3>
       <div each="nativeplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-client" disabled-if="{clientPlatform}" data-hidden="{apptype !== 'spa-api' || codevisible}">
+    <div class="row step select-platform-client" disabled-if="{!!clientPlatform}" data-hidden="{apptype !== 'spa-api' || codevisible}">
       <h3>What will you use in the FrontEnd?</h3>
       <div each="clientplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-hybrid" disabled-if="{hybridPlatform}" data-hidden="{apptype !== 'hybrid' || codevisible}">
+    <div class="row step select-platform-hybrid" disabled-if="{!!hybridPlatform}" data-hidden="{apptype !== 'hybrid' || codevisible}">
       <h3>Select your hybrid SDK</h3>
       <div each="hybridplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="hybridplatformselect">
         <a data-href="url" class="logo-tutorial">
