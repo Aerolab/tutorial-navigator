@@ -1,4 +1,13 @@
 
+0.8.0 / 2014-07-07
+==================
+
+ * Update tutorial navigator to send query parameters for new-docs on jsonp request
+ * Revert: Update to save platform object instead of name as tutorial states...
+ * Update purgeCache task for CDN
+ * Update to save platform object instead of name as tutorial states, making it easier to manipulate
+ * Update disabled-if == Boolean
+
 0.7.6 / 2014-07-04
 ==================
 
