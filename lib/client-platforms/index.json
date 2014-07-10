@@ -6,15 +6,14 @@
     "image": "//auth0.com/platforms-collection/img/html5.png"
   },
   {
+    "title": "jQuery",
+    "url": "/new/client-platforms/jquery",
+    "image": "http://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg"
+  },
+  {
     "title": "Angular.js",
     "name": "angular",
     "url": "/angular-tutorial",
     "image": "//auth0.com/platforms-collection/img/angular.png"
-  },
-  {
-    "title": "Ember.js",
-    "name": "ember",
-    "url": "/ember-tutorial",
-    "image": "//auth0.com/platforms-collection/img/html5.png"
   }
 ]
