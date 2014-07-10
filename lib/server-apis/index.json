@@ -16,7 +16,7 @@
   {
     "title": "Node.js API",
     "name": "nodeapi",
-    "url": "/nodeapi-tutorial",
+    "url": "/new/server-apis/nodejs",
     "thirdParty": false,
     "image": "//auth0.com/platforms-collection/img/node.png"
   },
