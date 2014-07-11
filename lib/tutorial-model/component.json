@@ -4,12 +4,12 @@
   "dependencies": {
     "component/to-function": "*",
     "modella/modella": "0.2.8",
-    "modella/defaults": "*"
+    "modella/defaults": "*",
+    "auth0/client-platforms": "*"
   },
   "local": [
     "apptypes",
     "native-platforms",
-    "client-platforms",
     "server-apis",
     "server-platforms"
   ],
