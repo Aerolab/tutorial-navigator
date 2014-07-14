@@ -6,12 +6,12 @@
     "modella/modella": "0.2.8",
     "modella/defaults": "*",
     "auth0/client-platforms": "*",
+    "auth0/native-platforms": "*",
     "auth0/server-platforms": "*",
     "auth0/server-apis": "*"
   },
   "local": [
-    "apptypes",
-    "native-platforms"
+    "apptypes"
   ],
   "scripts": [ "index.js" ],
   "main": "index.js"

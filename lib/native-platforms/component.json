@@ -1,7 +1,0 @@
-{
-  "name": "native-platforms",
-  "description": "Native platforms tutorials",
-  "scripts": [ ],
-  "json": [ "index.json" ],
-  "main": "index.json"
-}
