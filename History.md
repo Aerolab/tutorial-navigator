@@ -1,4 +1,10 @@
 
+0.8.2 / 2014-07-14
+==================
+
+  * Fix typo on server platforms collection
+  * Clean History.md
+
 0.8.1 / 2014-07-10
 ==================
 
