@@ -1,7 +1,0 @@
-{
-  "name": "apptypes",
-  "description": "Apptypes tutorials",
-  "scripts": [ ],
-  "json": [ "index.json" ],
-  "main": "index.json"
-}
