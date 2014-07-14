@@ -1,4 +1,13 @@
 
+0.9.0 / 2014-07-14
+==================
+
+  * Update docs
+  * Move apptypes to auth0/application-types
+  * Move native-platforms to auth0/native-platforms
+  * Replace server-platforms and server-apis with separated components
+  * Move client-platforms to auth0/client-platforms
+
 0.8.2 / 2014-07-14
 ==================
 
