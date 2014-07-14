@@ -183,7 +183,7 @@ TutorialView.prototype.findPlatform = function(name) {
   if (model.get('nativePlatform')) return find(model.get('nativeplatforms'), name);
   if (model.get('hybridPlatform')) return find(model.get('hybridplatforms'), name);
   if (model.get('clientPlatform')) return find(model.get('clientplatforms'), name);
-  if (model.get('serverPlatform')) return find(model.get('serverPlatform'), name);
+  if (model.get('serverPlatform')) return find(model.get('serverplatforms'), name);
   return null;
 };
 
