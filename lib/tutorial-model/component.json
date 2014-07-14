@@ -5,14 +5,14 @@
     "component/to-function": "*",
     "modella/modella": "0.2.8",
     "modella/defaults": "*",
-    "auth0/client-platforms": "*"
+    "auth0/client-platforms": "*",
+    "auth0/server-platforms": "*",
+    "auth0/server-apis": "*"
   },
   "local": [
     "apptypes",
-    "native-platforms",
-    "server-apis",
-    "server-platforms"
+    "native-platforms"
   ],
-  "scripts": ["index.js"],
+  "scripts": [ "index.js" ],
   "main": "index.js"
 }
