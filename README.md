@@ -10,6 +10,10 @@ var tutorial = new TutorialNavigator({
 });
 
 tutorial.render('#my-tutorial-container');  // Try to avoid using 'tutorial-navigator' as an id
+tutorial.pretty(function() {
+  // save function to be called after docs get fetch and instert
+  // so they can be `prettyfied` by any pretty printing plugin
+});
 ```
 
 ## Install & Build
