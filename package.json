@@ -1,6 +1,6 @@
 {
   "name": "auth0-tutorial-navigator",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "description": "Auth0's Nativator Tutorial page",
   "dependencies": {},

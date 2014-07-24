@@ -1,4 +1,12 @@
 
+0.9.1 / 2014-07-24 
+==================
+
+ * Fix firefox linear gradients
+ * Update README.md
+ * Update code examples to reflect usage of new `pretty()` help method
+ * Add new `pretty()` help method to assign a pretty print func to be called after docs fetch\&insert
+
 0.9.0 / 2014-07-14
 ==================
 
