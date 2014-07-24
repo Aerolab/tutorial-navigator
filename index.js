@@ -229,3 +229,11 @@ TutorialView.prototype.render = function(el) {
 TutorialView.prototype.el = function() {
   return this.reactive.el;
 };
+
+TutorialView.prototype.pretty = function(pretty) {
+  if (0 !== arguments.length) return this._pretty = pretty, this;
+  if ('function' === typeof this._pretty) {
+    this._pretty(this.el());
+  };
+  return this;
+}
