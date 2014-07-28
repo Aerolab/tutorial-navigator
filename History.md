@@ -1,4 +1,10 @@
 
+0.10.0 / 2014-07-28
+===================
+
+  * Fix routing example
+  * Update model defaults dependencies, and update tutorial.html to match it
+
 0.9.1 / 2014-07-24 
 ==================
 
