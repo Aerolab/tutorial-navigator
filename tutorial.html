@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-client" disabled-if="{!!clientPlatform}" data-hidden="{apptype !== 'spa-api' || codevisible}">
+    <div class="row step select-platform-client" disabled-if="{!!clientPlatform}" data-hidden="{apptype !== 'spa' || codevisible}">
       <h3>What will you use in the FrontEnd?</h3>
       <div each="clientplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -77,7 +77,7 @@
     </div>
 
     <div class="row step select-platform-api" scroll-on="{!(!apptype || apptype === 'web' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}" disabled-if="{!(clientPlatform || nativePlatform || hybridPlatform)}" data-hidden="{!apptype || apptype === 'web' || codevisible}">
-      <h3>Will you use an API Server with your {'spa-api' === apptype ? 'javascript' : 'mobile'} application?<small>No, <a on-click="showCode">skip this</a></small></h3>
+      <h3>Will you use an API Server with your {'spa' === apptype ? 'javascript' : 'mobile'} application?<small>No, <a on-click="showCode">skip this</a></small></h3>
       <h4>Backend Platform</h4>
       <div each="serverapis" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverapiselect" data-hidden="thirdParty">
         <a data-href="url" class="logo-tutorial">
@@ -108,7 +108,7 @@
           <span data-text="title"></span>
         </a>
       </div>
-      <p>Are you using a FrontEnd technology like AngularJS? If so, check the <a on-click="apptypeselect" data-type="spa-api">Single Page App</a> tutorial.</p>
+      <p>Are you using a FrontEnd technology like AngularJS? If so, check the <a on-click="apptypeselect" data-type="spa">Single Page App</a> tutorial.</p>
     </div>
 
     <div class="row code-snippets" data-visible="codevisible">

@@ -5,11 +5,11 @@
     "component/to-function": "*",
     "modella/modella": "0.2.8",
     "modella/defaults": "*",
-    "auth0/application-types": "*",
-    "auth0/client-platforms": "*",
-    "auth0/native-platforms": "*",
-    "auth0/server-platforms": "*",
-    "auth0/server-apis": "*"
+    "auth0/application-types": "0.1.0",
+    "auth0/client-platforms": "0.1.0",
+    "auth0/native-platforms": "0.1.0",
+    "auth0/server-platforms": "0.1.0",
+    "auth0/server-apis": "0.1.0"
   },
   "local": [ ],
   "scripts": [ "index.js" ],
