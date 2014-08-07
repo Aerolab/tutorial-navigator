@@ -9,7 +9,7 @@
     "auth0/client-platforms": "0.1.0",
     "auth0/native-platforms": "0.1.0",
     "auth0/server-platforms": "0.1.0",
-    "auth0/server-apis": "0.1.6"
+    "auth0/server-apis": "0.1.7"
   },
   "local": [ ],
   "scripts": [ "index.js" ],
