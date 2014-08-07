@@ -1,4 +1,12 @@
 
+0.10.7 / 2014-08-07 
+==================
+
+ * v0.10.7
+ * Added new server-api version
+ * Release 0.10.6
+ * Bump tutorial model dependency auth0/server-apis@0.1.6
+
 0.10.6 / 2014-08-05
 ===================
 
