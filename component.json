@@ -1,7 +1,7 @@
 {
   "name": "tutorial-navigator",
   "description": "Auth0's quickstarts",
-  "version": "0.10.8",
+  "version": "0.10.9",
   "dependencies": {
     "component/dom": "*",
     "component/to-function": "*",
