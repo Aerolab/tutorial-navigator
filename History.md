@@ -1,4 +1,14 @@
 
+0.10.13 / 2014-08-21
+==================
+
+ * 0.10.13
+ * Release 0.10.12
+ * 0.10.12
+ * Bumped native-platforms version
+ * fix css
+ * quick fix for labels
+
 0.10.12 / 2014-08-21
 ==================
 
