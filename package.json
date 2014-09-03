@@ -1,6 +1,6 @@
 {
   "name": "auth0-tutorial-navigator",
-  "version": "0.10.16",
+  "version": "0.10.17",
   "private": true,
   "description": "Auth0's quickstarts",
   "dependencies": {},
