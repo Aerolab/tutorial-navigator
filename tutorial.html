@@ -1,4 +1,4 @@
-<div id="tutorial-navigator" scroll-on="{!(!apptype || apptype === 'web' || !codevisible)}">
+<div id="tutorial-navigator" scroll-on="{!(!apptype || apptype === 'webapp' || !codevisible)}">
   <div class="tutorial-header">
     <div class="step-circle col-xs-4 active">
       <a href="#" on-click="clear">
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-api" scroll-on="{!(!apptype || apptype === 'web' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}" disabled-if="{!(clientPlatform || nativePlatform || hybridPlatform)}" data-hidden="{!apptype || apptype === 'web' || codevisible}">
+    <div class="row step select-platform-api" scroll-on="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}" disabled-if="{!(clientPlatform || nativePlatform || hybridPlatform)}" data-hidden="{!apptype || apptype === 'webapp' || codevisible}">
       <h3>Will you use an API Server with your {'spa' === apptype ? 'javascript' : 'mobile'} application?<small>No, <a on-click="showCode">skip this</a></small></h3>
       <h4>Backend Platform</h4>
       <div each="serverapis" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverapiselect" data-hidden="thirdParty">
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="row step select-platform-server" data-hidden="{apptype !== 'web' || serverPlatform}">
+    <div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}">
       <h3>What technology are you using for your WebApp?</h3>
       <div each="serverplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
         <a data-href="url" class="logo-tutorial">
@@ -130,7 +130,7 @@
       <div class="snippet" tutorial-fetch="hybridPlatform" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
       <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
       <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
-      <div class="snippet" tutorial-fetch="serverPlatform" empty-if="{!serverPlatform}" data-visible="{apptype === 'web'}"></div>
+      <div class="snippet" tutorial-fetch="serverPlatform" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
     </div>
   </div>
 </div>
