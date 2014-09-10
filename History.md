@@ -1,4 +1,10 @@
 
+0.11.0 / 2014-09-10
+===================
+
+  * Fix routing example
+  * Update tutorial's collections dependencies and fix namings
+
 0.10.17 / 2014-09-03
 ====================
 
@@ -12,24 +18,17 @@
 0.10.15 / 2014-08-27
 ==================
 
- * 0.10.15
  * Bumped server-platforms to 0.1.2
 
 0.10.14 / 2014-08-26
 ==================
 
- * 0.10.14
  * Bumped server-apis
 
 0.10.13 / 2014-08-21
 ==================
 
  * 0.10.13
- * Release 0.10.12
- * 0.10.12
- * Bumped native-platforms version
- * fix css
- * quick fix for labels
 
 0.10.12 / 2014-08-21
 ==================
@@ -37,31 +36,31 @@
  * 0.10.12
  * Bumped native-platforms version
 
-0.10.11 / 2014-08-12 
+0.10.11 / 2014-08-12
 ==================
 
  * 0.10.11
  * Bumped native platforms to 0.1.2
 
-0.10.10 / 2014-08-12 
+0.10.10 / 2014-08-12
 ==================
 
  * 0.10.10
  * bumped native-platforms
 
-0.10.9 / 2014-08-12 
+0.10.9 / 2014-08-12
 ==================
 
  * 0.10.9
  * Bumped server platforms version
 
-0.10.8 / 2014-08-07 
+0.10.8 / 2014-08-07
 ==================
 
  * 0.10.8
  * Bumped server-apis version
 
-0.10.7 / 2014-08-07 
+0.10.7 / 2014-08-07
 ==================
 
  * v0.10.7
@@ -74,24 +73,24 @@
 
   * Bump tutorial model dependency auth0/server-apis@0.1.6
 
-0.10.5 / 2014-08-05 
+0.10.5 / 2014-08-05
 ==================
 
  * New tuto nav version
  * Added 0.1.5
 
-0.10.4 / 2014-08-04 
+0.10.4 / 2014-08-04
 ==================
 
  * 0.10.4
  * Upgraded one more version
 
-0.10.3 / 2014-08-04 
+0.10.3 / 2014-08-04
 ==================
 
  * Added new server-apis version
 
-0.10.2 / 2014-07-30 
+0.10.2 / 2014-07-30
 ==================
 
  * Changed version of server-apis to 0.1.2
@@ -107,7 +106,7 @@
   * Fix routing example
   * Update model defaults dependencies, and update tutorial.html to match it
 
-0.9.1 / 2014-07-24 
+0.9.1 / 2014-07-24
 ==================
 
  * Fix firefox linear gradients
