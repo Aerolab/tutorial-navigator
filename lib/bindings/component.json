@@ -3,11 +3,12 @@
   "description": "reactive bindings for tutorial navigator",
   "dependencies": {
     "learnboost/jsonp": "*",
-    "component/reactive": "*",
+    "cristiandouce/reactive": "*",
     "component/jquery": "*",
     "component/scroll-to": "*",
     "timoxley/offset": "*"
   },
-  "scripts": [ "index.js" ],
+  "local": [ "binding-utils" ],
+  "scripts": [ "index.js", "tutorial-fetch.js" ],
   "main": "index.js"
 }

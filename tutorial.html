@@ -126,7 +126,7 @@
           <a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
         </div>
       </div>
-      <div class="snippet" tutorial-fetch="nativePlatform" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
+      <div class="snippet" tutorial-fetch="{nativePlatform && codevisible ? nativePlatform : '' }" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
       <div class="snippet" tutorial-fetch="hybridPlatform" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
       <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
       <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>

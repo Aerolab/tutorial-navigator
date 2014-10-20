@@ -1,0 +1,8 @@
+{
+  "name": "binding-utils",
+  "dependencies": {
+    "cristiandouce/reactive": "*"
+  },
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}
