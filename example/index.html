@@ -134,20 +134,6 @@
     </div>
   </body>
   <script src="https://docs.auth0.com/js/prettify.js"></script>
-  <script type="text/javascript">
-    !function ($) {
-      $(function(){
-      $('pre').each(function (i, e) {
-        // Ignore 'pre' elements inside .api-explorer elements
-        if ($(e).closest('.api-explorer').length === 0) {
-          $(e).addClass('prettyprint');
-        }
-      });
-      window.prettyPrint && prettyPrint();
-      })
-    }(window.jQuery);
-
-  </script>
   <script>
     // var sectionIndex = 1;
     // $('h2,h3,h4').each(function(){
@@ -174,7 +160,9 @@
       // this will be called right after
       // the tutorial fetch ends and
       // gets interted in dom
-      tutorial.pretty(prettyPrint);
+      tutorial.pretty(function(el) {
+        return 'function' === typeof window.prettyPrint ? prettyPrint() : null;
+      });
     })()
   </script>
 </html>
