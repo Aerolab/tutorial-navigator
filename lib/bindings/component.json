@@ -9,6 +9,6 @@
     "timoxley/offset": "*"
   },
   "local": [ "binding-utils" ],
-  "scripts": [ "index.js", "tutorial-fetch.js", "empty-if.js" ],
+  "scripts": [ "index.js", "tutorial-fetch.js", "empty-if.js", "remove-if.js", "disabled-if.js", "scroll-on.js" ],
   "main": "index.js"
 }
