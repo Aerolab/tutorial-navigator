@@ -127,10 +127,10 @@
         </div>
       </div>
       <div class="snippet" tutorial-fetch="{nativePlatform && codevisible ? nativePlatform : '' }" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
-      <div class="snippet" tutorial-fetch="hybridPlatform" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
-      <div class="snippet" tutorial-fetch="clientPlatform" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
-      <div class="snippet" tutorial-fetch="serverApi" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
-      <div class="snippet" tutorial-fetch="serverPlatform" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
+      <div class="snippet" tutorial-fetch="{hybridPlatform && codevisible ? hybridPlatform : ''}" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
+      <div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
+      <div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
+      <div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
     </div>
   </div>
 </div>
