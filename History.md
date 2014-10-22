@@ -1,4 +1,18 @@
 
+0.12.0 / 2014-10-21
+===================
+
+  * Modify the empty binding to render loading instead of blank
+  * Add basic loading template and styles
+  * Improve bindings
+  * Move empty-if in separate module
+  * Fix example header
+  * Delay tutorials fetch until all parameters selected
+  * Fix example pretty print
+  * Remove dummy vars since defaults on models work fine
+  * Remove unused var
+  * First updates to send whole bunch of parameters on tutorials requests
+
 0.11.2 / 2014-09-15
 ===================
 
