@@ -302,6 +302,8 @@
     // this will be called right after
     // the tutorial fetch ends and
     // gets interted in dom
-    tutorial.pretty(prettyPrint);
+    tutorial.pretty(function() {
+      window.prettyPrint && window.prettyPrint();
+    });
   </script>
 </html>
