@@ -4,10 +4,10 @@
   "version": "0.12.0",
   "dependencies": {
     "component/dom": "*",
-    "component/to-function": "*",
     "component/emitter": "*",
-    "cristiandouce/reactive": "*",
-    "discore/closest": "*"
+    "component/closest": "*",
+    "component/to-function": "*",
+    "cristiandouce/reactive": "*"
   },
   "paths": [
     "lib"
