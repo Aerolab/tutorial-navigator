@@ -1,4 +1,13 @@
 
+0.12.1 / 2014-11-14
+===================
+
+  * Update dependencies
+  * Fix routing example prettyPrint
+  * Fix routing example when webapp type selected expecting the code to show
+  * Update routing example sub-header
+  * Remove basic example unused code
+
 0.12.0 / 2014-10-21
 ===================
 
