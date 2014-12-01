@@ -9,6 +9,7 @@
       padding: 20px;
     }
   </style>
+    <script src="https://docs.auth0.com/js/prettify.js"></script>
   <script type="text/javascript" src="/build/build.js"></script>
 </head>
 <body>
@@ -17,6 +18,9 @@
     var TutorialNavigator = require('tutorial-navigator');
     var tutorial = new TutorialNavigator();
     tutorial.render('#tutorial-container');
+    tutorial.pretty(function(el) {
+        return 'function' === typeof window.prettyPrint ? prettyPrint() : null;
+      });
   </script>
 </body>
 </html>

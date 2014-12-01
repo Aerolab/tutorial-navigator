@@ -26,5 +26,8 @@
   "scripts": [
     "index.js"
   ],
+  "images":[
+  	"images/sprite.png"
+  ],
   "main": "index.js"
 }

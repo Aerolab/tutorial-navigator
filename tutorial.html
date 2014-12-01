@@ -1,136 +1,197 @@
-<div id="tutorial-navigator" scroll-on="{!(!apptype || apptype === 'webapp' || !codevisible)}">
-  <div class="tutorial-header">
-    <div class="step-circle col-xs-4 active">
-      <a href="#" on-click="clear">
-        <span>1</span>
-      </a>
-      <span class="step-label">Application Type</span>
-      <small>{apptype ? apptypeTitle : ''}</small>
-    </div>
-    <div class="step-circle col-xs-4 {apptype ? 'active' : ''}">
-      <a href="#" on-click="clearTwo">
-        <span>2</span>
-      </a>
-      <span class="step-label">Platform</span>
-      <small>
-        {nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformTitle : ''}
-        {serverApi ? ' + ' + apiTitle : ''}
-      </small>
-    </div>
-    <div class="step-circle col-xs-4 {codevisible ? 'active' : ''}">
-      <a href="#" on-click="noop">
-        <span>3</span>
-      </a>
-      <span class="step-label">Lets Code!</span>
-      <small>{codevisible ? 'Enjoy!' : ''}</small>
-    </div>
-  </div>
+<div id="tutorial-navigator"  data-ui="{apptype ? apptypeName : ''}">
+	<!-- Header -->
+	<div class="tutorial-header" data-hidden="{!apptype}">
+		<!-- Step 1 -->
+		<div class="step-circle active">
+			<a href="#" on-click="clear">
+				<div class="mask">
+					<!-- icon -->
+					<i class="sprite sprite-{apptype ? apptypeName : ''}-mask"></i>
+				</div>
+			</a>
+		</div>
+		<!-- Step 2 -->
+		<div class="step-circle {nativePlatform || hybridPlatform || clientPlatform ? 'active' : ''}">
+			<a href="#" on-click="clearTwo">
+				<div class="mask">
+					<!-- icon -->
+					<img src="{nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''}" />
+				</div>
+			</a>
+		</div>
+		<!-- Step 3 -->
+		<div class="step-circle {serverApi ? 'active' : ''}">
+			<a href="#" on-click="noop">
+				<div class="mask">
+					<!-- icon -->
+					<img src="{serverApi ? apiIcon : ''} " />
+				</div>
+			</a>
+		</div>
+	</div>
+	
+	<!-- Body -->
+	<div class="tutorial-body">
+		<!-- Aplication Type -->
+		<div class="row step select-app-type" data-hidden="apptype"> 
+			<h2>Select an application type</h2>
+			<div each="apptypes" class="app-type col-xs-3" data-type="{name}" on-click="apptypeselect">
+				<a href="#" class="app-type-item {name}">
+					<div class="grafic">
+						<i class="sprite sprite-{name}"></i>
+					</div>
+					<h3 class="label" data-text="title"></h3>
+					<div class="description">
+						<span data-text="description"></span>
+						<span data-text="example"></span>
+					</div>
+				</a>
 
-  <div class="tutorial-body">
-    <div class="row step select-app-type" data-hidden="apptype">
-      <div each="apptypes" class="app-type col-xs-3" data-type="{name}" on-click="apptypeselect">
-        <a href="#" class="app-type-item">
-          <span class="icon icon-budicon-{budicon}"></span>
-          <strong class="label" data-text="title"></strong>
-          <span data-text="description"></span>
-          <small data-text="example"></small>
-          <span class="btn btn-xs btn-select">Select</span>
-        </a>
+			</div>
+		</div>
+		<!-- Cliente -->
+		<div class="row step select-platform-native-mobile"  data-hidden="{apptype !== 'native-mobile' || nativePlatform}">
+			<h2>Select your native SDK</h2>
+			<!-- Search -->
+			<div class="text-center">
+				<div class="inputs">
+					<input class="search" type="text" name="search" placeholder="Type here..." />
+					<i class="sprite-close"></i>
+				</div>
+			</div>
+			<!-- items -->
+			<div each="nativeplatforms" data-name="{name}" class="tutorial-item" on-click="nativeplatformselect">
+				<a data-href="url" class="logo-tutorial">
+					<div class="grafic">
+						<img data-src="image">
+					</div>
+					<div class="description">
+						<span data-text="title"></span>
+					</div>
+				</a>
+			</div>
+		</div>
 
-      </div>
-    </div>
+		<div class="row step select-platform-client" data-hidden="{apptype !== 'spa' || clientPlatform}">
+			<h2>What will you use in the FrontEnd?</h2>
+			<!-- Search -->
+			<div class="text-center">
+				<div class="inputs">
+					<input class="search" type="text" name="search" placeholder="Type here..." />
+					<i class="sprite-close"></i>
+				</div>
+			</div>
+			<!-- items -->
+			<div each="clientplatforms" data-name="{name}" class="tutorial-item" on-click="clientplatformselect">
+				<a data-href="url" class="logo-tutorial">
+					<div class="grafic">
+						<img data-src="image">
+					</div>
+					<div class="description">
+						<span data-text="title"></span>
+					</div>
+				</a>
+			</div>
+		</div>
 
-    <div class="row step select-platform-native-mobile" disabled-if="{!!nativePlatform}" data-hidden="{apptype !== 'native-mobile' || codevisible}">
-      <h3>Select your native SDK</h3>
-      <div each="nativeplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="nativeplatformselect">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-    </div>
+		<div class="row step select-platform-hybrid"  data-hidden="{apptype !== 'hybrid' || hybridPlatform}">
+			<h2>Select your hybrid SDK</h2>
+			<!-- Search -->
+			<div class="text-center">
+				<div class="inputs">
+					<input class="search" type="text" name="search" placeholder="Type here..." />
+					<i class="sprite-close"></i>
+				</div>
+			</div>
+			<!-- items -->
+			<div each="hybridplatforms" data-name="{name}" class="tutorial-item" on-click="hybridplatformselect">
+				<a data-href="url" class="logo-tutorial">
+					<div class="grafic">
+						<img data-src="image">
+					</div>
+					<div class="description">
+						<span data-text="title"></span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- Backend -->
+		<div class="row step select-platform-api" data-visible="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}">
+			<h2>Will you use an API Server with your {'spa' === apptype ? 'javascript' : 'mobile'} application?</h2>
+			<!-- Search & Skip -->
+			<div class="text-center">
+				<div class="inputs">
+					<input class="search andskip" type="text" name="search" placeholder="Type here..." />
+					<i class="sprite-close"></i>
+					<input on-click="showCode" type="button" class="skip" value="No, skip">
+				</div>
+			</div>
+			<!-- items -->
+			<h3>Backend Platform</h3>
+			<div class="clearfix">
+				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="thirdParty">
+					<a data-href="url" class="logo-tutorial">
+						<div class="grafic">
+							<img data-src="image">
+						</div>
+						<div class="description">
+							<span data-text="title"></span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<h3>3rd Party API</h3>
+			<div class="clearfix">
+				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="{!thirdParty}">
+					<a data-href="url" class="logo-tutorial">
+						<div class="grafic">
+							<img data-src="image">
+						</div>
+						<div class="description">
+							<span data-text="title"></span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Server -->
+		<div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}">
+			<h3>What technology are you using for your WebApp?</h3>
+			<div each="serverplatforms" data-name="{name}" class="tutorial-item" on-click="serverplatformselect">
+				<a data-href="url" class="logo-tutorial">
+					<div class="grafic">
+						<img data-src="image">
+					</div>
+					<div class="description">
+						<span data-text="title"></span>
+					</div>
+				</a>
+			</div>
+			<p>Are you using a FrontEnd technology like AngularJS? If so, check the <a on-click="apptypeselect" data-type="spa">Single Page App</a> tutorial.</p>
+		</div>
 
-    <div class="row step select-platform-client" disabled-if="{!!clientPlatform}" data-hidden="{apptype !== 'spa' || codevisible}">
-      <h3>What will you use in the FrontEnd?</h3>
-      <div each="clientplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="clientplatformselect">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="row step select-platform-hybrid" disabled-if="{!!hybridPlatform}" data-hidden="{apptype !== 'hybrid' || codevisible}">
-      <h3>Select your hybrid SDK</h3>
-      <div each="hybridplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="hybridplatformselect">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="row step select-platform-api" scroll-on="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}" disabled-if="{!(clientPlatform || nativePlatform || hybridPlatform)}" data-hidden="{!apptype || apptype === 'webapp' || codevisible}">
-      <h3>Will you use an API Server with your {'spa' === apptype ? 'javascript' : 'mobile'} application?<small>No, <a on-click="showCode">skip this</a></small></h3>
-      <h4>Backend Platform</h4>
-      <div each="serverapis" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverapiselect" data-hidden="thirdParty">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-      <h4>3rd Party API</h4>
-      <div each="serverapis" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverapiselect" data-hidden="{!thirdParty}">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}">
-      <h3>What technology are you using for your WebApp?</h3>
-      <div each="serverplatforms" data-name="{name}" class="col-xs-2 tutorial-item" on-click="serverplatformselect">
-        <a data-href="url" class="logo-tutorial">
-          <strong>
-            <img data-src="image">
-          </strong>
-          <span data-text="title"></span>
-        </a>
-      </div>
-      <p>Are you using a FrontEnd technology like AngularJS? If so, check the <a on-click="apptypeselect" data-type="spa">Single Page App</a> tutorial.</p>
-    </div>
-
-    <div class="row code-snippets" data-visible="codevisible">
-      <div class="snippet-tabs" data-hidden="{!serverApi}">
-        <div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}">
-          <a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
-        </div>
-        <div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}">
-          <a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
-        </div>
-        <div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}">
-          <a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
-        </div>
-        <div class="snippet-tab" on-click="showServerApi">
-          <a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
-        </div>
-      </div>
-      <div class="snippet" tutorial-fetch="{nativePlatform && codevisible ? nativePlatform : '' }" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
-      <div class="snippet" tutorial-fetch="{hybridPlatform && codevisible ? hybridPlatform : ''}" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
-      <div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
-      <div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
-      <div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
-    </div>
-  </div>
+		<!-- Snippets Documentation -->
+		<div class="row code-snippets" data-visible="codevisible">
+			<h2>Let's code! Enjoy :)</h2>
+			<div class="snippet-tabs" data-hidden="{!serverApi}">
+				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}">
+					<a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}">
+					<a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}">
+					<a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showServerApi">
+					<a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
+				</div>
+			</div>
+			<div class="snippet" tutorial-fetch="{nativePlatform && codevisible ? nativePlatform : '' }" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
+			<div class="snippet" tutorial-fetch="{hybridPlatform && codevisible ? hybridPlatform : ''}" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
+			<div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
+			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
+			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
+		</div>
+	</div>
 </div>

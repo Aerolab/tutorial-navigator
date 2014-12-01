@@ -18,52 +18,6 @@
     display: table;
     content: " ";
 
-  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small
-    font-weight: normal;
-    line-height: 1;
-    color: #999;
-
-  h1, .h1, h2, .h2, h3, .h3
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-  h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small
-    font-size: 65%;
-
-  h4, .h4, h5, .h5, h6, .h6
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-  h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small, h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small
-    font-size: 75%;
-
-  h1, .h1
-    font-size: 36px;
-
-  h2, .h2
-    font-size: 30px;
-
-  h3, .h3
-    font-size: 24px;
-
-  h4, .h4
-    font-size: 18px;
-
-  h5, .h5
-    font-size: 14px;
-
-  h6, .h6
-    font-size: 12px;
-
-  p
-    margin: 0 0 10px;
-
   .row:after
     clear: both;
 
@@ -146,7 +100,7 @@
 
 // Now begins tutorial navigator styles
 #tutorial-navigator
-  border 1px solid #ddd
+  // border 1px solid #ddd
   border-radius 3px
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -180,258 +134,541 @@
     &:hover
       text-decoration: none
       color: #44c7f4
-  h1,h2,h3
-    font-weight: 100;
-  h4,h5,h6
-    font-weight: bold
-
-  h1,h2,h3,h4,h5,h6
-    font-family: "proxima-nova", "Helvetica Neue", sans-serif;
-    color: black;
-    a
-      color: black;
-  .tutorial-header
-    border-bottom 1px solid #ddd
-    padding 40px 0 20px 0
-    display table
-    width 100%
-    .step-circle
-      text-align center
-      a
-        background #ddd
-        border 1px solid #ddd
-        border-radius 100%
-        padding 15px 0
-        text-align: center;
-        height 60px
-        width 60px
-        display inline-block
-        line-height 30px
-        color #fff
-        font-size 25px
-      span
-        &.step-label
-          display block
-          padding 15px 0px 0px 0px
-          font-size 20px
-          color #ddd
-          margin-bottom 5px
-      small
-        display block
-        line-height 12px
-        height 12px
-        font-size 12px
-      &.active
-        a
-          background white
-          color #4fcb1f
-          border-color #4fcb1f
-        span
-          &.step-label
-            color #000
-  .step
-    .app-type
-      cursor pointer
-      text-align: center;
-      .app-type-item
-        display block
-        border-radius 3px
-        small
-          color #7E7E80
-          font-weight bold
-        span
-          &.icon
-            font-size 2em
-            background-color: white
-            background-image: -webkit-linear-gradient(90deg, darken(#448cf4, 40%) 0%, #448cf4 100%);
-            background-image: -moz-linear-gradient(90deg, darken(#448cf4, 40%) 0%, #448cf4 100%);
-            background-image: -ms-linear-gradient(90deg, darken(#448cf4, 40%) 0%, #448cf4 100%);
-            background-image: linear-gradient(90deg, darken(#448cf4, 40%) 0%, #448cf4 100%);
-            background-position: initial;
-            border-radius 3px
-            width 70px
-            height 70px
-            color white
-            margin auto
-            line-height 80px
-            text-shadow: 0 1px 0 rgba(0,0,0,.2);
-
-        strong
-          &.label
-            text-transform capitalize
-            font-size 1.3em
-            margin 20px 0 10px 0
-            font-weight 300
-            color black
-            background none
-            padding: 0;
-
-      .btn-select.btn-xs
-        font-size: 11px;
-        padding-left: 15px;
-        padding-right: 15px;
-        color: #333;
-        margin-top: 20px;
-        background: white;
-
-      &:hover
-        .app-type-item
-          background #fff
 
 
-    .app-type:nth-child(2n)
-      .app-type-item
-        span.icon
-          background-image: -webkit-linear-gradient(90deg, darken(#ffdb47, 40%) 0%, #ffdb47 100%);
-          background-image: -moz-linear-gradient(90deg, darken(#ffdb47, 40%) 0%, #ffdb47 100%);
-          background-image: -ms-linear-gradient(90deg, darken(#ffdb47, 40%) 0%, #ffdb47 100%);
-          background-image: linear-gradient(90deg, darken(#ffdb47, 40%) 0%, #ffdb47 100%);
-
-
-    .app-type:nth-child(3n)
-      .app-type-item
-        span.icon
-          background-image: -webkit-linear-gradient(90deg, darken(#a83dda, 40%) 0%, #a83dda 100%);
-          background-image: -moz-linear-gradient(90deg, darken(#a83dda, 40%) 0%, #a83dda 100%);
-          background-image: -ms-linear-gradient(90deg, darken(#a83dda, 40%) 0%, #a83dda 100%);
-          background-image: linear-gradient(90deg, darken(#a83dda, 40%) 0%, #a83dda 100%);
-
-    .app-type:nth-child(4n)
-      .app-type-item
-        span.icon
-          background-image: -webkit-linear-gradient(90deg, darken(#ff4847, 40%) 0%, #ff4847 100%);
-          background-image: -moz-linear-gradient(90deg, darken(#ff4847, 40%) 0%, #ff4847 100%);
-          background-image: -ms-linear-gradient(90deg, darken(#ff4847, 40%) 0%, #ff4847 100%);
-          background-image: linear-gradient(90deg, darken(#ff4847, 40%) 0%, #ff4847 100%);
-
-
-    .tutorial-item
-      display inline-block
-      float none
-      margin-bottom 20px
-      vertical-align top
-      padding 0px 5px
-      a
-        &.logo-tutorial
-          border 1px solid #f1f1f1
-          padding 10px
-          text-align center
-          border-radius 4px
-          display block
-          padding 10px
-          span
-            text-transform: uppercase;
-            font-weight: bold;
-            display: block;
-            margin-top: 6px;
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #333;
-          strong
-            background-color #fff
-            display block
-            padding 10px 0
-            border-radius 3px
-            img
-              height 45px
-              max-width 100%
-      &:hover
-        a
-          &.logo-tutorial
-            border-color #44C7F4
-            background-color none
-            color darken(#44C7F4, 40%)
-
-      span
-        min-height 30px
-        margin-top 10px
-    &.disabled
-      position relative
-      opacity .15
-      .disabled-cover
-        position absolute
-        background none
-        top 0
-        right 0
-        bottom 0
-        left 0
   .code-snippets
     min-height 400px
     padding-left 60px
     padding-right 60px
-    .snippet-tabs
-      width 100%
-      display table
-      border-bottom 1px solid #16214d
-      margin-bottom 30px
-      .snippet-tab
-        display inline-block
-        a
-          display inline-block
-          background #f1f1f1
-          padding 10px
-          height auto
-          min-width 110px
-          text-align center
-          color #aaa
-          &.active
-            background #16214d
-            color #fff
 
-#tutorial-navigator *,
-#tutorial-navigator :before,
-#tutorial-navigator :after
-  -webkit-box-sizing border-box
-  -moz-box-sizing border-box
-  box-sizing border-box
+  *,
+  :before,
+  :after
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    box-sizing border-box
 
-#tutorial-navigator .step,
-#tutorial-navigator .code-snippets
-  padding 15px
-  border-radius 3px
 
-#tutorial-navigator .step > h3,
-#tutorial-navigator .code-snippets > h3
-  margin-top 0px
 
-#tutorial-navigator .step > h3,
-#tutorial-navigator .step > h4,
-#tutorial-navigator .step > p
-  padding-left 5px
 
-#tutorial-navigator .step .app-type .app-type-item span,
-#tutorial-navigator .step .app-type .app-type-item small,
-#tutorial-navigator .step .app-type .app-type-item strong
-  display block
-  width 100%
+// New Style ui documentation
+// Normalizer
+@import 'normalize'
+// Mixind
+size( values... )
+  if length( values ) == 1
+    width values[ 0 ] || auto
+    height values[ 0 ] || auto
+  else
+    width values[ 0 ] if values[ 0 ] != false
+    height values[ 1 ] if values[ 1 ] != false
+// Colors Auth0
+grayBorder = #d5d5d5
+grayFont = #666f78
+grayLightFont = #5b646d
+blueFont = #394856
+grayBackground = #e2e2e2
+link = #44c6f4
+cyan = #44c6f4
+yellow = #eac92c
+green = #00b47c
+red = #eb5323
+
+// Helppers
+.center-vertical
+  display -webkit-box
+  display -moz-box
+  display -ms-flexbox
+  display -webkit-flex
+  display flex
+  align-items center
+  justify-content center
+.clearfix
+  display inline-table
+  &:after
+    visibility hidden
+    display block
+    font-size 0
+    content " "
+    clear both
+    height 0
+* html .clearfix
+  height: 1%
+.text-center
   text-align center
 
-#tutorial-navigator .step .app-type .app-type-item span,
-#tutorial-navigator .step .app-type .app-type-item strong
-  color #666
+// sprite 
+.sprite
+  background-image url(images/sprite.png)
+  &-hybrid
+    background-position 0px 0px
+    width 60px
+    height 110px
+    &-mask
+      background-position 0px -110px
+      width 58px
+      height 78px
+  &-native-mobile
+    background-position -60px 0px
+    width 60px
+    height 110px
+    &-mask
+      background-position -58px -110px
+      width 58px
+      height 78px
+  &-webapp
+    background-position -120px 0px
+    width 70px
+    height 110px
+    &-mask
+      background-position -116px -110px
+      width 58px
+      height 78px
+  &-spa
+    background-position -190px 0px
+    width 60px
+    height 110px
+    &-mask
+      background-position -174px -110px
+      width 58px
+      height 77px
 
-#tutorial-navigator .step .app-type:hover
+// styles
+#tutorial-navigator
+  max-width 845px
+  margin 0 auto
+  .tutorial-body
+    text-align center
+  h2
+    text-align center
+    font-weight 400
+    
   .app-type-item
-    span.icon
-      color: white
+    width 150px 
+    display inline-block 
+    vertical-align top
+    margin 0 10px
+    cursor pointer
+    .label
+      color grayFont
+      text-align center
+      font-weight 300 
+      &::first-word
+        font-weight 600
+    .description
+      transition all .3s ease
+      opacity 0
+      transform translate(0,-5px)
+      span
+        font-size 12px
+        color grayFont !important
+        margin 10px 0
+    &:hover
+      .description
+        opacity 1
+        transform translate(0,0)
+      .grafic
+        transition all .3s ease
+        i
+          filter drop-shadow( 5px 5px 4px rgba(black,.2))
+          -webkit-filter drop-shadow( 5px 5px 4px rgba(black,.2))
+  .grafic 
+    width 100%
+    height 170px
+    border solid 1px grayBorder
+    border-radius 3px
+    @extend .center-vertical  
+  .step
+    h2,
+    h3
+      text-align center
+      margin 40px auto 30px
+  .complete 
+    text-align center
+    
+  .tutorial-header
+    text-align center
+  .step-circle
+    display inline-block 
+    vertical-align top
+    margin 0 15px
+    size(80px,80px)
+    background grayBackground
+    border-radius 50%
+    a
+      .mask
+        @extend .center-vertical
+        position relative 
+        top 3px
+        height 80px
+        img
+          max-height 70%
+          max-width 100%
+          margin 0 auto
+          position relative
+          top -3px
+  .inputs
+    display block
+    text-align center
+    position relative
+    width 640px 
+    margin 0 auto 40px
+    @extend .clearfix
+    .search
+      size(100%, 60px)
+      border-radius 3px
+      border solid 1px grayBorder
+      font-size 25px
+      line-height 25px
+      padding (35/2)px
+      padding 0 15px
+      outline none
+      &::-webkit-input-placeholder
+        vertical-align bottom
+        line-height 25px
+      &::-moz-placeholder
+        vertical-align bottom
+        line-height 25px
+      &:-ms-input-placeholder
+        vertical-align bottom
+        line-height 25px
+      &:-moz-placeholder
+        vertical-align bottom
+        line-height 25px
+      &.andskip
+        width 80%
+        border-radius 3px 0 0 3px
+    .sprite-close
+      opacity 0 
+      transform translate(0,5px)
+      transition all .3s ease
+      absolute top 20px right 15px 
+      cursor pointer
+      &.show
+        opacity 1
+        transform translate(0,0)
+    .skip
+    .radio
+      size(20%,60px)
+      float right
+      background grayBorder
+      border solid 1px grayBorder
+      border none
+      border-radius 0 3px 3px 0
+      font-size 25px 
+      color white
+      outline none
+    .radio
+      width 50%
+      background white
+      border solid 1px grayBorder
+      color grayFont
+      &:first-child
+        float left
+        border-radius 3px 0 0 3px
+  .step
+    @extend .clearfix
+    width 650px
+    margin 0 auto
+    .tutorial-item
+      float left
+      width 120px
+      margin-bottom 10px
+      margin-right 10px 
+      &.visible
+        &:nth-child(5n+5)
+          margin-right 0
+      a
+        img
+          max-height 70%
+          max-width 70%
+          filter grayscale(1)
+          -webkit-filter grayscale(1)
+        .grafic
+          height 120px 
+          width 120px
+          border-radius 3px 3px 0 0
+        .description
+          @extend .center-vertical
+          border-radius 0 0 3px 3px
+          height 60px
+          background grayBorder
+          color white 
+    h3 
+      font-size 22px
+      color blueFont
+      font-weight 400
+    .sprite-close
+      right calc(20% + 15px) 
+  // Snippet
+  .snippet
+    text-align left 
+    color grayLightFont
+    width 640px
+    margin 0 auto
+    h1
+    h2
+    h3
+    h4
+      text-align left
+      font-weight 300
+      font-size 22px
+      margin-bottom 10px
+    p 
+      font-size 15px
+      line-height 20px
+      margin-top 0
+    a 
+      text-decoration none
+      color link 
+    pre
+      width 700px
+      margin-left -50px
+    blockquote
+      margin 0
+      padding 1em 
+    img
+      max-width 100%
+  .code-snippets
+    h2
+      margin 40px auto 30px
+  .snippet-tabs
+    border-bottom none
+    .snippet-tab
+      background white
+      border solid 1px grayBorder
+      border none
+      border-radius 0 3px 3px 0
+      font-size 25px 
+      color white
+      width 50%
+      a 
+        background none
+        color grayFont
+      &:first-child
+        border-radius 3px 0 0 3px
+      
+// Colors - step-1
+ui-step-1(color)
+  &:hover
+    .grafic
+      background color
 
-    strong, span
-      color black
+.app-type-item
+  &.native-mobile
+    ui-step-1(yellow)
+  &.hybrid
+    ui-step-1(green)
+  &.spa
+    ui-step-1(cyan)
+  &.webapp
+    ui-step-1(red)
 
-    .btn
-      background: #D0D2D3;
-      border-color #D0D2D3;
+// Colors - step-2
+ui-step(color)
+  .step-circle.active
+    background color
+  .skip
+    &:hover 
+    &:focus
+      background color
+  .snippet-tab
+    border solid 1px color
+    &.visible
+    &:hover
+    &:focus
+      background color
+      color white
+      a 
+        color white 
+  input
+    &:hover 
+    &:focus
+    &.active
+      border-color color 
+  .tutorial-item
+    // &.active
+    &:hover
+      *
+        transition all .3s ease
+      .grafic
+        border-color color
+        img 
+          filter grayscale(0)
+          -webkit-filter grayscale(0)
+      .description
+        background color 
+  .snippet
+    blockquote
+      background color
+      margin-bottom 1em
+#tutorial-navigator
+  &[data-ui="native-mobile"]
+    ui-step(yellow)
+  &[data-ui="hybrid"]
+    ui-step(green)
+  &[data-ui="spa"]
+    ui-step(cyan)
+  &[data-ui="webapp"]
+    ui-step(red)
+// Code 
+code 
+  font-size 13px
+  padding 2px 4px
+  color #c7254e
+  background-color #f9f2f4
+  border-radius 4px
+pre
+  overflow auto
+  display block
+  font-size 13px
+  line-height 1.42857143
+  color #333
+  word-break break-all
+  word-wrap break-word
+  background-color #f5f5f5
+  border 1px solid #ccc
+  border-radius 4px
+  margin 0 0 10px
+  padding 9.5px
+  font-size 13px
+  font-weight 300
+  font-family Menlo,Monaco,Consolas,"Courier New",monospace
+  &.code-snippet
+    &.prettyprint
+      background rgba(255,255,255,0.96)
+      border 0
+      border-left 30px solid #f1f1f1
+      color #333
+      font-size 10px
+      font-family monospace
+      line-height 20px
+      margin-bottom 0
+      padding 10px 10px 10px 2px
+      border-radius 3px
+      box-shadow 0 1px 6px rgba(0,0,0,0.4)
+      list-style dotted
+      ol
+        margin 0
+        padding 0
+        color #999
+        width 600px
+      li
+        padding-left 10px
+        margin 0
+        &.L1,
+        &.L3,
+        &.L5,
+        &.L7,
+        &.L9
+          background none
+        &.L0,
+        &.L1,
+        &.L2,
+        &.L3,
+        &.L5,
+        &.L6,
+        &.L7,
+        &.L8
+          list-style inherit
+  &.prettyprint
+    &.prettyprinted
+      border 0 !important
+      padding 20px !important
 
+pre
+  font-family Menlo,Monaco,Consolas,"Courier New",monospace
+.pln
+  color #000
+  
+.code-snippets
+  min-height 400px
+  .snippet-tabs
+    width 100%
+    display table
+    border-bottom 1px solid #16214d
+    margin-bottom 30px
+    .snippet-tab
+      display inline-block
+      a
+        display inline-block
+        background #f1f1f1
+        padding 10px
+        height auto
+        min-width 110px
+        text-align center
+        color #aaa
+        &.active
+          background #16214d
+          color #fff
+          
+@media screen
+  .str 
+    color #0a0
+  .kwd
+    color #00b
+    font-weight bold
 
-#tutorial-navigator .step .tutorial-item,
-#tutorial-navigator .step .tutorial-item a.logo-tutorial,
-#tutorial-navigator .step .tutorial-item a.logo-tutorial strong
-  background none
-  border-radius 3px
+  .com
+    color #b00
+    // font-style italic
 
-#tutorial-navigator .step .tutorial-item:hover,
-#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial,
-#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial strong,
-#tutorial-navigator .step .tutorial-item:hover a.logo-tutorial span
-  background #fff
-  color darken(#44C7F4, 40%)
+  .typ
+    color #b0b
+    font-weight bold
+
+  .lit
+    color #0bb
+
+  .pun,
+    .opn,
+    .clo
+    color #bb0
+
+  .tag
+    color #00b
+    font-weight bold
+
+  .atn
+    color #b0b
+
+  .atv
+    color #0b0
+
+  .dec,
+    .var
+    color #b0b
+
+  .fun
+    color #f00
+
+@media print, projection
+  .str 
+    color #0b0
+  pre
+    &.prettyprint
+      padding 20px
+      border 0
+
+  ol
+    &.linenums
+      margin-top 0
+      margin-bottom 0
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8
+    list-style-type none
+  li.L1,
+  li.L3,
+  li.L5,
+  li.L7,
+  li.L9
+    background #eee
+
+      

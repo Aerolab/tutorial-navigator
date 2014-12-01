@@ -203,10 +203,25 @@ TutorialView.prototype.platformTitle = function() {
   return platform ? platform.title : '';
 };
 
+TutorialView.prototype.platformIcon = function() {
+  var model = this.model;
+  var name = model.get('nativePlatform')
+    || model.get('hybridPlatform')
+    || model.get('clientPlatform')
+    || model.get('serverPlatform');
+  var platform = this.findPlatform(name);
+  return platform ? platform.image : '';
+};
+
 TutorialView.prototype.apiTitle = function() {
   var name = this.model.get('serverApi');
   var api = this.findApi(name);
   return api ? api.title : '';
+};
+TutorialView.prototype.apiIcon = function() {
+  var name = this.model.get('serverApi');
+  var api = this.findApi(name);
+  return api ? api.image : '';
 };
 
 TutorialView.prototype.apptypeTitle = function() {
@@ -214,6 +229,13 @@ TutorialView.prototype.apptypeTitle = function() {
   var apptypeFilter = _(apptypeQuery);
   var apptype = this.model.get('apptypes').filter(apptypeFilter);
   return apptype.length ? apptype[0].title : '';
+};
+
+TutorialView.prototype.apptypeName = function() {
+  var apptypeQuery = 'name === "%"'.replace('%', this.get('apptype'));
+  var apptypeFilter = _(apptypeQuery);
+  var apptype = this.model.get('apptypes').filter(apptypeFilter);
+  return apptype.length ? apptype[0].name : '';
 };
 
 TutorialView.prototype.render = function(el) {
