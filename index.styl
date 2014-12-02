@@ -7,6 +7,9 @@
 // Normalizer
 @import 'stylus/normalize'
 
+// Compense Style docs.css
+@import 'stylus/compens'
+
 #tutorial-navigator
   // Add some bootstrap.min.css@3.1.1
   @import 'stylus/bootstrap'
@@ -22,6 +25,7 @@
 // styles
 #tutorial-navigator
   max-width 845px
+  width 100%
   margin 0 auto
   -webkit-font-smoothing: antialiased
   -moz-font-smoothing: antialiased
@@ -237,3 +241,5 @@
     ui-step(cyan)
   &[data-ui="webapp"]
     ui-step(red)
+    
+@import 'stylus/responsive'
