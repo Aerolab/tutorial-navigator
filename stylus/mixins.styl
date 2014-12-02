@@ -1,0 +1,48 @@
+size( values... )
+  if length( values ) == 1
+    width values[ 0 ] || auto
+    height values[ 0 ] || auto
+  else
+    width values[ 0 ] if values[ 0 ] != false
+    height values[ 1 ] if values[ 1 ] != false
+
+// Ui Color
+ui-step-1(color)
+  .grafic
+    background color
+ui-step(color)
+  .step-circle.active
+    background color
+  .skip
+    &:hover
+    &:focus
+      background color
+  .snippet-tab 
+    a
+      border solid 1px color
+      &.active
+      &:hover
+      &:focus
+        background color !important
+        color white
+  input
+    &:hover 
+    &:focus
+    &.selected
+      border-color color 
+  .tutorial-item
+    &.selected
+    &:hover
+      *
+        transition all .3s ease
+      .grafic
+        border-color color
+        img 
+          filter grayscale(0)
+          -webkit-filter grayscale(0)
+      .description
+        background color 
+  .snippet
+    blockquote
+      background color
+      margin-bottom 1em

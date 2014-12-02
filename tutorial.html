@@ -12,7 +12,7 @@
 		</div>
 		<!-- Step 2 -->
 		<div class="step-circle {nativePlatform || hybridPlatform || clientPlatform ? 'active' : ''}">
-			<a href="#" on-click="clearTwo">
+			<a href="#" on-click="clearTwo" >
 				<div class="mask">
 					<!-- icon -->
 					<img src="{nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''}" />
@@ -21,7 +21,7 @@
 		</div>
 		<!-- Step 3 -->
 		<div class="step-circle {serverApi ? 'active' : ''}">
-			<a href="#" on-click="noop">
+			<a href="#" on-click="noop"  >
 				<div class="mask">
 					<!-- icon -->
 					<img src="{serverApi ? apiIcon : ''} " />
@@ -33,9 +33,9 @@
 	<!-- Body -->
 	<div class="tutorial-body">
 		<!-- Aplication Type -->
-		<div class="row step select-app-type" data-hidden="apptype"> 
+		<div class="row step select-app-type" data-hidden="apptype" keyboard-navigate="{!apptype}"> 
 			<h2>Select an application type</h2>
-			<div each="apptypes" class="app-type col-xs-3" data-type="{name}" on-click="apptypeselect">
+			<div each="apptypes" class="app-type  col-xs-3" data-type="{name}" on-click="apptypeselect" keynav-item>
 				<a href="#" class="app-type-item {name}">
 					<div class="grafic">
 						<i class="sprite sprite-{name}"></i>
@@ -50,17 +50,11 @@
 			</div>
 		</div>
 		<!-- Cliente -->
-		<div class="row step select-platform-native-mobile"  data-hidden="{apptype !== 'native-mobile' || nativePlatform}">
+		<div class="row step select-platform-native-mobile"  data-hidden="{apptype !== 'native-mobile' || nativePlatform}" keyboard-navigate="{!(apptype !== 'native-mobile' || nativePlatform)}" >
 			<h2>Select your native SDK</h2>
-			<!-- Search -->
-			<div class="text-center">
-				<div class="inputs">
-					<input class="search" type="text" name="search" placeholder="Type here..." />
-					<i class="sprite-close"></i>
-				</div>
-			</div>
+			
 			<!-- items -->
-			<div each="nativeplatforms" data-name="{name}" class="tutorial-item" on-click="nativeplatformselect">
+			<div each="nativeplatforms" data-name="{name}" class="tutorial-item" on-click="nativeplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
 						<img data-src="image">
@@ -74,15 +68,9 @@
 
 		<div class="row step select-platform-client" data-hidden="{apptype !== 'spa' || clientPlatform}">
 			<h2>What will you use in the FrontEnd?</h2>
-			<!-- Search -->
-			<div class="text-center">
-				<div class="inputs">
-					<input class="search" type="text" name="search" placeholder="Type here..." />
-					<i class="sprite-close"></i>
-				</div>
-			</div>
+			
 			<!-- items -->
-			<div each="clientplatforms" data-name="{name}" class="tutorial-item" on-click="clientplatformselect">
+			<div each="clientplatforms" data-name="{name}" class="tutorial-item" on-click="clientplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
 						<img data-src="image">
@@ -96,15 +84,9 @@
 
 		<div class="row step select-platform-hybrid"  data-hidden="{apptype !== 'hybrid' || hybridPlatform}">
 			<h2>Select your hybrid SDK</h2>
-			<!-- Search -->
-			<div class="text-center">
-				<div class="inputs">
-					<input class="search" type="text" name="search" placeholder="Type here..." />
-					<i class="sprite-close"></i>
-				</div>
-			</div>
+			
 			<!-- items -->
-			<div each="hybridplatforms" data-name="{name}" class="tutorial-item" on-click="hybridplatformselect">
+			<div each="hybridplatforms" data-name="{name}" class="tutorial-item" on-click="hybridplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
 						<img data-src="image">
@@ -121,15 +103,13 @@
 			<!-- Search & Skip -->
 			<div class="text-center">
 				<div class="inputs">
-					<input class="search andskip" type="text" name="search" placeholder="Type here..." />
-					<i class="sprite-close"></i>
-					<input on-click="showCode" type="button" class="skip" value="No, skip">
+					<input on-click="showCode" type="button" class="skip" value="No, skip" keynav-item>
 				</div>
 			</div>
 			<!-- items -->
 			<h3>Backend Platform</h3>
 			<div class="clearfix">
-				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="thirdParty">
+				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="thirdParty" keynav-item >
 					<a data-href="url" class="logo-tutorial">
 						<div class="grafic">
 							<img data-src="image">
@@ -142,7 +122,7 @@
 			</div>
 			<h3>3rd Party API</h3>
 			<div class="clearfix">
-				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="{!thirdParty}">
+				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="{!thirdParty}" keynav-item >
 					<a data-href="url" class="logo-tutorial">
 						<div class="grafic">
 							<img data-src="image">
@@ -157,7 +137,7 @@
 		<!-- Server -->
 		<div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}">
 			<h3>What technology are you using for your WebApp?</h3>
-			<div each="serverplatforms" data-name="{name}" class="tutorial-item" on-click="serverplatformselect">
+			<div each="serverplatforms" data-name="{name}" class="tutorial-item" on-click="serverplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
 						<img data-src="image">
@@ -174,16 +154,16 @@
 		<div class="row code-snippets" data-visible="codevisible">
 			<h2>Let's code! Enjoy :)</h2>
 			<div class="snippet-tabs" data-hidden="{!serverApi}">
-				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}">
+				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" keynav-item >
 					<a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}">
+				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}" keynav-item >
 					<a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}">
+				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}" keynav-item >
 					<a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showServerApi">
+				<div class="snippet-tab" on-click="showServerApi" keynav-item >
 					<a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
 				</div>
 			</div>
@@ -192,6 +172,20 @@
 			<div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
+			<div class="snippet-tabs" data-hidden="{!serverApi}">
+				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" keynav-item >
+					<a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}" keynav-item >
+					<a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}" keynav-item >
+					<a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
+				</div>
+				<div class="snippet-tab" on-click="showServerApi" keynav-item >
+					<a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

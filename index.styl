@@ -1,248 +1,38 @@
+// New styles
 
-// Add some bootstrap.min.css@3.1.1
-// styles from migration to standalone version
-#tutorial-navigator
-  *
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-  *:before,
-  *:after
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-  .row:before,
-  .row:after
-    display: table;
-    content: " ";
-
-  .row:after
-    clear: both;
-
-  .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-
-  .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12
-    float: left;
-
-  .col-xs-12
-    width: 100%;
-
-  .col-xs-11
-    width: 91.66666667%;
-
-  .col-xs-10
-    width: 83.33333333%;
-
-  .col-xs-9
-    width: 75%;
-
-  .col-xs-8
-    width: 66.66666667%;
-
-  .col-xs-7
-    width: 58.33333333%;
-
-  .col-xs-6
-    width: 50%;
-
-  .col-xs-5
-    width: 41.66666667%;
-
-  .col-xs-4
-    width: 33.33333333%;
-
-  .col-xs-3
-    width: 25%;
-
-  .col-xs-2
-    width: 16.66666667%;
-
-  .col-xs-1
-    width: 8.33333333%;
-
-  .btn
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-
-  .btn:hover,
-  .btn:focus
-    color: #333;
-    text-decoration: none;
-
-  .btn-xs,
-  .btn-group-xs > .btn
-    padding: 1px 5px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-
-
-// Now begins tutorial navigator styles
-#tutorial-navigator
-  // border 1px solid #ddd
-  border-radius 3px
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-family: "proxima-nova", "Helvetica Neue", sans-serif;
-  color: #4d4d4d;
-  .hidden
-    display none!important
-    visibility hidden!important
-  .visible
-    visibility visible!important
-  .row
-    margin 0
-  .btn, a.btn
-    -webkit-transition: background-color 0.2s ease;
-    -moz-transition: background-color 0.2s ease;
-    -ms-transition: background-color 0.2s ease;
-    -o-transition: background-color 0.2s ease;
-    transition: background-color 0.2s ease;
-    text-transform: uppercase
-    font-size: 16px;
-    letter-spacing: 2px;
-    border: 0;
-    font-weight: bold
-    border: 1px solid #d0d2d3;
-  a
-    cursor pointer
-    text-decoration none
-    color: darken(#44c7f4, 40%);
-    &:focus
-      outline: 0;
-    &:hover
-      text-decoration: none
-      color: #44c7f4
-
-
-  .code-snippets
-    min-height 400px
-    padding-left 60px
-    padding-right 60px
-
-  *,
-  :before,
-  :after
-    -webkit-box-sizing border-box
-    -moz-box-sizing border-box
-    box-sizing border-box
-
-
-
-
-// New Style ui documentation
-// Normalizer
-@import 'normalize'
-// Mixind
-size( values... )
-  if length( values ) == 1
-    width values[ 0 ] || auto
-    height values[ 0 ] || auto
-  else
-    width values[ 0 ] if values[ 0 ] != false
-    height values[ 1 ] if values[ 1 ] != false
 // Colors Auth0
-grayBorder = #d5d5d5
-grayFont = #666f78
-grayLightFont = #5b646d
-blueFont = #394856
-grayBackground = #e2e2e2
-link = #44c6f4
-cyan = #44c6f4
-yellow = #eac92c
-green = #00b47c
-red = #eb5323
+@import 'stylus/variable'
+// Mixind
+@import 'stylus/mixins'
+// Normalizer
+@import 'stylus/normalize'
 
-// Helppers
-.center-vertical
-  display -webkit-box
-  display -moz-box
-  display -ms-flexbox
-  display -webkit-flex
-  display flex
-  align-items center
-  justify-content center
-.clearfix
-  display inline-table
-  &:after
-    visibility hidden
-    display block
-    font-size 0
-    content " "
-    clear both
-    height 0
-* html .clearfix
-  height: 1%
-.text-center
-  text-align center
-
-// sprite 
-.sprite
-  background-image url(images/sprite.png)
-  &-hybrid
-    background-position 0px 0px
-    width 60px
-    height 110px
-    &-mask
-      background-position 0px -110px
-      width 58px
-      height 78px
-  &-native-mobile
-    background-position -60px 0px
-    width 60px
-    height 110px
-    &-mask
-      background-position -58px -110px
-      width 58px
-      height 78px
-  &-webapp
-    background-position -120px 0px
-    width 70px
-    height 110px
-    &-mask
-      background-position -116px -110px
-      width 58px
-      height 78px
-  &-spa
-    background-position -190px 0px
-    width 60px
-    height 110px
-    &-mask
-      background-position -174px -110px
-      width 58px
-      height 77px
+#tutorial-navigator
+  // Add some bootstrap.min.css@3.1.1
+  @import 'stylus/bootstrap'
+  // Base
+  @import 'stylus/base'
+  // Code
+  @import 'stylus/code'
+  // Helppers
+  @import 'stylus/helppers'
+  // sprite 
+  @import 'stylus/sprite'
 
 // styles
 #tutorial-navigator
   max-width 845px
   margin 0 auto
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif
+  color grayFont
   .tutorial-body
     text-align center
   h2
     text-align center
     font-weight 400
-    
+
   .app-type-item
     width 150px 
     display inline-block 
@@ -277,7 +67,7 @@ red = #eb5323
     height 170px
     border solid 1px grayBorder
     border-radius 3px
-    @extend .center-vertical  
+    @extend #tutorial-navigator .center-vertical  
   .step
     h2,
     h3
@@ -285,7 +75,7 @@ red = #eb5323
       margin 40px auto 30px
   .complete 
     text-align center
-    
+  // Tutorial Header
   .tutorial-header
     text-align center
   .step-circle
@@ -297,7 +87,7 @@ red = #eb5323
     border-radius 50%
     a
       .mask
-        @extend .center-vertical
+        @extend #tutorial-navigator .center-vertical
         position relative 
         top 3px
         height 80px
@@ -307,46 +97,15 @@ red = #eb5323
           margin 0 auto
           position relative
           top -3px
+  // Search
   .inputs
     display block
     text-align center
     position relative
     width 640px 
     margin 0 auto 40px
-    @extend .clearfix
-    .search
-      size(100%, 60px)
-      border-radius 3px
-      border solid 1px grayBorder
-      font-size 25px
-      line-height 25px
-      padding (35/2)px
-      padding 0 15px
-      outline none
-      &::-webkit-input-placeholder
-        vertical-align bottom
-        line-height 25px
-      &::-moz-placeholder
-        vertical-align bottom
-        line-height 25px
-      &:-ms-input-placeholder
-        vertical-align bottom
-        line-height 25px
-      &:-moz-placeholder
-        vertical-align bottom
-        line-height 25px
-      &.andskip
-        width 80%
-        border-radius 3px 0 0 3px
-    .sprite-close
-      opacity 0 
-      transform translate(0,5px)
-      transition all .3s ease
-      absolute top 20px right 15px 
-      cursor pointer
-      &.show
-        opacity 1
-        transform translate(0,0)
+    @extend #tutorial-navigator .clearfix
+    // Skyp
     .skip
     .radio
       size(20%,60px)
@@ -366,8 +125,12 @@ red = #eb5323
       &:first-child
         float left
         border-radius 3px 0 0 3px
+    .skip
+      float none 
+      border-radius 3px 
+  // Steps
   .step
-    @extend .clearfix
+    @extend #tutorial-navigator .clearfix
     width 650px
     margin 0 auto
     .tutorial-item
@@ -389,7 +152,7 @@ red = #eb5323
           width 120px
           border-radius 3px 3px 0 0
         .description
-          @extend .center-vertical
+          @extend #tutorial-navigator .center-vertical
           border-radius 0 0 3px 3px
           height 60px
           background grayBorder
@@ -405,7 +168,7 @@ red = #eb5323
     text-align left 
     color grayLightFont
     width 640px
-    margin 0 auto
+    margin 0 auto 30px
     h1
     h2
     h3
@@ -432,76 +195,52 @@ red = #eb5323
   .code-snippets
     h2
       margin 40px auto 30px
+  // Snippet Tabs
   .snippet-tabs
+    width 100%
+    display table
     border-bottom none
-    .snippet-tab
-      background white
-      border solid 1px grayBorder
-      border none
-      border-radius 0 3px 3px 0
-      font-size 25px 
-      color white
+    margin-bottom 30px
+    .snippet-tab 
       width 50%
-      a 
-        background none
+      display inline-block  
+      a
+        background white
+        border none
+        border solid 1px grayBorder
+        border-radius 0 3px 3px 0
         color grayFont
-      &:first-child
-        border-radius 3px 0 0 3px
-      
+        display inline-block
+        font-size 25px 
+        height auto
+        padding 10px
+        text-align center
+        width 100%
+        &.active
+          color #fff
+      &.visible
+        a
+          border-radius 3px 0 0 3px
+  // selected
+  .app-type.selected 
+    @extend #tutorial-navigator .app-type-item:hover
+// Colors UI
+
 // Colors - step-1
-ui-step-1(color)
-  &:hover
-    .grafic
-      background color
+#tutorial-navigator
+  .app-type.selected .app-type-item,
+  .app-type-item:hover
+    &.native-mobile
+      ui-step-1(yellow)
+    &.hybrid
+      ui-step-1(green)
+    &.spa
+      ui-step-1(cyan)
+    &.webapp
+      ui-step-1(red)
+  
 
-.app-type-item
-  &.native-mobile
-    ui-step-1(yellow)
-  &.hybrid
-    ui-step-1(green)
-  &.spa
-    ui-step-1(cyan)
-  &.webapp
-    ui-step-1(red)
-
-// Colors - step-2
-ui-step(color)
-  .step-circle.active
-    background color
-  .skip
-    &:hover 
-    &:focus
-      background color
-  .snippet-tab
-    border solid 1px color
-    &.visible
-    &:hover
-    &:focus
-      background color
-      color white
-      a 
-        color white 
-  input
-    &:hover 
-    &:focus
-    &.active
-      border-color color 
-  .tutorial-item
-    // &.active
-    &:hover
-      *
-        transition all .3s ease
-      .grafic
-        border-color color
-        img 
-          filter grayscale(0)
-          -webkit-filter grayscale(0)
-      .description
-        background color 
-  .snippet
-    blockquote
-      background color
-      margin-bottom 1em
+// Colors - step-2-3
 #tutorial-navigator
   &[data-ui="native-mobile"]
     ui-step(yellow)
@@ -511,164 +250,3 @@ ui-step(color)
     ui-step(cyan)
   &[data-ui="webapp"]
     ui-step(red)
-// Code 
-code 
-  font-size 13px
-  padding 2px 4px
-  color #c7254e
-  background-color #f9f2f4
-  border-radius 4px
-pre
-  overflow auto
-  display block
-  font-size 13px
-  line-height 1.42857143
-  color #333
-  word-break break-all
-  word-wrap break-word
-  background-color #f5f5f5
-  border 1px solid #ccc
-  border-radius 4px
-  margin 0 0 10px
-  padding 9.5px
-  font-size 13px
-  font-weight 300
-  font-family Menlo,Monaco,Consolas,"Courier New",monospace
-  &.code-snippet
-    &.prettyprint
-      background rgba(255,255,255,0.96)
-      border 0
-      border-left 30px solid #f1f1f1
-      color #333
-      font-size 10px
-      font-family monospace
-      line-height 20px
-      margin-bottom 0
-      padding 10px 10px 10px 2px
-      border-radius 3px
-      box-shadow 0 1px 6px rgba(0,0,0,0.4)
-      list-style dotted
-      ol
-        margin 0
-        padding 0
-        color #999
-        width 600px
-      li
-        padding-left 10px
-        margin 0
-        &.L1,
-        &.L3,
-        &.L5,
-        &.L7,
-        &.L9
-          background none
-        &.L0,
-        &.L1,
-        &.L2,
-        &.L3,
-        &.L5,
-        &.L6,
-        &.L7,
-        &.L8
-          list-style inherit
-  &.prettyprint
-    &.prettyprinted
-      border 0 !important
-      padding 20px !important
-
-pre
-  font-family Menlo,Monaco,Consolas,"Courier New",monospace
-.pln
-  color #000
-  
-.code-snippets
-  min-height 400px
-  .snippet-tabs
-    width 100%
-    display table
-    border-bottom 1px solid #16214d
-    margin-bottom 30px
-    .snippet-tab
-      display inline-block
-      a
-        display inline-block
-        background #f1f1f1
-        padding 10px
-        height auto
-        min-width 110px
-        text-align center
-        color #aaa
-        &.active
-          background #16214d
-          color #fff
-          
-@media screen
-  .str 
-    color #0a0
-  .kwd
-    color #00b
-    font-weight bold
-
-  .com
-    color #b00
-    // font-style italic
-
-  .typ
-    color #b0b
-    font-weight bold
-
-  .lit
-    color #0bb
-
-  .pun,
-    .opn,
-    .clo
-    color #bb0
-
-  .tag
-    color #00b
-    font-weight bold
-
-  .atn
-    color #b0b
-
-  .atv
-    color #0b0
-
-  .dec,
-    .var
-    color #b0b
-
-  .fun
-    color #f00
-
-@media print, projection
-  .str 
-    color #0b0
-  pre
-    &.prettyprint
-      padding 20px
-      border 0
-
-  ol
-    &.linenums
-      margin-top 0
-      margin-bottom 0
-
-  li.L0,
-  li.L1,
-  li.L2,
-  li.L3,
-  li.L5,
-  li.L6,
-  li.L7,
-  li.L8
-    list-style-type none
-  li.L1,
-  li.L3,
-  li.L5,
-  li.L7,
-  li.L9
-    background #eee
-
-      

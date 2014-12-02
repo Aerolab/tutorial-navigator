@@ -21,7 +21,15 @@
     "tutorial.html"
   ],
   "styles": [
-    "index.styl"
+    "index.styl",
+    "stylus/variable.styl",
+    "stylus/mixins.styl",
+    "stylus/normalize.styl",
+    "stylus/bootstrap.styl",
+    "stylus/base.styl",
+    "stylus/code.styl",
+    "stylus/helppers.styl",
+    "stylus/sprite.styl"
   ],
   "scripts": [
     "index.js"
