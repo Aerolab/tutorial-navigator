@@ -6,12 +6,11 @@
     "cristiandouce/reactive": "*",
     "component/jquery": "*",
     "component/scroll-to": "*",
-    "timoxley/offset": "*",
-    "yields/k": "*"
+    "timoxley/offset": "*"
   },
   "templates": [ "loading.html" ],
   "styles": [ "loading.css" ],
   "local": [ "binding-utils" ],
-  "scripts": [ "index.js", "tutorial-fetch.js", "empty-if.js", "remove-if.js", "disabled-if.js", "scroll-on.js", "keyboard-navigate.js" ],
+  "scripts": [ "index.js", "tutorial-fetch.js", "empty-if.js", "remove-if.js", "disabled-if.js", "scroll-on.js" ],
   "main": "index.js"
 }
