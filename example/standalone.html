@@ -12,6 +12,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://docs.auth0.com/js/prettify.js"></script>
   <script>
+  // Keynav.js
   // https://github.com/firedev/jquery.keynav/blob/master/javascript/jquery.keynav.js
   (function(e,t,n,r){e.fn.keynav=function(r){function c(){var e=0;var t=Array();var n=-1;var r=false;var i=Array();s.each(function(){if(!r)r=this.offsetTop;newtop=this.offsetTop;if(newtop!=r){r=newtop;i[e]=t;t=Array();e++;n=0;t[n]=this}else{n++;t[n]=this}});i[e]=t;o=i;coordinates=h();u=coordinates[0];a=coordinates[1];return o}function h(){i=0;j=0;found=false;try{for(i=0;i<o.length;i++){row=o[i];for(j=0;j<row.length;j++){if(f[0]==row[j]){throw[i,j]}}}}catch(e){found=[i,j]}return found}function p(t,n){if(t<0)t=o.length-1;if(t>=o.length)t=0;if(n<0)n=o[t].length-1;if(n>=o[t].length)n=0;f.removeClass("selected");f=e(o[t][n]);f.addClass("selected");u=t;a=n}var s=this;var o;var u;var a;var f=this.filter(".selected");var l=false;if(f.length==0)f=this.first();f.addClass("selected");e(t).bind("resize",function(e){c()});e(n).ready(function(){c()});e(n).keydown(function(e){if(r&&r())return;if(e.keyCode==37){p(u,a-1);e.preventDefault()}else if(e.keyCode==38){p(u-1,a);e.preventDefault()}else if(e.keyCode==39){p(u,a+1);e.preventDefault()}else if(e.keyCode==40){p(u+1,a);e.preventDefault()}});return this}})(jQuery,window,document)
   </script>
@@ -26,7 +27,7 @@
     tutorial.pretty(function(el) {
         return 'function' === typeof window.prettyPrint ? prettyPrint() : null;
       });
-    tutorial.set("apptype", "")
+    tutorial.set("apptype", "") // Hack cc Cristian Douce para hacer andar el keynav.js
   </script>
 </body>
 </html>

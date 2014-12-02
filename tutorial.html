@@ -99,11 +99,11 @@
 		</div>
 		<!-- Backend -->
 		<div class="row step select-platform-api" data-visible="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}">
-			<h2>Will you use an API Server with your {'spa' === apptype ? 'javascript' : 'mobile'} application?</h2>
+			<h2>Will you use an API Server <br>with your {'spa' === apptype ? 'javascript' : 'mobile'} application?</h2>
 			<!-- Search & Skip -->
 			<div class="text-center">
 				<div class="inputs">
-					<input on-click="showCode" type="button" class="skip" value="No, skip" keynav-item>
+					<input on-click="showCode" type="button" class="skip" value="Skip" keynav-item>
 				</div>
 			</div>
 			<!-- items -->
