@@ -11,7 +11,7 @@
 			</a>
 		</div>
 		<!-- Step 2 -->
-		<div class="step-circle {nativePlatform || hybridPlatform || clientPlatform ? 'active' : ''}">
+		<div class="step-circle {nativePlatform || hybridPlatform || clientPlatform || serverPlatform  ? 'active' : ''}">
 			<a href="#" on-click="clearTwo" >
 				<div class="mask">
 					<!-- icon -->
@@ -154,36 +154,27 @@
 		<div class="row code-snippets" data-visible="codevisible">
 			<h2>Let's code! Enjoy :)</h2>
 			<div class="snippet-tabs" data-hidden="{!serverApi}">
-				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" keynav-item >
+				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" >
 					<a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}" keynav-item >
+				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}" >
 					<a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}" keynav-item >
+				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}" >
 					<a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
 				</div>
-				<div class="snippet-tab" on-click="showServerApi" keynav-item >
+				<div class="snippet-tab" on-click="showServerApi" >
 					<a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
 				</div>
 			</div>
 			<div class="snippet" tutorial-fetch="{nativePlatform && codevisible ? nativePlatform : '' }" empty-if="{!nativePlatform}" data-visible="{nativevisible}"></div>
 			<div class="snippet" tutorial-fetch="{hybridPlatform && codevisible ? hybridPlatform : ''}" empty-if="{!hybridPlatform}" data-visible="{hybridvisible}"></div>
 			<div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
-			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
+			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" scroll-on="serverapivisible" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
-			<div class="snippet-tabs" data-hidden="{!serverApi}">
-				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" keynav-item >
-					<a class="{nativevisible ? 'active' : ''}"><span>{nativePlatform ? platformTitle : ''}</span></a>
-				</div>
-				<div class="snippet-tab" on-click="showHybrid" data-hidden="{!hybridPlatform}" keynav-item >
-					<a class="{hybridvisible ? 'active' : ''}" ><span>{hybridPlatform ? platformTitle: ''}</span></a>
-				</div>
-				<div class="snippet-tab" on-click="showClient" data-hidden="{!clientPlatform}" keynav-item >
-					<a class="{clientvisible ? 'active' : ''}"><span>{clientPlatform ? platformTitle : ''}</span></a>
-				</div>
-				<div class="snippet-tab" on-click="showServerApi" keynav-item >
-					<a class="{serverapivisible ? 'active' : ''}"><span>{serverApi ? apiTitle : ''}</span></a>
+			<div class="snippet-tabs" data-hidden="{serverapivisible}">
+				<div class="snippet-tab" on-click="showServerApi" >
+					<a class="{serverapivisible ? 'active' : ''}"><span>Continue with {serverApi ? apiTitle : ''}</span></a>
 				</div>
 			</div>
 		</div>
