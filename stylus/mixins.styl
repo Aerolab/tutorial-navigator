@@ -16,7 +16,9 @@ ui-step(color)
   .skip
     &:hover
     &:focus
+    &.selected
       background color
+      border-color color 
   .snippet-tab 
     a
       border solid 1px color
@@ -25,11 +27,6 @@ ui-step(color)
       &:focus
         background color !important
         color white
-  input
-    &:hover 
-    &:focus
-    &.selected
-      border-color color 
   .tutorial-item
     &.selected
     &:hover
@@ -38,8 +35,9 @@ ui-step(color)
       .grafic
         border-color color
         img 
-          filter grayscale(0)
-          -webkit-filter grayscale(0)
+          filter grayscale(0%)
+          -webkit-filter grayscale(0%)
+          -moz-filter grayscale(0%)
       .description
         background color 
   .snippet

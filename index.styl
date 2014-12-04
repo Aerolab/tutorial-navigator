@@ -65,12 +65,22 @@
         i
           filter drop-shadow( 5px 5px 4px rgba(black,.2))
           -webkit-filter drop-shadow( 5px 5px 4px rgba(black,.2))
+          -moz-filter drop-shadow( 5px 5px 4px rgba(black,.2))
   .grafic 
     width 100%
     height 170px
     border solid 1px grayBorder
     border-radius 3px
-    @extend #tutorial-navigator .center-vertical  
+    text-align center
+    &:before
+      content ''
+      display inline-block
+      height 100%
+      vertical-align middle
+      margin-right -0.25em 
+    i
+      display inline-block
+      vertical-align middle
   .step
     h2,
     h3
@@ -90,15 +100,28 @@
     border-radius 50%
     a
       .mask
-        @extend #tutorial-navigator .center-vertical
         position relative 
         top 3px
         height 80px
+        text-align center
+        &:before
+          content ''
+          display inline-block
+          height 100%
+          vertical-align middle
+          margin-right -0.25em 
+        i
+          display inline-block
+          vertical-align middle
         img
-          max-height 70%
-          max-width 100%
+          // max-height 70%
+          // max-width 100%
+          width 70%
+          height auto
           margin 0 auto
           position relative
+          display inline-block
+          vertical-align middle
           top -3px
   // Search
   .inputs
@@ -134,20 +157,28 @@
           margin-right 0
       a
         img
-          max-height 70%
-          max-width 70%
-          filter grayscale(1)
-          -webkit-filter grayscale(1)
+          // max-height 70%
+          // max-width 70%
+          width 70%
+          height auto
+          filter grayscale(100%)
+          -webkit-filter grayscale(100%)
+          -moz-filter grayscale(100%)
         .grafic
           height 120px 
           width 120px
           border-radius 3px 3px 0 0
         .description
-          @extend #tutorial-navigator .center-vertical
           border-radius 0 0 3px 3px
           height 60px
           background grayBorder
           color white 
+          display table
+          width 100%
+          .inline-middle
+            display table-cell
+            text-align center
+            vertical-align middle
     h3 
       font-size 22px
       color blueFont
@@ -194,7 +225,7 @@
     margin-bottom 30px
     .snippet-tab 
       width 50%
-      display inline-block  
+      float left 
       a
         background white
         border none

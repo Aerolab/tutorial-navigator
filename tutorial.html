@@ -15,7 +15,7 @@
 			<a href="#" on-click="clearTwo" >
 				<div class="mask">
 					<!-- icon -->
-					<img src="{nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''}" />
+					<img src="{nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''}" data-hidden="{!(nativePlatform || hybridPlatform || clientPlatform || serverPlatform)}" />
 				</div>
 			</a>
 		</div>
@@ -24,7 +24,7 @@
 			<a href="#" on-click="noop"  >
 				<div class="mask">
 					<!-- icon -->
-					<img src="{serverApi ? apiIcon : ''} " />
+					<img src="{serverApi ? apiIcon : ''} " data-hidden="{!serverApi} "  />
 				</div>
 			</a>
 		</div>
@@ -42,8 +42,10 @@
 					</div>
 					<h3 class="label" data-text="title"></h3>
 					<div class="description">
-						<span data-text="description"></span>
-						<span data-text="example"></span>
+						<div class="inline-middle">
+							<span data-text="description"></span>
+							<span data-text="example"></span>
+						</div>
 					</div>
 				</a>
 
@@ -60,13 +62,15 @@
 						<img data-src="image">
 					</div>
 					<div class="description">
-						<span data-text="title"></span>
+						<div class="inline-middle">
+							<span data-text="title"></span>
+						</div>
 					</div>
 				</a>
 			</div>
 		</div>
 
-		<div class="row step select-platform-client" data-hidden="{apptype !== 'spa' || clientPlatform}">
+		<div class="row step select-platform-client" data-hidden="{apptype !== 'spa' || clientPlatform}" keyboard-navigate="{!(apptype !== 'spa' || clientPlatform)}" >
 			<h2>What will you use in the FrontEnd?</h2>
 			
 			<!-- items -->
@@ -76,13 +80,15 @@
 						<img data-src="image">
 					</div>
 					<div class="description">
-						<span data-text="title"></span>
+						<div class="inline-middle">
+							<span data-text="title"></span>
+						</div>
 					</div>
 				</a>
 			</div>
 		</div>
 
-		<div class="row step select-platform-hybrid"  data-hidden="{apptype !== 'hybrid' || hybridPlatform}">
+		<div class="row step select-platform-hybrid"  data-hidden="{apptype !== 'hybrid' || hybridPlatform}" keyboard-navigate="{!(apptype !== 'hybrid' || hybridPlatform)}">
 			<h2>Select your hybrid SDK</h2>
 			
 			<!-- items -->
@@ -92,19 +98,21 @@
 						<img data-src="image">
 					</div>
 					<div class="description">
-						<span data-text="title"></span>
+						<div class="inline-middle">
+							<span data-text="title"></span>
+						</div>
 					</div>
 				</a>
 			</div>
 		</div>
 		<!-- Backend -->
-		<div class="row step select-platform-api" data-visible="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}">
+		<div class="row step select-platform-api" data-visible="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}" keyboard-navigate="{!(!apptype || apptype === 'webapp' || serverApi || codevisible || !(clientPlatform || nativePlatform || hybridPlatform))}">
 			<h2>Will you use an API Server <br>with your {'spa' === apptype ? 'javascript' : 'mobile'} application?</h2>
 			<!-- Search & Skip -->
 			<div class="text-center">
 				<div class="inputs">
-					<input on-click="showCode" type="button" class="skip" value="Skip" keynav-item>
-				</div>
+					<button on-click="showCode" class="skip" keynav-item >Skip</button>
+				</div> 
 			</div>
 			<!-- items -->
 			<h3>Backend Platform</h3>
@@ -115,7 +123,9 @@
 							<img data-src="image">
 						</div>
 						<div class="description">
-							<span data-text="title"></span>
+							<div class="inline-middle">
+								<span data-text="title"></span>
+							</div>
 						</div>
 					</a>
 				</div>
@@ -128,14 +138,16 @@
 							<img data-src="image">
 						</div>
 						<div class="description">
-							<span data-text="title"></span>
+							<div class="inline-middle">
+								<span data-text="title"></span>
+							</div>
 						</div>
 					</a>
 				</div>
 			</div>
 		</div>
 		<!-- Server -->
-		<div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}">
+		<div class="row step select-platform-server" data-hidden="{apptype !== 'webapp' || serverPlatform}" keyboard-navigate="{!(apptype !== 'webapp' || serverPlatform)}">
 			<h3>What technology are you using for your WebApp?</h3>
 			<div each="serverplatforms" data-name="{name}" class="tutorial-item" on-click="serverplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
@@ -143,7 +155,9 @@
 						<img data-src="image">
 					</div>
 					<div class="description">
-						<span data-text="title"></span>
+						<div class="inline-middle">
+							<span data-text="title"></span>
+						</div>
 					</div>
 				</a>
 			</div>
@@ -151,7 +165,7 @@
 		</div>
 
 		<!-- Snippets Documentation -->
-		<div class="row code-snippets" data-visible="codevisible">
+		<div class="row code-snippets" data-visible="codevisible" keyboard-navigate="codevisible">
 			<h2>Let's code! Enjoy :)</h2>
 			<div class="snippet-tabs" data-hidden="{!serverApi}">
 				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" >
