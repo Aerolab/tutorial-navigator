@@ -104,25 +104,18 @@
         top 3px
         height 80px
         text-align center
-        &:before
-          content ''
-          display inline-block
-          height 100%
-          vertical-align middle
-          margin-right -0.25em 
         i
           display inline-block
           vertical-align middle
-        img
-          // max-height 70%
-          // max-width 100%
-          width 70%
-          height auto
-          margin 0 auto
-          position relative
-          display inline-block
-          vertical-align middle
-          top -3px
+        &.icons
+          top 0
+          i
+            height 80%
+            width 80%
+            margin 10%
+            background-size contain
+            background-repeat no-repeat
+            background-position 50% 50%
   // Search
   .inputs
     display block
@@ -156,18 +149,22 @@
         &:nth-child(5n+5)
           margin-right 0
       a
-        img
-          // max-height 70%
-          // max-width 70%
-          width 70%
-          height auto
-          filter grayscale(100%)
-          -webkit-filter grayscale(100%)
-          -moz-filter grayscale(100%)
         .grafic
           height 120px 
           width 120px
           border-radius 3px 3px 0 0
+          padding 10%
+          &:before
+            display none
+          i 
+            height 100%
+            width 100%
+            filter grayscale(100%)
+            -webkit-filter grayscale(100%)
+            -moz-filter grayscale(100%)
+            background-size contain
+            background-repeat no-repeat
+            background-position 50% 50%
         .description
           border-radius 0 0 3px 3px
           height 60px
@@ -175,6 +172,8 @@
           color white 
           display table
           width 100%
+          span
+            font-size 15px
           .inline-middle
             display table-cell
             text-align center
@@ -226,6 +225,9 @@
     .snippet-tab 
       width 50%
       float left 
+      &.center
+        float none
+        display inline-block
       a
         background white
         border none

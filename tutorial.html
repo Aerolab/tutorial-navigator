@@ -13,18 +13,18 @@
 		<!-- Step 2 -->
 		<div class="step-circle {nativePlatform || hybridPlatform || clientPlatform || serverPlatform  ? 'active' : ''}">
 			<a href="#" on-click="clearTwo" >
-				<div class="mask">
+				<div class="mask icons">
 					<!-- icon -->
-					<img src="{nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''}" data-hidden="{!(nativePlatform || hybridPlatform || clientPlatform || serverPlatform)}" />
+					<i style="background-image:url({nativePlatform || hybridPlatform || clientPlatform || serverPlatform ? platformIcon : ''});"></i>
 				</div>
 			</a>
 		</div>
 		<!-- Step 3 -->
 		<div class="step-circle {serverApi ? 'active' : ''}">
 			<a href="#" on-click="noop"  >
-				<div class="mask">
+				<div class="mask icons">
 					<!-- icon -->
-					<img src="{serverApi ? apiIcon : ''} " data-hidden="{!serverApi} "  />
+					<i style="background-image:url({serverApi ? apiIcon : ''});"></i>
 				</div>
 			</a>
 		</div>
@@ -59,7 +59,7 @@
 			<div each="nativeplatforms" data-name="{name}" class="tutorial-item" on-click="nativeplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
-						<img data-src="image">
+						<i style="background-image:url({image});"></i>
 					</div>
 					<div class="description">
 						<div class="inline-middle">
@@ -77,7 +77,7 @@
 			<div each="clientplatforms" data-name="{name}" class="tutorial-item" on-click="clientplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
-						<img data-src="image">
+						<i style="background-image:url({image});"></i>
 					</div>
 					<div class="description">
 						<div class="inline-middle">
@@ -95,7 +95,7 @@
 			<div each="hybridplatforms" data-name="{name}" class="tutorial-item" on-click="hybridplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
-						<img data-src="image">
+						<i style="background-image:url({image});"></i>
 					</div>
 					<div class="description">
 						<div class="inline-middle">
@@ -120,7 +120,7 @@
 				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="thirdParty" keynav-item >
 					<a data-href="url" class="logo-tutorial">
 						<div class="grafic">
-							<img data-src="image">
+							<i style="background-image:url({image});"></i>
 						</div>
 						<div class="description">
 							<div class="inline-middle">
@@ -135,7 +135,7 @@
 				<div each="serverapis" data-name="{name}" class="tutorial-item" on-click="serverapiselect" data-hidden="{!thirdParty}" keynav-item >
 					<a data-href="url" class="logo-tutorial">
 						<div class="grafic">
-							<img data-src="image">
+							<i style="background-image:url({image});"></i>
 						</div>
 						<div class="description">
 							<div class="inline-middle">
@@ -152,7 +152,7 @@
 			<div each="serverplatforms" data-name="{name}" class="tutorial-item" on-click="serverplatformselect" keynav-item >
 				<a data-href="url" class="logo-tutorial">
 					<div class="grafic">
-						<img data-src="image">
+						<i style="background-image:url({image});"></i>
 					</div>
 					<div class="description">
 						<div class="inline-middle">
@@ -187,7 +187,7 @@
 			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" scroll-on="serverapivisible" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
 			<div class="snippet-tabs" data-hidden="{serverapivisible || !serverApi}">
-				<div class="snippet-tab" on-click="showServerApi" >
+				<div class="snippet-tab center" on-click="showServerApi" >
 					<a class="{serverapivisible ? 'active' : ''}"><span>Continue with {serverApi ? apiTitle : ''}</span></a>
 				</div>
 			</div>
