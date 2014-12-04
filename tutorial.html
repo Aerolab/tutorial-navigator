@@ -172,7 +172,7 @@
 			<div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" scroll-on="serverapivisible" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
-			<div class="snippet-tabs" data-hidden="{serverapivisible}">
+			<div class="snippet-tabs" data-hidden="{serverapivisible || !serverApi}">
 				<div class="snippet-tab" on-click="showServerApi" >
 					<a class="{serverapivisible ? 'active' : ''}"><span>Continue with {serverApi ? apiTitle : ''}</span></a>
 				</div>
