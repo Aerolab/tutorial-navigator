@@ -48,6 +48,8 @@
       font-weight 300 
       &::first-word
         font-weight 600
+    .grafic 
+      border solid 2px grayBorder
     .description
       transition all .3s ease
       opacity 0
@@ -62,10 +64,10 @@
         transform translate(0,0)
       .grafic
         transition all .3s ease
-        i
-          filter drop-shadow( 5px 5px 4px rgba(black,.2))
-          -webkit-filter drop-shadow( 5px 5px 4px rgba(black,.2))
-          -moz-filter drop-shadow( 5px 5px 4px rgba(black,.2))
+        // i
+        //   filter drop-shadow( 5px 5px 4px rgba(black,.2))
+        //   -webkit-filter drop-shadow( 5px 5px 4px rgba(black,.2))
+        //   -moz-filter drop-shadow( 5px 5px 4px rgba(black,.2))
   .grafic 
     width 100%
     height 170px
@@ -82,15 +84,18 @@
       display inline-block
       vertical-align middle
   .step
-    h2,
+    h2
+      text-align center
+      margin 0 auto 20px
     h3
       text-align center
-      margin 40px auto 30px
+      margin 20px auto 20px
   .complete 
     text-align center
   // Tutorial Header
   .tutorial-header
     text-align center
+    margin-bottom 20px
   .step-circle
     display inline-block 
     vertical-align top
@@ -110,9 +115,9 @@
         &.icons
           top 0
           i
-            height 80%
-            width 80%
-            margin 10%
+            height 60%
+            width 60%
+            margin 20%
             background-size contain
             background-repeat no-repeat
             background-position 50% 50%
@@ -140,14 +145,12 @@
     @extend #tutorial-navigator .clearfix
     width 650px
     margin 0 auto
+    padding-top 0
     .tutorial-item
       float left
       width 120px
       margin-bottom 10px
       margin-right 10px 
-      &.visible
-        &:nth-child(5n+5)
-          margin-right 0
       a
         .grafic
           height 120px 

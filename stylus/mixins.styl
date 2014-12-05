@@ -9,7 +9,7 @@ size( values... )
 // Ui Color
 ui-step-1(color)
   .grafic
-    background color
+    border-color color
 ui-step(color)
   .step-circle.active
     background color
@@ -20,6 +20,9 @@ ui-step(color)
       background color
       border-color color 
   .snippet-tab 
+    &.selected a
+      background color !important
+      color white
     a
       border solid 1px color
       &.active

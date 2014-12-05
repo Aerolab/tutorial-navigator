@@ -137,6 +137,9 @@ TutorialView.prototype.clearTwo = function(ev) {
 
 TutorialView.prototype.noop = function() {
   // noop, take a coffee
+  this.set('serverApi', '');
+  this.set('codevisible', false);
+  this.resetTabs();
 };
 
 TutorialView.prototype.showCode = function() {

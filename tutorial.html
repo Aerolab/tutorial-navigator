@@ -111,7 +111,7 @@
 			<!-- Search & Skip -->
 			<div class="text-center">
 				<div class="inputs">
-					<button on-click="showCode" class="skip" keynav-item >Skip</button>
+					<button on-click="showCode" class="skip visible" keynav-item >Skip</button>
 				</div> 
 			</div>
 			<!-- items -->
@@ -165,7 +165,7 @@
 		</div>
 
 		<!-- Snippets Documentation -->
-		<div class="row code-snippets" data-visible="codevisible" keyboard-navigate="codevisible">
+		<div class="row code-snippets" data-visible="codevisible" keyboard-navigate="codevisible" >
 			<h2>Let's code! Enjoy :)</h2>
 			<div class="snippet-tabs" data-hidden="{!serverApi}">
 				<div class="snippet-tab" on-click="showNative" data-hidden="{!nativePlatform}" >
@@ -186,6 +186,7 @@
 			<div class="snippet" tutorial-fetch="{clientPlatform && codevisible ? clientPlatform : ''}" empty-if="{!clientPlatform}" data-visible="{clientvisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverApi && codevisible ? serverApi : ''}" scroll-on="serverapivisible" empty-if="{!serverApi}" data-visible="{serverapivisible}"></div>
 			<div class="snippet" tutorial-fetch="{serverPlatform && codevisible ? serverPlatform : ''}" empty-if="{!serverPlatform}" data-visible="{apptype === 'webapp'}"></div>
+			
 			<div class="snippet-tabs" data-hidden="{serverapivisible || !serverApi}">
 				<div class="snippet-tab center" on-click="showServerApi" >
 					<a class="{serverapivisible ? 'active' : ''}"><span>Continue with {serverApi ? apiTitle : ''}</span></a>
