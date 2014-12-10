@@ -35,7 +35,11 @@
     "index.js"
   ],
   "images":[
-  	"images/sprite.png"
+    "images/sprite.png",
+    "images/hybrid-hover.png",
+    "images/native-hover.png",
+    "images/webapp-hover.png",
+  	"images/spa-hover.png"
   ],
   "main": "index.js"
 }

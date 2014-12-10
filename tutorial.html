@@ -33,9 +33,9 @@
 	<!-- Body -->
 	<div class="tutorial-body">
 		<!-- Aplication Type -->
-		<div class="row step select-app-type" data-hidden="apptype" keyboard-navigate="{!apptype}"> 
+		<div class="row step select-app-type" data-hidden="apptype" keyboard-navigate="{!apptype}" > 
 			<h2>Select an application type</h2>
-			<div each="apptypes" class="app-type  col-xs-3" data-type="{name}" on-click="apptypeselect" keynav-item>
+			<div each="apptypes" class="app-type  col-xs-3" data-type="{name}" on-click="apptypeselect" on-hover="{!apptype}" keynav-item>
 				<a href="#" class="app-type-item {name}">
 					<div class="grafic">
 						<i class="sprite sprite-{name}"></i>
